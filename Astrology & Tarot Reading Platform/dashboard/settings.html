@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — CelestiaAura Dashboard</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">Main</div>
+      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="users.html" class="sidebar__link"><i class="fas fa-users"></i> Users</a>
+      <a href="bookings.html" class="sidebar__link"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
+      <div class="sidebar__section-label">Content</div>
+      <a href="content.html" class="sidebar__link"><i class="fas fa-file-alt"></i> Content</a>
+      <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
+      <div class="sidebar__section-label">System</div>
+      <a href="settings.html" class="sidebar__link active"><i class="fas fa-cog"></i> Settings</a>
+      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin" class="sidebar__user-avatar">
+        <div><div class="sidebar__user-name">Marcus Chen</div><div class="sidebar__user-role">Administrator</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div><div class="dash-header__title">Settings</div><div class="dash-header__subtitle">Platform configuration and preferences</div></div>
+      </div>
+      <div class="dash-header__right">
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      <!-- Section 1: Profile Settings -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-user" style="color:var(--clr-accent);"></i> Profile Settings</div></div>
+        <div class="dash-panel__body">
+          <div style="display:flex;gap:var(--sp-6);align-items:start;flex-wrap:wrap;">
+            <div style="text-align:center;">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Admin Avatar" style="width:100px;height:100px;border-radius:var(--radius-full);object-fit:cover;border:3px solid var(--clr-border-light);margin-bottom:var(--sp-3);">
+              <div><button class="btn btn--ghost btn--sm"><i class="fas fa-camera"></i> Change</button></div>
+            </div>
+            <div style="flex:1;min-width:280px;">
+              <div class="grid grid--2" style="gap:var(--sp-4);">
+                <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" value="Marcus"></div>
+                <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" value="Chen"></div>
+                <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" value="marcus@celestiaaura.com"></div>
+                <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-input" value="+1 (310) 555-0142"></div>
+              </div>
+              <div class="form-group"><label class="form-label">Bio</label><textarea class="form-textarea" rows="3">Platform administrator and spiritual technology enthusiast. Ensuring CelestiaAura delivers transformative experiences.</textarea></div>
+              <button class="btn btn--primary"><i class="fas fa-save"></i> Save Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Site Configuration -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-sliders" style="color:var(--clr-secondary);"></i> Site Configuration</div></div>
+        <div class="dash-panel__body">
+          <div class="grid grid--2" style="gap:var(--sp-4);">
+            <div class="form-group"><label class="form-label">Site Name</label><input type="text" class="form-input" value="CelestiaAura"></div>
+            <div class="form-group"><label class="form-label">Tagline</label><input type="text" class="form-input" value="Astrology & Tarot Reading Platform"></div>
+            <div class="form-group"><label class="form-label">Contact Email</label><input type="email" class="form-input" value="hello@celestiaaura.com"></div>
+            <div class="form-group"><label class="form-label">Time Zone</label>
+              <select class="form-select"><option>America/Los_Angeles (PST)</option><option>America/New_York (EST)</option><option>Europe/London (GMT)</option><option>Asia/Tokyo (JST)</option></select>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-4);margin-top:var(--sp-4);">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+              <div><strong style="font-size:var(--fs-sm);">Maintenance Mode</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Show coming soon page to visitors</p></div>
+              <label class="toggle-switch"><input type="checkbox"><span class="toggle-switch__slider"></span></label>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+              <div><strong style="font-size:var(--fs-sm);">User Registration</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Allow new users to register</p></div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-switch__slider"></span></label>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+              <div><strong style="font-size:var(--fs-sm);">Email Notifications</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Send email for new bookings</p></div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-switch__slider"></span></label>
+            </div>
+          </div>
+          <div style="margin-top:var(--sp-6);"><button class="btn btn--primary"><i class="fas fa-save"></i> Save Configuration</button></div>
+        </div>
+      </div>
+
+      <!-- Section 3: Payment Settings -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-credit-card" style="color:var(--clr-success);"></i> Payment Settings</div></div>
+        <div class="dash-panel__body">
+          <div class="grid grid--2" style="gap:var(--sp-4);">
+            <div class="form-group"><label class="form-label">Payment Gateway</label>
+              <select class="form-select"><option selected>Stripe</option><option>PayPal</option><option>Square</option></select>
+            </div>
+            <div class="form-group"><label class="form-label">Currency</label>
+              <select class="form-select"><option selected>USD ($)</option><option>EUR (€)</option><option>GBP (£)</option></select>
+            </div>
+            <div class="form-group"><label class="form-label">Stripe Public Key</label><input type="text" class="form-input" value="pk_live_****************************" style="font-family:monospace;"></div>
+            <div class="form-group"><label class="form-label">Stripe Secret Key</label><input type="password" class="form-input" value="sk_live_****************************" style="font-family:monospace;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);margin-top:var(--sp-4);">
+            <div><strong style="font-size:var(--fs-sm);">Test Mode</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Process payments in test mode</p></div>
+            <label class="toggle-switch"><input type="checkbox"><span class="toggle-switch__slider"></span></label>
+          </div>
+          <div style="margin-top:var(--sp-6);"><button class="btn btn--primary"><i class="fas fa-save"></i> Save Payment Settings</button></div>
+        </div>
+      </div>
+
+      <!-- Section 4-5: Email Templates + Integrations -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-envelope-open-text" style="color:var(--clr-info);"></i> Email Templates</div></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><span style="font-size:var(--fs-sm);font-weight:500;">Welcome Email</span><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Sent to new users</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><span style="font-size:var(--fs-sm);font-weight:500;">Booking Confirmed</span><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Sent on booking</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><span style="font-size:var(--fs-sm);font-weight:500;">Password Reset</span><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Security template</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><span style="font-size:var(--fs-sm);font-weight:500;">Payment Receipt</span><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">After payment</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-puzzle-piece" style="color:var(--clr-warning);"></i> Integrations</div></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div style="display:flex;align-items:center;gap:var(--sp-3);"><i class="fab fa-google" style="font-size:var(--fs-lg);color:#4285F4;"></i><div><strong style="font-size:var(--fs-sm);">Google Analytics</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Track site visitors</p></div></div>
+                <span class="status status--active"><span class="status__dot"></span> Connected</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div style="display:flex;align-items:center;gap:var(--sp-3);"><i class="fab fa-stripe-s" style="font-size:var(--fs-lg);color:#6772E5;"></i><div><strong style="font-size:var(--fs-sm);">Stripe</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Payment processing</p></div></div>
+                <span class="status status--active"><span class="status__dot"></span> Connected</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div style="display:flex;align-items:center;gap:var(--sp-3);"><i class="fab fa-mailchimp" style="font-size:var(--fs-lg);color:#FFE01B;"></i><div><strong style="font-size:var(--fs-sm);">Mailchimp</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Email marketing</p></div></div>
+                <span class="status status--pending"><span class="status__dot"></span> Not Connected</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div style="display:flex;align-items:center;gap:var(--sp-3);"><i class="fab fa-slack" style="font-size:var(--fs-lg);color:#4A154B;"></i><div><strong style="font-size:var(--fs-sm);">Slack</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Team notifications</p></div></div>
+                <span class="status status--active"><span class="status__dot"></span> Connected</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Backup -->
+      <div class="dash-panel">
+        <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-database" style="color:var(--clr-error);"></i> Backup & Restore</div></div>
+        <div class="dash-panel__body">
+          <div class="grid grid--2" style="gap:var(--sp-6);">
+            <div>
+              <h3 style="font-size:var(--fs-base);margin-bottom:var(--sp-3);">Create Backup</h3>
+              <p style="font-size:var(--fs-sm);color:var(--clr-text-secondary);">Create a full backup of your site data, including users, bookings, content, and settings.</p>
+              <button class="btn btn--primary"><i class="fas fa-download"></i> Create Backup</button>
+            </div>
+            <div>
+              <h3 style="font-size:var(--fs-base);margin-bottom:var(--sp-3);">Recent Backups</h3>
+              <div style="display:flex;flex-direction:column;gap:var(--sp-2);">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-sm);">
+                  <span><i class="fas fa-file-archive" style="color:var(--clr-success);margin-right:var(--sp-2);"></i>backup_2025-04-14.zip</span>
+                  <span style="color:var(--clr-text-muted);font-size:var(--fs-xs);">12.4 MB • Today</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-sm);">
+                  <span><i class="fas fa-file-archive" style="color:var(--clr-text-muted);margin-right:var(--sp-2);"></i>backup_2025-04-07.zip</span>
+                  <span style="color:var(--clr-text-muted);font-size:var(--fs-xs);">11.8 MB • Apr 7</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-sm);">
+                  <span><i class="fas fa-file-archive" style="color:var(--clr-text-muted);margin-right:var(--sp-2);"></i>backup_2025-03-31.zip</span>
+                  <span style="color:var(--clr-text-muted);font-size:var(--fs-xs);">11.2 MB • Mar 31</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

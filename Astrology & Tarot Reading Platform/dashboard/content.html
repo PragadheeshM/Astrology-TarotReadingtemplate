@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Management — CelestiaAura Dashboard</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">Main</div>
+      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="users.html" class="sidebar__link"><i class="fas fa-users"></i> Users</a>
+      <a href="bookings.html" class="sidebar__link"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
+      <div class="sidebar__section-label">Content</div>
+      <a href="content.html" class="sidebar__link active"><i class="fas fa-file-alt"></i> Content</a>
+      <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
+      <div class="sidebar__section-label">System</div>
+      <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
+      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin" class="sidebar__user-avatar">
+        <div><div class="sidebar__user-name">Marcus Chen</div><div class="sidebar__user-role">Administrator</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div><div class="dash-header__title">Content Management</div><div class="dash-header__subtitle">Manage blog posts, services, and media</div></div>
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search content..." aria-label="Search"></div>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      <!-- Section 1: Blog Posts -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-newspaper" style="color:var(--clr-accent);"></i> Blog Posts</div>
+          <button class="btn btn--primary btn--sm"><i class="fas fa-plus"></i> New Post</button>
+        </div>
+        <div class="dash-panel__body dash-panel__body--no-pad">
+          <div style="overflow-x:auto;">
+            <div class="dash-table-wrap"><table class="dash-table">
+              <thead><tr><th>Title</th><th>Author</th><th>Category</th><th>Published</th><th>Views</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:var(--clr-text);">Understanding Your Birth Chart</strong></td>
+                  <td>Selene M.</td><td><span class="tag">Astrology</span></td><td>Apr 10, 2025</td>
+                  <td>3,421</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Published</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;margin-left:4px;"><i class="fas fa-trash"></i></button></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--clr-text);">The Power of Crystal Healing</strong></td>
+                  <td>Luna C.</td><td><span class="tag">Wellness</span></td><td>Apr 8, 2025</td>
+                  <td>2,187</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Published</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;margin-left:4px;"><i class="fas fa-trash"></i></button></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--clr-text);">Mercury Retrograde Survival Guide</strong></td>
+                  <td>Orion S.</td><td><span class="tag">Astrology</span></td><td>—</td>
+                  <td>—</td>
+                  <td><span class="status status--pending"><span class="status__dot"></span> Draft</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;margin-left:4px;"><i class="fas fa-trash"></i></button></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--clr-text);">Tarot for Beginners: A Complete Guide</strong></td>
+                  <td>Selene M.</td><td><span class="tag">Tarot</span></td><td>Apr 5, 2025</td>
+                  <td>5,892</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Published</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;margin-left:4px;"><i class="fas fa-trash"></i></button></td>
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Services Editor -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-spa" style="color:var(--clr-secondary);"></i> Services</div>
+          <button class="btn btn--primary btn--sm"><i class="fas fa-plus"></i> Add Service</button>
+        </div>
+        <div class="dash-panel__body">
+          <div class="grid grid--3" style="gap:var(--sp-4);">
+            <div style="padding:var(--sp-4);background:var(--clr-bg-alt);border-radius:var(--radius-lg);display:flex;gap:var(--sp-3);align-items:center;">
+              <div style="width:48px;height:48px;background:rgba(124,58,237,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;"><i class="fas fa-hand-sparkles" style="color:var(--clr-accent);"></i></div>
+              <div><strong style="font-size:var(--fs-sm);">Tarot Reading</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">From $29</p></div>
+              <button class="btn btn--ghost btn--sm" style="margin-left:auto;padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+            </div>
+            <div style="padding:var(--sp-4);background:var(--clr-bg-alt);border-radius:var(--radius-lg);display:flex;gap:var(--sp-3);align-items:center;">
+              <div style="width:48px;height:48px;background:rgba(212,168,67,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;"><i class="fas fa-sun" style="color:var(--clr-secondary);"></i></div>
+              <div><strong style="font-size:var(--fs-sm);">Birth Chart</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">From $49</p></div>
+              <button class="btn btn--ghost btn--sm" style="margin-left:auto;padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+            </div>
+            <div style="padding:var(--sp-4);background:var(--clr-bg-alt);border-radius:var(--radius-lg);display:flex;gap:var(--sp-3);align-items:center;">
+              <div style="width:48px;height:48px;background:rgba(16,185,129,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;"><i class="fas fa-gem" style="color:var(--clr-success);"></i></div>
+              <div><strong style="font-size:var(--fs-sm);">Crystal Healing</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">From $39</p></div>
+              <button class="btn btn--ghost btn--sm" style="margin-left:auto;padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3-4: Page Content + Media Library -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-sitemap" style="color:var(--clr-info);"></i> Page Content</div></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <span style="font-size:var(--fs-sm);font-weight:500;">Home Page 1</span>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i> Edit</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <span style="font-size:var(--fs-sm);font-weight:500;">Home Page 2</span>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i> Edit</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <span style="font-size:var(--fs-sm);font-weight:500;">About Us</span>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i> Edit</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <span style="font-size:var(--fs-sm);font-weight:500;">Contact Us</span>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i> Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-images" style="color:var(--clr-secondary);"></i> Media Library</div><button class="btn btn--primary btn--sm"><i class="fas fa-upload"></i> Upload</button></div>
+          <div class="dash-panel__body">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-2);">
+              <div style="aspect-ratio:1;background:var(--clr-bg-alt);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'"><i class="fas fa-image" style="color:var(--clr-text-muted);font-size:var(--fs-xl);"></i></div>
+              <div style="aspect-ratio:1;background:var(--clr-bg-alt);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'"><i class="fas fa-image" style="color:var(--clr-text-muted);font-size:var(--fs-xl);"></i></div>
+              <div style="aspect-ratio:1;background:var(--clr-bg-alt);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'"><i class="fas fa-image" style="color:var(--clr-text-muted);font-size:var(--fs-xl);"></i></div>
+              <div style="aspect-ratio:1;background:var(--clr-bg-alt);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px dashed var(--clr-border);"><i class="fas fa-plus" style="color:var(--clr-text-muted);font-size:var(--fs-lg);"></i></div>
+            </div>
+            <p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:var(--sp-3);margin-bottom:0;">142 files • 2.4 GB used of 10 GB</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5-6: SEO + Comments Moderation -->
+      <div class="grid grid--2">
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-search" style="color:var(--clr-success);"></i> SEO Settings</div></div>
+          <div class="dash-panel__body">
+            <div class="form-group"><label class="form-label">Default Meta Title</label><input type="text" class="form-input" value="CelestiaAura — Astrology & Tarot Reading Platform"></div>
+            <div class="form-group"><label class="form-label">Default Meta Description</label><textarea class="form-textarea" rows="3">Unlock the mysteries of the cosmos with CelestiaAura. Professional astrology readings, tarot consultations, and spiritual guidance.</textarea></div>
+            <button class="btn btn--primary btn--sm"><i class="fas fa-save"></i> Save Changes</button>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-comments" style="color:var(--clr-warning);"></i> Comments Moderation <span class="sidebar__badge" style="margin-left:var(--sp-2);">4</span></div></div>
+          <div class="dash-panel__body dash-panel__body--no-pad">
+            <div style="padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--clr-border-light);display:flex;justify-content:space-between;align-items:center;">
+              <div><p style="font-size:var(--fs-sm);margin:0;"><strong>Sarah M.</strong> on <em>"Birth Chart Guide"</em></p><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">"This was so helpful, thank you!"</p></div>
+              <div style="display:flex;gap:4px;"><button class="btn btn--ghost btn--sm" style="padding:2px 6px;min-height:24px;color:var(--clr-success);"><i class="fas fa-check"></i></button><button class="btn btn--ghost btn--sm" style="padding:2px 6px;min-height:24px;color:var(--clr-error);"><i class="fas fa-times"></i></button></div>
+            </div>
+            <div style="padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--clr-border-light);display:flex;justify-content:space-between;align-items:center;">
+              <div><p style="font-size:var(--fs-sm);margin:0;"><strong>James R.</strong> on <em>"Tarot for Beginners"</em></p><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">"Can you do a follow-up on reversed cards?"</p></div>
+              <div style="display:flex;gap:4px;"><button class="btn btn--ghost btn--sm" style="padding:2px 6px;min-height:24px;color:var(--clr-success);"><i class="fas fa-check"></i></button><button class="btn btn--ghost btn--sm" style="padding:2px 6px;min-height:24px;color:var(--clr-error);"><i class="fas fa-times"></i></button></div>
+            </div>
+            <div style="padding:var(--sp-4) var(--sp-5);display:flex;justify-content:space-between;align-items:center;">
+              <div><p style="font-size:var(--fs-sm);margin:0;"><strong>Emily K.</strong> on <em>"Crystal Healing"</em></p><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">"I started using amethyst, amazing results!"</p></div>
+              <div style="display:flex;gap:4px;"><button class="btn btn--ghost btn--sm" style="padding:2px 6px;min-height:24px;color:var(--clr-success);"><i class="fas fa-check"></i></button><button class="btn btn--ghost btn--sm" style="padding:2px 6px;min-height:24px;color:var(--clr-error);"><i class="fas fa-times"></i></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

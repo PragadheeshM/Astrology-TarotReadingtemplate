@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Overview — CelestiaAura Admin</title>
+  <meta name="description" content="CelestiaAura admin dashboard overview with analytics, bookings, and revenue insights.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../index.html" class="sidebar__logo">
+        <div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div>
+        <span class="sidebar__logo-text">CelestiaAura</span>
+      </a>
+      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Dashboard Navigation">
+      <div class="sidebar__section-label">Main</div>
+      <a href="index.html" class="sidebar__link active"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="users.html" class="sidebar__link"><i class="fas fa-users"></i> Users</a>
+      <a href="bookings.html" class="sidebar__link"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
+
+      <div class="sidebar__section-label">Content</div>
+      <a href="content.html" class="sidebar__link"><i class="fas fa-file-alt"></i> Content</a>
+      <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
+
+      <div class="sidebar__section-label">System</div>
+      <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
+      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin Avatar" class="sidebar__user-avatar">
+        <div>
+          <div class="sidebar__user-name">Marcus Chen</div>
+          <div class="sidebar__user-role">Administrator</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <div class="dash-main">
+    <!-- Header -->
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div>
+          <div class="dash-header__title">Dashboard Overview</div>
+          <div class="dash-header__subtitle">Welcome back, Marcus!</div>
+        </div>
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-header__search">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." aria-label="Search dashboard">
+        </div>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL" title="RTL Toggle"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme" title="Theme Toggle"><i class="fas fa-moon"></i></button>
+        <button class="dash-header__icon-btn" aria-label="Notifications" title="Notifications">
+          <i class="fas fa-bell"></i>
+          <span class="notif-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dash-content">
+
+      <!-- Section 1: Stats Cards -->
+      <div class="stats-row">
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--purple"><i class="fas fa-dollar-sign"></i></div>
+            <div class="stat-card-dash__trend stat-card-dash__trend--up"><i class="fas fa-arrow-up"></i> 12.5%</div>
+          </div>
+          <div class="stat-card-dash__value" data-counter="48720" data-prefix="$">$0</div>
+          <div class="stat-card-dash__label">Total Revenue</div>
+        </div>
+
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--gold"><i class="fas fa-calendar-check"></i></div>
+            <div class="stat-card-dash__trend stat-card-dash__trend--up"><i class="fas fa-arrow-up"></i> 8.3%</div>
+          </div>
+          <div class="stat-card-dash__value" data-counter="1284">0</div>
+          <div class="stat-card-dash__label">Total Bookings</div>
+        </div>
+
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--green"><i class="fas fa-users"></i></div>
+            <div class="stat-card-dash__trend stat-card-dash__trend--up"><i class="fas fa-arrow-up"></i> 23.1%</div>
+          </div>
+          <div class="stat-card-dash__value" data-counter="8542">0</div>
+          <div class="stat-card-dash__label">Active Users</div>
+        </div>
+
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--blue"><i class="fas fa-star"></i></div>
+            <div class="stat-card-dash__trend stat-card-dash__trend--up"><i class="fas fa-arrow-up"></i> 2.4%</div>
+          </div>
+          <div class="stat-card-dash__value">4.9</div>
+          <div class="stat-card-dash__label">Avg. Rating</div>
+        </div>
+      </div>
+
+      <!-- Section 2: Revenue Chart (Line) + Bookings by Service (Horizontal Bar) -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-chart-line" style="color:var(--clr-accent);"></i> Revenue Over Time</div>
+            <select style="padding:4px 8px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
+              <option>Last 7 Days</option>
+              <option selected>Last 30 Days</option>
+              <option>Last 90 Days</option>
+            </select>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-bars-staggered" style="color:var(--clr-secondary);"></i> Bookings by Service</div>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container">
+              <canvas id="bookingsChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: User Demographics (Pie) + Platform Health (Gauge) -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-chart-pie" style="color:var(--clr-success);"></i> User Demographics</div>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container chart-container--sm">
+              <canvas id="demographicsChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-gauge-high" style="color:var(--clr-info);"></i> Platform Health Score</div>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container chart-container--sm">
+              <canvas id="healthChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Recent Bookings Table -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> Recent Bookings</div>
+          <a href="bookings.html" class="btn btn--sm btn--ghost">View All</a>
+        </div>
+        <div class="dash-panel__body dash-panel__body--no-pad">
+          <div style="overflow-x:auto;">
+            <div class="dash-table-wrap"><table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Service</th>
+                  <th>Reader</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="dash-table__user">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&h=72&fit=crop&crop=face" alt="Sarah M." class="dash-table__avatar">
+                      <div><div class="dash-table__name">Sarah Mitchell</div><div class="dash-table__email">sarah@email.com</div></div>
+                    </div>
+                  </td>
+                  <td>Tarot Reading</td>
+                  <td>Selene M.</td>
+                  <td>Apr 14, 2025</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Confirmed</span></td>
+                  <td><strong>$49</strong></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="dash-table__user">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=72&h=72&fit=crop&crop=face" alt="James R." class="dash-table__avatar">
+                      <div><div class="dash-table__name">James Rodriguez</div><div class="dash-table__email">james@email.com</div></div>
+                    </div>
+                  </td>
+                  <td>Birth Chart</td>
+                  <td>Orion S.</td>
+                  <td>Apr 13, 2025</td>
+                  <td><span class="status status--completed"><span class="status__dot"></span> Completed</span></td>
+                  <td><strong>$69</strong></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="dash-table__user">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=72&h=72&fit=crop&crop=face" alt="Emily K." class="dash-table__avatar">
+                      <div><div class="dash-table__name">Emily Kawasaki</div><div class="dash-table__email">emily@email.com</div></div>
+                    </div>
+                  </td>
+                  <td>Crystal Healing</td>
+                  <td>Luna C.</td>
+                  <td>Apr 13, 2025</td>
+                  <td><span class="status status--pending"><span class="status__dot"></span> Pending</span></td>
+                  <td><strong>$59</strong></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="dash-table__user">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&h=72&fit=crop&crop=face" alt="David L." class="dash-table__avatar">
+                      <div><div class="dash-table__name">David Lee</div><div class="dash-table__email">david@email.com</div></div>
+                    </div>
+                  </td>
+                  <td>Palmistry</td>
+                  <td>Atlas N.</td>
+                  <td>Apr 12, 2025</td>
+                  <td><span class="status status--completed"><span class="status__dot"></span> Completed</span></td>
+                  <td><strong>$39</strong></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="dash-table__user">
+                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=72&h=72&fit=crop&crop=face" alt="Priya S." class="dash-table__avatar">
+                      <div><div class="dash-table__name">Priya Sharma</div><div class="dash-table__email">priya@email.com</div></div>
+                    </div>
+                  </td>
+                  <td>Tarot Reading</td>
+                  <td>Selene M.</td>
+                  <td>Apr 12, 2025</td>
+                  <td><span class="status status--cancelled"><span class="status__dot"></span> Cancelled</span></td>
+                  <td><strong>$49</strong></td>
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Top Readers + Quick Actions -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-trophy" style="color:var(--clr-secondary);"></i> Top Readers</div>
+          </div>
+          <div class="dash-panel__body dash-panel__body--no-pad">
+            <div class="dash-table-wrap"><table class="dash-table">
+              <thead><tr><th>Reader</th><th>Sessions</th><th>Rating</th><th>Revenue</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=72&h=72&fit=crop&crop=face" alt="Selene" class="dash-table__avatar"><div class="dash-table__name">Selene Moonweaver</div></div></td>
+                  <td>342</td>
+                  <td><span style="color:var(--clr-secondary);"><i class="fas fa-star"></i></span> 4.9</td>
+                  <td><strong>$16,758</strong></td>
+                </tr>
+                <tr>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&h=72&fit=crop&crop=face" alt="Orion" class="dash-table__avatar"><div class="dash-table__name">Orion Starfield</div></div></td>
+                  <td>298</td>
+                  <td><span style="color:var(--clr-secondary);"><i class="fas fa-star"></i></span> 4.8</td>
+                  <td><strong>$14,210</strong></td>
+                </tr>
+                <tr>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=72&h=72&fit=crop&crop=face" alt="Luna" class="dash-table__avatar"><div class="dash-table__name">Luna Celestine</div></div></td>
+                  <td>256</td>
+                  <td><span style="color:var(--clr-secondary);"><i class="fas fa-star"></i></span> 5.0</td>
+                  <td><strong>$12,544</strong></td>
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+
+        <!-- Section 6: Quick Actions -->
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-bolt" style="color:var(--clr-warning);"></i> Quick Actions</div>
+          </div>
+          <div class="dash-panel__body">
+            <div class="quick-actions">
+              <a href="bookings.html" class="quick-action"><i class="fas fa-plus-circle" style="color:var(--clr-accent);"></i> New Booking</a>
+              <a href="users.html" class="quick-action"><i class="fas fa-user-plus" style="color:var(--clr-success);"></i> Add User</a>
+              <a href="content.html" class="quick-action"><i class="fas fa-pen-to-square" style="color:var(--clr-info);"></i> New Post</a>
+              <a href="messages.html" class="quick-action"><i class="fas fa-paper-plane" style="color:var(--clr-secondary);"></i> Send Message</a>
+              <a href="settings.html" class="quick-action"><i class="fas fa-download" style="color:var(--clr-primary);"></i> Export Data</a>
+              <a href="settings.html" class="quick-action"><i class="fas fa-shield-halved" style="color:var(--clr-error);"></i> Security</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/charts.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+
+  <!-- Initialize charts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Chart 1: Revenue — Smooth Line Chart with gradient fill
+      drawLineChart('revenueChart', {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        values: [3200,4100,3800,5200,4800,6100,5400,7200,6800,7500,8100,8720]
+      });
+
+      // Chart 2: Bookings — Horizontal Bar Chart (unique to admin)
+      drawHorizontalBarChart('bookingsChart', {
+        labels: ['Tarot','Birth Chart','Crystal','Palmistry','Numerology','Reiki'],
+        values: [420,280,190,150,120,124]
+      });
+
+      // Chart 3: Demographics — Donut/Pie Chart
+      drawPieChart('demographicsChart', {
+        labels: ['25-34','35-44','18-24','45-54','55+'],
+        values: [3400,2200,1500,900,542]
+      });
+
+      // Chart 4: Platform Health — Gauge/Speedometer (unique to admin)
+      drawGaugeChart('healthChart', {
+        value: 87,
+        max: 100,
+        label: 'Platform Health'
+      });
+
+      // Redraw on resize
+      var resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          drawLineChart('revenueChart', { labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], values:[3200,4100,3800,5200,4800,6100,5400,7200,6800,7500,8100,8720] });
+          drawHorizontalBarChart('bookingsChart', { labels:['Tarot','Birth Chart','Crystal','Palmistry','Numerology','Reiki'], values:[420,280,190,150,120,124] });
+          drawPieChart('demographicsChart', { labels:['25-34','35-44','18-24','45-54','55+'], values:[3400,2200,1500,900,542] });
+          drawGaugeChart('healthChart', { value:87, max:100, label:'Platform Health' });
+        }, 250);
+      });
+    });
+  </script>
+</body>
+</html>

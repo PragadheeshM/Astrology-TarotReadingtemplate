@@ -1,0 +1,120 @@
+/* ============================================
+   RTL (Right-to-Left) Layout Overrides
+   ============================================ */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Typography */
+[dir="rtl"] .section-header {
+  text-align: center;
+}
+
+/* Navbar */
+[dir="rtl"] .navbar__menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .navbar__dropdown-toggle i.fa-chevron-down {
+  margin-left: 0;
+  margin-right: var(--sp-1);
+}
+
+/* Cards */
+[dir="rtl"] .card__link i {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .card__link:hover i {
+  transform: scaleX(-1) translateX(4px);
+}
+
+/* Testimonials */
+[dir="rtl"] .testimonial-card__quote {
+  padding-left: 0;
+  padding-right: var(--sp-6);
+}
+
+[dir="rtl"] .testimonial-card__quote::before {
+  left: auto;
+  right: 0;
+}
+
+/* Footer */
+[dir="rtl"] .footer__link:hover {
+  padding-left: 0;
+  padding-right: var(--sp-2);
+}
+
+/* Breadcrumb */
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+/* Buttons */
+[dir="rtl"] .btn i {
+  order: 1;
+}
+
+/* Process steps */
+[dir="rtl"] .process-connector {
+  transform: scaleX(-1);
+}
+
+/* Pricing */
+[dir="rtl"] .pricing-card__features {
+  text-align: right;
+}
+
+/* Forms */
+[dir="rtl"] .form-input,
+[dir="rtl"] .form-textarea,
+[dir="rtl"] .form-select {
+  text-align: right;
+}
+
+/* Accordion */
+[dir="rtl"] .accordion__header {
+  text-align: right;
+}
+
+/* Mobile menu */
+[dir="rtl"] .navbar__mobile-menu {
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .navbar__mobile-menu.open {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .navbar__mobile-sub {
+  padding-left: 0;
+  padding-right: var(--sp-6);
+}
+
+/* Back to top */
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: var(--sp-8);
+}
+
+/* Blog */
+[dir="rtl"] .blog-meta {
+  flex-direction: row-reverse;
+}
+
+/* Stats */
+[dir="rtl"] .stat-card {
+  text-align: center;
+}
+
+/* Generic mirror utilities */
+[dir="rtl"] .mr-auto { margin-right: 0; margin-left: auto; }
+[dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }

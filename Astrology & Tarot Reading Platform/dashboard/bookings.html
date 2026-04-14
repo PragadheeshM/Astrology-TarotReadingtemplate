@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookings — CelestiaAura Dashboard</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">Main</div>
+      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="users.html" class="sidebar__link"><i class="fas fa-users"></i> Users</a>
+      <a href="bookings.html" class="sidebar__link active"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
+      <div class="sidebar__section-label">Content</div>
+      <a href="content.html" class="sidebar__link"><i class="fas fa-file-alt"></i> Content</a>
+      <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
+      <div class="sidebar__section-label">System</div>
+      <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
+      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin" class="sidebar__user-avatar">
+        <div><div class="sidebar__user-name">Marcus Chen</div><div class="sidebar__user-role">Administrator</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div><div class="dash-header__title">Bookings & Orders</div><div class="dash-header__subtitle">Manage all reading sessions</div></div>
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search bookings..." aria-label="Search"></div>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      <!-- Section 1: Calendar Overview (simplified) -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-calendar" style="color:var(--clr-accent);"></i> April 2025</div>
+          <div style="display:flex;gap:var(--sp-2);">
+            <button class="btn btn--ghost btn--sm"><i class="fas fa-chevron-left"></i></button>
+            <button class="btn btn--ghost btn--sm">Today</button>
+            <button class="btn btn--ghost btn--sm"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="dash-panel__body">
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;">
+            <div style="padding:var(--sp-2);font-size:var(--fs-xs);color:var(--clr-text-muted);font-weight:600;">Sun</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-xs);color:var(--clr-text-muted);font-weight:600;">Mon</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-xs);color:var(--clr-text-muted);font-weight:600;">Tue</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-xs);color:var(--clr-text-muted);font-weight:600;">Wed</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-xs);color:var(--clr-text-muted);font-weight:600;">Thu</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-xs);color:var(--clr-text-muted);font-weight:600;">Fri</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-xs);color:var(--clr-text-muted);font-weight:600;">Sat</div>
+            <!-- Week 1 -->
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);color:var(--clr-text-muted);">30</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);color:var(--clr-text-muted);">31</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">1</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">2</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">3</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">4</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">5</div>
+            <!-- Week 2 -->
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">6</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">7<div style="width:6px;height:6px;background:var(--clr-accent);border-radius:50%;margin:4px auto 0;"></div></div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">8</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">9<div style="width:6px;height:6px;background:var(--clr-secondary);border-radius:50%;margin:4px auto 0;"></div></div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">10</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">11<div style="width:6px;height:6px;background:var(--clr-success);border-radius:50%;margin:4px auto 0;"></div></div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">12</div>
+            <!-- Week 3 -->
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">13</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);background:var(--clr-accent);color:#fff;border-radius:var(--radius-md);font-weight:600;">14<div style="font-size:9px;font-weight:400;">3 bookings</div></div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">15<div style="width:6px;height:6px;background:var(--clr-accent);border-radius:50%;margin:4px auto 0;"></div></div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">16</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">17<div style="width:6px;height:6px;background:var(--clr-secondary);border-radius:50%;margin:4px auto 0;"></div></div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">18</div>
+            <div style="padding:var(--sp-2);font-size:var(--fs-sm);">19</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Bookings List -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> All Bookings</div>
+          <div style="display:flex;gap:var(--sp-2);">
+            <select style="padding:6px 12px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
+              <option>All Status</option><option>Confirmed</option><option>Pending</option><option>Completed</option><option>Cancelled</option>
+            </select>
+            <button class="btn btn--primary btn--sm"><i class="fas fa-plus"></i> New Booking</button>
+          </div>
+        </div>
+        <div class="dash-panel__body dash-panel__body--no-pad">
+          <div style="overflow-x:auto;">
+            <div class="dash-table-wrap"><table class="dash-table">
+              <thead><tr><th>ID</th><th>Client</th><th>Service</th><th>Reader</th><th>Date & Time</th><th>Status</th><th>Payment</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:500;">#B-1284</td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div class="dash-table__name">Sarah M.</div></div></td>
+                  <td>Tarot Reading</td><td>Selene M.</td><td>Apr 14, 3:00 PM</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Confirmed</span></td>
+                  <td><span class="status status--completed"><span class="status__dot"></span> Paid $49</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">#B-1283</td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div class="dash-table__name">James R.</div></div></td>
+                  <td>Birth Chart</td><td>Orion S.</td><td>Apr 14, 1:00 PM</td>
+                  <td><span class="status status--pending"><span class="status__dot"></span> Pending</span></td>
+                  <td><span class="status status--pending"><span class="status__dot"></span> Awaiting</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">#B-1282</td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div class="dash-table__name">Emily K.</div></div></td>
+                  <td>Crystal Healing</td><td>Luna C.</td><td>Apr 13, 5:00 PM</td>
+                  <td><span class="status status--completed"><span class="status__dot"></span> Completed</span></td>
+                  <td><span class="status status--completed"><span class="status__dot"></span> Paid $59</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+                <tr>
+                  <td style="font-weight:500;">#B-1281</td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div class="dash-table__name">Priya S.</div></div></td>
+                  <td>Tarot Reading</td><td>Selene M.</td><td>Apr 12, 2:00 PM</td>
+                  <td><span class="status status--cancelled"><span class="status__dot"></span> Cancelled</span></td>
+                  <td><span class="status status--cancelled"><span class="status__dot"></span> Refunded</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3-6: Status, Payment, Assignment, Cancellation panels -->
+      <div class="grid grid--3" style="margin-bottom:var(--sp-6);">
+        <!-- Status Management -->
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-tasks" style="color:var(--clr-success);"></i> Status Overview</div></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:var(--fs-sm);">Confirmed</span><span class="badge badge--success">12</span></div>
+              <div style="width:100%;height:6px;background:var(--clr-bg-alt);border-radius:var(--radius-full);"><div style="width:48%;height:100%;background:var(--clr-success);border-radius:var(--radius-full);"></div></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:var(--fs-sm);">Pending</span><span class="badge badge--gold">5</span></div>
+              <div style="width:100%;height:6px;background:var(--clr-bg-alt);border-radius:var(--radius-full);"><div style="width:20%;height:100%;background:var(--clr-warning);border-radius:var(--radius-full);"></div></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:var(--fs-sm);">Completed</span><span class="badge badge--primary">8</span></div>
+              <div style="width:100%;height:6px;background:var(--clr-bg-alt);border-radius:var(--radius-full);"><div style="width:32%;height:100%;background:var(--clr-info);border-radius:var(--radius-full);"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Tracking -->
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-credit-card" style="color:var(--clr-secondary);"></i> Payment Summary</div></div>
+          <div class="dash-panel__body">
+            <div style="text-align:center;margin-bottom:var(--sp-4);">
+              <div style="font-family:var(--ff-heading);font-size:var(--fs-2xl);font-weight:700;color:var(--clr-primary);">$3,240</div>
+              <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);">Revenue this week</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:var(--sp-2);">
+              <div style="display:flex;justify-content:space-between;font-size:var(--fs-sm);"><span>Collected</span><strong style="color:var(--clr-success);">$2,890</strong></div>
+              <div style="display:flex;justify-content:space-between;font-size:var(--fs-sm);"><span>Pending</span><strong style="color:var(--clr-warning);">$350</strong></div>
+              <div style="display:flex;justify-content:space-between;font-size:var(--fs-sm);"><span>Refunded</span><strong style="color:var(--clr-error);">-$49</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reader Assignment -->
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-user-tie" style="color:var(--clr-info);"></i> Reader Load</div></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="display:flex;align-items:center;gap:var(--sp-2);"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=48&h=48&fit=crop&crop=face" alt="Selene" style="width:28px;height:28px;border-radius:50%;"><span style="font-size:var(--fs-sm);">Selene M.</span></div>
+                <span class="badge badge--primary">8 today</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="display:flex;align-items:center;gap:var(--sp-2);"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face" alt="Orion" style="width:28px;height:28px;border-radius:50%;"><span style="font-size:var(--fs-sm);">Orion S.</span></div>
+                <span class="badge badge--success">5 today</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="display:flex;align-items:center;gap:var(--sp-2);"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=48&h=48&fit=crop&crop=face" alt="Luna" style="width:28px;height:28px;border-radius:50%;"><span style="font-size:var(--fs-sm);">Luna C.</span></div>
+                <span class="badge badge--gold">3 today</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

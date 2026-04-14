@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management — CelestiaAura Dashboard</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">Main</div>
+      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="users.html" class="sidebar__link active"><i class="fas fa-users"></i> Users</a>
+      <a href="bookings.html" class="sidebar__link"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
+      <div class="sidebar__section-label">Content</div>
+      <a href="content.html" class="sidebar__link"><i class="fas fa-file-alt"></i> Content</a>
+      <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
+      <div class="sidebar__section-label">System</div>
+      <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
+      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin" class="sidebar__user-avatar">
+        <div><div class="sidebar__user-name">Marcus Chen</div><div class="sidebar__user-role">Administrator</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div><div class="dash-header__title">User Management</div><div class="dash-header__subtitle">Manage all platform users and roles</div></div>
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search users..." aria-label="Search users"></div>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      <!-- Section 1: User Stats -->
+      <div class="stats-row">
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header"><div class="stat-card-dash__icon stat-card-dash__icon--purple"><i class="fas fa-users"></i></div><div class="stat-card-dash__trend stat-card-dash__trend--up"><i class="fas fa-arrow-up"></i> 15%</div></div>
+          <div class="stat-card-dash__value" data-counter="8542">0</div>
+          <div class="stat-card-dash__label">Total Users</div>
+        </div>
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header"><div class="stat-card-dash__icon stat-card-dash__icon--green"><i class="fas fa-user-check"></i></div><div class="stat-card-dash__trend stat-card-dash__trend--up"><i class="fas fa-arrow-up"></i> 8%</div></div>
+          <div class="stat-card-dash__value" data-counter="6318">0</div>
+          <div class="stat-card-dash__label">Active Users</div>
+        </div>
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header"><div class="stat-card-dash__icon stat-card-dash__icon--gold"><i class="fas fa-user-plus"></i></div></div>
+          <div class="stat-card-dash__value" data-counter="234">0</div>
+          <div class="stat-card-dash__label">New This Month</div>
+        </div>
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header"><div class="stat-card-dash__icon stat-card-dash__icon--blue"><i class="fas fa-crown"></i></div></div>
+          <div class="stat-card-dash__value" data-counter="1247">0</div>
+          <div class="stat-card-dash__label">Premium Users</div>
+        </div>
+      </div>
+
+      <!-- Section 2: Users Table -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> All Users</div>
+          <div style="display:flex;gap:var(--sp-2);">
+            <select style="padding:6px 12px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
+              <option>All Roles</option><option>Client</option><option>Reader</option><option>Admin</option>
+            </select>
+            <button class="btn btn--primary btn--sm"><i class="fas fa-user-plus"></i> Add User</button>
+          </div>
+        </div>
+        <div class="dash-panel__body dash-panel__body--no-pad">
+          <div style="overflow-x:auto;">
+            <div class="dash-table-wrap"><table class="dash-table">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" data-select-all=".user-check" style="accent-color:var(--clr-accent);"></th>
+                  <th>User</th><th>Role</th><th>Plan</th><th>Joined</th><th>Status</th><th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="user-check" style="accent-color:var(--clr-accent);"></td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div><div class="dash-table__name">Sarah Mitchell</div><div class="dash-table__email">sarah@email.com</div></div></div></td>
+                  <td><span class="badge badge--primary">Client</span></td>
+                  <td>Mystic</td><td>Jan 15, 2025</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Active</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="user-check" style="accent-color:var(--clr-accent);"></td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div><div class="dash-table__name">Selene Moonweaver</div><div class="dash-table__email">selene@celestiaaura.com</div></div></div></td>
+                  <td><span class="badge badge--gold">Reader</span></td>
+                  <td>Staff</td><td>Mar 08, 2023</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Active</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="user-check" style="accent-color:var(--clr-accent);"></td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div><div class="dash-table__name">James Rodriguez</div><div class="dash-table__email">james@email.com</div></div></div></td>
+                  <td><span class="badge badge--primary">Client</span></td>
+                  <td>Oracle</td><td>Feb 20, 2025</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Active</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="user-check" style="accent-color:var(--clr-accent);"></td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div><div class="dash-table__name">Emily Kawasaki</div><div class="dash-table__email">emily@email.com</div></div></div></td>
+                  <td><span class="badge badge--primary">Client</span></td>
+                  <td>Seeker</td><td>Mar 01, 2025</td>
+                  <td><span class="status status--pending"><span class="status__dot"></span> Pending</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="user-check" style="accent-color:var(--clr-accent);"></td>
+                  <td><div class="dash-table__user"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=72&h=72&fit=crop&crop=face" alt="" class="dash-table__avatar"><div><div class="dash-table__name">Orion Starfield</div><div class="dash-table__email">orion@celestiaaura.com</div></div></div></td>
+                  <td><span class="badge badge--gold">Reader</span></td>
+                  <td>Staff</td><td>Jun 12, 2022</td>
+                  <td><span class="status status--active"><span class="status__dot"></span> Active</span></td>
+                  <td><button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-ellipsis"></i></button></td>
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Role Management -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-shield-halved" style="color:var(--clr-accent);"></i> Role Management</div>
+          </div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><strong style="font-size:var(--fs-sm);">Administrator</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Full system access</p></div>
+                <span class="badge badge--primary">2 users</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><strong style="font-size:var(--fs-sm);">Reader</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Manage bookings & sessions</p></div>
+                <span class="badge badge--gold">24 users</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><strong style="font-size:var(--fs-sm);">Client</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Book and manage readings</p></div>
+                <span class="badge badge--success">8,516 users</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Activity Log -->
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-clock-rotate-left" style="color:var(--clr-secondary);"></i> Recent Activity</div>
+          </div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
+              <div style="display:flex;gap:var(--sp-3);align-items:start;">
+                <div style="width:8px;height:8px;background:var(--clr-success);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+                <div><p style="font-size:var(--fs-sm);margin:0;"><strong>Sarah Mitchell</strong> upgraded to Mystic plan</p><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">2 minutes ago</span></div>
+              </div>
+              <div style="display:flex;gap:var(--sp-3);align-items:start;">
+                <div style="width:8px;height:8px;background:var(--clr-info);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+                <div><p style="font-size:var(--fs-sm);margin:0;"><strong>Orion Starfield</strong> updated profile photo</p><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">15 minutes ago</span></div>
+              </div>
+              <div style="display:flex;gap:var(--sp-3);align-items:start;">
+                <div style="width:8px;height:8px;background:var(--clr-accent);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+                <div><p style="font-size:var(--fs-sm);margin:0;"><strong>New user</strong> Emily K. registered</p><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">1 hour ago</span></div>
+              </div>
+              <div style="display:flex;gap:var(--sp-3);align-items:start;">
+                <div style="width:8px;height:8px;background:var(--clr-warning);border-radius:50%;margin-top:6px;flex-shrink:0;"></div>
+                <div><p style="font-size:var(--fs-sm);margin:0;"><strong>James Rodriguez</strong> changed password</p><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">3 hours ago</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Add User Form -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-user-plus" style="color:var(--clr-success);"></i> Add New User</div>
+        </div>
+        <div class="dash-panel__body">
+          <form data-validate>
+            <div class="grid grid--3" style="gap:var(--sp-4);">
+              <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-input" placeholder="Enter full name" required></div>
+              <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input" placeholder="user@email.com" required></div>
+              <div class="form-group"><label class="form-label">Role *</label>
+                <select class="form-select" required><option value="" disabled selected>Select role</option><option>Client</option><option>Reader</option><option>Admin</option></select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary"><i class="fas fa-plus"></i> Create User</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Section 6: Export Options -->
+      <div class="dash-panel">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-download" style="color:var(--clr-info);"></i> Export Users</div>
+        </div>
+        <div class="dash-panel__body">
+          <p style="font-size:var(--fs-sm);color:var(--clr-text-secondary);">Export user data in your preferred format for reporting and analysis.</p>
+          <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;">
+            <button class="btn btn--ghost btn--sm"><i class="fas fa-file-csv"></i> Export CSV</button>
+            <button class="btn btn--ghost btn--sm"><i class="fas fa-file-excel"></i> Export Excel</button>
+            <button class="btn btn--ghost btn--sm"><i class="fas fa-file-pdf"></i> Export PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

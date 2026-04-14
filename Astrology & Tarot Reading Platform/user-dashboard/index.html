@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard — CelestiaAura</title>
+  <meta name="description" content="Your personal spiritual dashboard. Track readings, manage bookings, and explore your cosmic journey.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+
+  <style>
+    /* User Dashboard Specific Overrides */
+    .sidebar { background: linear-gradient(180deg, var(--clr-surface) 0%, rgba(74,29,150,0.03) 100%); }
+    [data-theme="dark"] .sidebar { background: linear-gradient(180deg, var(--clr-surface) 0%, rgba(124,58,237,0.05) 100%); }
+
+    .user-welcome {
+      background: var(--gradient-primary);
+      border-radius: var(--radius-2xl);
+      padding: var(--sp-8);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: var(--sp-8);
+    }
+    .user-welcome::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .user-welcome::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 40%;
+      width: 120px;
+      height: 120px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .user-welcome h1 { color: #fff; font-size: var(--fs-2xl); margin-bottom: var(--sp-2); }
+    .user-welcome p { color: rgba(255,255,255,0.8); margin-bottom: var(--sp-5); }
+
+    .zodiac-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-4);
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-full);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-semibold);
+      color: var(--clr-secondary-light);
+    }
+
+    .reading-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--sp-5);
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .reading-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .reading-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--fs-lg);
+      margin-bottom: var(--sp-3);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: var(--sp-4);
+      padding: var(--sp-4) 0;
+      border-bottom: 1px solid var(--clr-border-light);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-top: 4px;
+      flex-shrink: 0;
+      border: 3px solid var(--clr-accent);
+      background: var(--clr-surface);
+    }
+
+    .energy-meter {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+    .energy-meter__bar {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+    .energy-meter__label {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      min-width: 80px;
+      color: var(--clr-text-secondary);
+    }
+    .energy-meter__track {
+      flex: 1;
+      height: 8px;
+      background: var(--clr-bg-alt);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+    .energy-meter__fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      transition: width 1s ease;
+    }
+    .energy-meter__value {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semibold);
+      min-width: 36px;
+      text-align: right;
+    }
+
+    .upcoming-session {
+      display: flex;
+      gap: var(--sp-4);
+      padding: var(--sp-4);
+      background: var(--clr-bg-alt);
+      border-radius: var(--radius-lg);
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .upcoming-session:hover { background: rgba(124,58,237,0.05); }
+    .upcoming-session__date {
+      width: 56px;
+      height: 56px;
+      background: var(--gradient-primary);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .upcoming-session__day { font-size: var(--fs-xl); font-weight: var(--fw-bold); line-height: 1; }
+    .upcoming-session__month { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ============ USER SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../index.html" class="sidebar__logo">
+        <div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div>
+        <span class="sidebar__logo-text">CelestiaAura</span>
+      </a>
+      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="User Dashboard Navigation">
+      <div class="sidebar__section-label">My Space</div>
+      <a href="index.html" class="sidebar__link active"><i class="fas fa-home"></i> My Dashboard</a>
+      <a href="my-bookings.html" class="sidebar__link"><i class="fas fa-calendar-alt"></i> My Bookings</a>
+      <a href="my-readings.html" class="sidebar__link"><i class="fas fa-hand-sparkles"></i> My Readings</a>
+      <a href="horoscope.html" class="sidebar__link"><i class="fas fa-sun"></i> Daily Horoscope</a>
+
+      <div class="sidebar__section-label">Explore</div>
+      <a href="../services.html" class="sidebar__link"><i class="fas fa-spa"></i> Browse Services</a>
+      <a href="favorites.html" class="sidebar__link"><i class="fas fa-heart"></i> Favorites</a>
+      <a href="birth-chart.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> My Birth Chart</a>
+
+      <div class="sidebar__section-label">Account</div>
+      <a href="my-profile.html" class="sidebar__link"><i class="fas fa-user"></i> My Profile</a>
+      <a href="my-subscription.html" class="sidebar__link"><i class="fas fa-crown"></i> Subscription</a>
+      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="User Avatar" class="sidebar__user-avatar">
+        <div>
+          <div class="sidebar__user-name">Arya Nightbloom</div>
+          <div class="sidebar__user-role"><i class="fas fa-crown" style="color:var(--clr-secondary);font-size:10px;"></i> Mystic Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <div class="dash-main">
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div>
+          <div class="dash-header__title">My Dashboard</div>
+          <div class="dash-header__subtitle">Your spiritual journey at a glance</div>
+        </div>
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-header__search">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL" title="RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme" title="Theme"><i class="fas fa-moon"></i></button>
+        <button class="dash-header__icon-btn" aria-label="Notifications" title="Notifications">
+          <i class="fas fa-bell"></i>
+          <span class="notif-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="dash-content">
+
+      <!-- ====== SECTION 1: Welcome Banner ====== -->
+      <div class="user-welcome">
+        <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--sp-4);">
+          <div>
+            <h1>Welcome back, Arya! ✨</h1>
+            <p>The stars have aligned beautifully for you today. Your cosmic energy is at its peak.</p>
+            <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;">
+              <span class="zodiac-badge"><i class="fas fa-star"></i> Pisces — Sun Sign</span>
+              <span class="zodiac-badge"><i class="fas fa-moon"></i> Cancer — Moon Sign</span>
+              <span class="zodiac-badge"><i class="fas fa-arrow-up"></i> Leo — Rising</span>
+            </div>
+          </div>
+          <a href="../services.html" class="btn btn--gold"><i class="fas fa-plus"></i> Book a Reading</a>
+        </div>
+      </div>
+
+      <!-- ====== SECTION 2: Personal Stats ====== -->
+      <div class="stats-row">
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--purple"><i class="fas fa-hand-sparkles"></i></div>
+          </div>
+          <div class="stat-card-dash__value" data-counter="24">0</div>
+          <div class="stat-card-dash__label">Total Readings</div>
+        </div>
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--gold"><i class="fas fa-calendar-check"></i></div>
+          </div>
+          <div class="stat-card-dash__value">3</div>
+          <div class="stat-card-dash__label">Remaining This Month</div>
+        </div>
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--green"><i class="fas fa-clock"></i></div>
+          </div>
+          <div class="stat-card-dash__value" data-counter="18" data-suffix="h">0h</div>
+          <div class="stat-card-dash__label">Total Session Time</div>
+        </div>
+        <div class="stat-card-dash">
+          <div class="stat-card-dash__header">
+            <div class="stat-card-dash__icon stat-card-dash__icon--blue"><i class="fas fa-fire"></i></div>
+          </div>
+          <div class="stat-card-dash__value">7</div>
+          <div class="stat-card-dash__label">Day Streak 🔥</div>
+        </div>
+      </div>
+
+      <!-- ====== SECTION 3: Charts Row 1 — Cosmic Profile (Radar) + Monthly Spending (Bar) ====== -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-spider" style="color:var(--clr-accent);"></i> My Cosmic Profile</div>
+            <span class="badge badge--primary" style="font-size:var(--fs-xs);">Pisces</span>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container">
+              <canvas id="userRadarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-chart-bar" style="color:var(--clr-secondary);"></i> Monthly Spending</div>
+            <select style="padding:4px 8px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
+              <option selected>Last 6 Months</option>
+              <option>This Year</option>
+            </select>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container">
+              <canvas id="userSpendingChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== SECTION 4: Charts Row 2 — Reading Goals (Ring Progress) + Session Satisfaction (Line) ====== -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-bullseye" style="color:var(--clr-success);"></i> Reading Goals</div>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container chart-container--sm">
+              <canvas id="userGoalsChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-face-smile" style="color:var(--clr-info);"></i> Satisfaction Trend</div>
+          </div>
+          <div class="dash-panel__body">
+            <div class="chart-container chart-container--sm">
+              <canvas id="userSatisfactionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== SECTION 5: Upcoming Sessions + Energy Meter ====== -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-calendar" style="color:var(--clr-accent);"></i> Upcoming Sessions</div>
+            <a href="my-bookings.html" class="btn btn--ghost btn--sm">View All</a>
+          </div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div class="upcoming-session">
+                <div class="upcoming-session__date">
+                  <span class="upcoming-session__day">16</span>
+                  <span class="upcoming-session__month">Apr</span>
+                </div>
+                <div style="flex:1;">
+                  <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);margin-bottom:2px;">Tarot Reading — Full Spread</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);">with Selene Moonweaver • 3:00 PM PST</div>
+                </div>
+                <span class="status status--active" style="align-self:center;"><span class="status__dot"></span> Confirmed</span>
+              </div>
+              <div class="upcoming-session">
+                <div class="upcoming-session__date">
+                  <span class="upcoming-session__day">21</span>
+                  <span class="upcoming-session__month">Apr</span>
+                </div>
+                <div style="flex:1;">
+                  <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);margin-bottom:2px;">Crystal Healing Session</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);">with Luna Celestine • 11:00 AM PST</div>
+                </div>
+                <span class="status status--pending" style="align-self:center;"><span class="status__dot"></span> Pending</span>
+              </div>
+              <div class="upcoming-session">
+                <div class="upcoming-session__date">
+                  <span class="upcoming-session__day">28</span>
+                  <span class="upcoming-session__month">Apr</span>
+                </div>
+                <div style="flex:1;">
+                  <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);margin-bottom:2px;">Birth Chart Deep Dive</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);">with Orion Starfield • 5:00 PM PST</div>
+                </div>
+                <span class="status status--active" style="align-self:center;"><span class="status__dot"></span> Confirmed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-bolt" style="color:var(--clr-secondary);"></i> Today's Cosmic Energy</div>
+          </div>
+          <div class="dash-panel__body">
+            <p style="font-size:var(--fs-sm);color:var(--clr-text-secondary);margin-bottom:var(--sp-5);">Your planetary alignments for today, April 14, 2025.</p>
+            <div class="energy-meter">
+              <div class="energy-meter__bar">
+                <span class="energy-meter__label">Love</span>
+                <div class="energy-meter__track"><div class="energy-meter__fill" style="width:85%;background:linear-gradient(90deg,#ec4899,#f43f5e);"></div></div>
+                <span class="energy-meter__value" style="color:#ec4899;">85%</span>
+              </div>
+              <div class="energy-meter__bar">
+                <span class="energy-meter__label">Career</span>
+                <div class="energy-meter__track"><div class="energy-meter__fill" style="width:72%;background:linear-gradient(90deg,var(--clr-accent),#818cf8);"></div></div>
+                <span class="energy-meter__value" style="color:var(--clr-accent);">72%</span>
+              </div>
+              <div class="energy-meter__bar">
+                <span class="energy-meter__label">Health</span>
+                <div class="energy-meter__track"><div class="energy-meter__fill" style="width:91%;background:linear-gradient(90deg,#10b981,#34d399);"></div></div>
+                <span class="energy-meter__value" style="color:var(--clr-success);">91%</span>
+              </div>
+              <div class="energy-meter__bar">
+                <span class="energy-meter__label">Creativity</span>
+                <div class="energy-meter__track"><div class="energy-meter__fill" style="width:68%;background:linear-gradient(90deg,var(--clr-secondary),#fbbf24);"></div></div>
+                <span class="energy-meter__value" style="color:var(--clr-secondary);">68%</span>
+              </div>
+              <div class="energy-meter__bar">
+                <span class="energy-meter__label">Spirituality</span>
+                <div class="energy-meter__track"><div class="energy-meter__fill" style="width:95%;background:linear-gradient(90deg,#8b5cf6,#c084fc);"></div></div>
+                <span class="energy-meter__value" style="color:#8b5cf6;">95%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== SECTION 6: Recent Readings Timeline + Favorite Readers ====== -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-clock-rotate-left" style="color:var(--clr-accent);"></i> Recent Readings</div>
+            <a href="my-readings.html" class="btn btn--ghost btn--sm">View All</a>
+          </div>
+          <div class="dash-panel__body">
+            <div class="timeline-item">
+              <div class="timeline-dot" style="border-color:var(--clr-accent);"></div>
+              <div>
+                <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);">Tarot — 3 Card Spread</div>
+                <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-bottom:4px;">with Selene Moonweaver • Apr 10, 2025</div>
+                <p style="font-size:var(--fs-xs);color:var(--clr-text-secondary);margin:0;">The Fool, The Star, Ten of Cups — A new beginning aligned with your heart's desires.</p>
+                <div style="margin-top:4px;"><span style="color:var(--clr-secondary);font-size:var(--fs-xs);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="border-color:var(--clr-secondary);"></div>
+              <div>
+                <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);">Birth Chart Analysis</div>
+                <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-bottom:4px;">with Orion Starfield • Apr 3, 2025</div>
+                <p style="font-size:var(--fs-xs);color:var(--clr-text-secondary);margin:0;">Detailed natal chart revealing strong Jupiter influence in 9th house.</p>
+                <div style="margin-top:4px;"><span style="color:var(--clr-secondary);font-size:var(--fs-xs);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span></div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="border-color:var(--clr-success);"></div>
+              <div>
+                <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);">Crystal Healing</div>
+                <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-bottom:4px;">with Luna Celestine • Mar 28, 2025</div>
+                <p style="font-size:var(--fs-xs);color:var(--clr-text-secondary);margin:0;">Amethyst and rose quartz session focused on heart chakra alignment.</p>
+                <div style="margin-top:4px;"><span style="color:var(--clr-secondary);font-size:var(--fs-xs);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header">
+            <div class="dash-panel__title"><i class="fas fa-heart" style="color:#ec4899;"></i> My Favorite Readers</div>
+          </div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
+              <div style="display:flex;align-items:center;gap:var(--sp-4);">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=96&h=96&fit=crop&crop=face" alt="Selene" style="width:48px;height:48px;border-radius:var(--radius-full);object-fit:cover;border:2px solid var(--clr-accent);">
+                <div style="flex:1;">
+                  <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);">Selene Moonweaver</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);">Tarot & Intuitive Reading</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-secondary);margin-top:2px;"><i class="fas fa-star"></i> 4.9 • 12 sessions together</div>
+                </div>
+                <a href="../service-detail.html" class="btn btn--primary btn--sm" style="white-space:nowrap;">Book</a>
+              </div>
+              <div style="display:flex;align-items:center;gap:var(--sp-4);">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" alt="Orion" style="width:48px;height:48px;border-radius:var(--radius-full);object-fit:cover;border:2px solid var(--clr-secondary);">
+                <div style="flex:1;">
+                  <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);">Orion Starfield</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);">Astrology & Birth Charts</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-secondary);margin-top:2px;"><i class="fas fa-star"></i> 4.8 • 7 sessions together</div>
+                </div>
+                <a href="../service-detail.html" class="btn btn--primary btn--sm" style="white-space:nowrap;">Book</a>
+              </div>
+              <div style="display:flex;align-items:center;gap:var(--sp-4);">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=96&h=96&fit=crop&crop=face" alt="Luna" style="width:48px;height:48px;border-radius:var(--radius-full);object-fit:cover;border:2px solid var(--clr-success);">
+                <div style="flex:1;">
+                  <div style="font-weight:var(--fw-semibold);font-size:var(--fs-sm);">Luna Celestine</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);">Crystal Healing & Reiki</div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-secondary);margin-top:2px;"><i class="fas fa-star"></i> 5.0 • 5 sessions together</div>
+                </div>
+                <a href="../service-detail.html" class="btn btn--primary btn--sm" style="white-space:nowrap;">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== SECTION 7: Quick Actions for User ====== -->
+      <div class="dash-panel">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-compass" style="color:var(--clr-secondary);"></i> Explore & Discover</div>
+        </div>
+        <div class="dash-panel__body">
+          <div class="quick-actions" style="grid-template-columns:repeat(4,1fr);">
+            <a href="../services.html" class="quick-action"><i class="fas fa-plus-circle" style="color:var(--clr-accent);"></i> Book Reading</a>
+            <a href="horoscope.html" class="quick-action"><i class="fas fa-sun" style="color:var(--clr-secondary);"></i> Daily Horoscope</a>
+            <a href="birth-chart.html" class="quick-action"><i class="fas fa-chart-pie" style="color:var(--clr-info);"></i> Birth Chart</a>
+            <a href="../blog.html" class="quick-action"><i class="fas fa-book-open" style="color:var(--clr-success);"></i> Cosmic Blog</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/charts.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+
+  <!-- User Dashboard Charts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Chart 1: Cosmic Profile — Radar/Spider Chart (unique to user)
+      drawRadarChart('userRadarChart', {
+        labels: ['Intuition', 'Love', 'Career', 'Health', 'Creativity', 'Spirituality'],
+        values: [88, 75, 62, 80, 70, 95],
+        max: 100
+      }, {
+        fillColor: 'rgba(139,92,246,0.2)',
+        strokeColor: '#8B5CF6',
+        dotColor: '#8B5CF6'
+      });
+
+      // Chart 2: Monthly Spending — Vertical Bar Chart
+      drawBarChart('userSpendingChart', {
+        labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+        values: [78, 127, 156, 198, 245, 147]
+      });
+
+      // Chart 3: Reading Goals — Ring Progress Chart (unique to user)
+      drawRingChart('userGoalsChart', {
+        rings: [
+          { label: 'Monthly', value: 5, max: 8, color: '#8B5CF6' },
+          { label: 'Yearly', value: 24, max: 50, color: '#D4A843' },
+          { label: 'Hours', value: 18, max: 30, color: '#10B981' }
+        ]
+      });
+
+      // Chart 4: Satisfaction Trend — Styled Line Chart (different color scheme)
+      drawLineChart('userSatisfactionChart', {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        values: [4.2, 4.5, 4.3, 4.8, 4.6, 4.9]
+      }, {
+        lineColor: '#10B981',
+        fillColor: 'rgba(16,185,129,0.1)'
+      });
+
+      // Redraw on resize
+      var resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          drawRadarChart('userRadarChart', {labels:['Intuition','Love','Career','Health','Creativity','Spirituality'],values:[88,75,62,80,70,95],max:100}, {fillColor:'rgba(139,92,246,0.2)',strokeColor:'#8B5CF6',dotColor:'#8B5CF6'});
+          drawBarChart('userSpendingChart', {labels:['Nov','Dec','Jan','Feb','Mar','Apr'],values:[78,127,156,198,245,147]});
+          drawRingChart('userGoalsChart', {rings:[{label:'Monthly',value:5,max:8,color:'#8B5CF6'},{label:'Yearly',value:24,max:50,color:'#D4A843'},{label:'Hours',value:18,max:30,color:'#10B981'}]});
+          drawLineChart('userSatisfactionChart', {labels:['Jan','Feb','Mar','Apr','May','Jun'],values:[4.2,4.5,4.3,4.8,4.6,4.9]}, {lineColor:'#10B981',fillColor:'rgba(16,185,129,0.1)'});
+        }, 250);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages — CelestiaAura Dashboard</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">Main</div>
+      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="users.html" class="sidebar__link"><i class="fas fa-users"></i> Users</a>
+      <a href="bookings.html" class="sidebar__link"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
+      <div class="sidebar__section-label">Content</div>
+      <a href="content.html" class="sidebar__link"><i class="fas fa-file-alt"></i> Content</a>
+      <a href="messages.html" class="sidebar__link active"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
+      <div class="sidebar__section-label">System</div>
+      <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
+      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin" class="sidebar__user-avatar">
+        <div><div class="sidebar__user-name">Marcus Chen</div><div class="sidebar__user-role">Administrator</div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div><div class="dash-header__title">Messages & Notifications</div><div class="dash-header__subtitle">Manage communications and support</div></div>
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search messages..." aria-label="Search"></div>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      <!-- Tabs -->
+      <div style="display:flex;gap:var(--sp-1);margin-bottom:var(--sp-6);border-bottom:1px solid var(--clr-border-light);padding-bottom:var(--sp-1);">
+        <button style="padding:var(--sp-2) var(--sp-4);font-size:var(--fs-sm);font-weight:600;color:var(--clr-accent);border:none;background:none;cursor:pointer;border-bottom:2px solid var(--clr-accent);">Inbox <span class="sidebar__badge" style="margin-left:4px;">3</span></button>
+        <button style="padding:var(--sp-2) var(--sp-4);font-size:var(--fs-sm);font-weight:500;color:var(--clr-text-muted);border:none;background:none;cursor:pointer;">Sent</button>
+        <button style="padding:var(--sp-2) var(--sp-4);font-size:var(--fs-sm);font-weight:500;color:var(--clr-text-muted);border:none;background:none;cursor:pointer;">Support Tickets <span class="sidebar__badge" style="margin-left:4px;background:var(--clr-warning);">2</span></button>
+        <button style="padding:var(--sp-2) var(--sp-4);font-size:var(--fs-sm);font-weight:500;color:var(--clr-text-muted);border:none;background:none;cursor:pointer;">System</button>
+      </div>
+
+      <!-- Section 1: Inbox -->
+      <div class="dash-panel" style="margin-bottom:var(--sp-6);">
+        <div class="dash-panel__header">
+          <div class="dash-panel__title"><i class="fas fa-inbox" style="color:var(--clr-accent);"></i> Inbox</div>
+          <button class="btn btn--primary btn--sm"><i class="fas fa-pen-to-square"></i> Compose</button>
+        </div>
+        <div class="dash-panel__body dash-panel__body--no-pad">
+          <div class="msg-item msg-item--unread">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=88&h=88&fit=crop&crop=face" alt="Sarah" class="msg-item__avatar">
+            <div class="msg-item__content">
+              <div class="msg-item__header"><div class="msg-item__name">Sarah Mitchell</div><div class="msg-item__time">2 min ago</div></div>
+              <div style="font-size:var(--fs-sm);font-weight:600;color:var(--clr-text);margin-bottom:2px;">Question about upcoming tarot session</div>
+              <div class="msg-item__preview">Hi, I wanted to ask about the preparation for my session tomorrow. Should I bring anything specific or...</div>
+            </div>
+          </div>
+          <div class="msg-item msg-item--unread">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=88&h=88&fit=crop&crop=face" alt="James" class="msg-item__avatar">
+            <div class="msg-item__content">
+              <div class="msg-item__header"><div class="msg-item__name">James Rodriguez</div><div class="msg-item__time">1 hour ago</div></div>
+              <div style="font-size:var(--fs-sm);font-weight:600;color:var(--clr-text);margin-bottom:2px;">Re: Birth chart follow-up</div>
+              <div class="msg-item__preview">Thank you for the detailed reading yesterday. I was wondering if you could share the PDF version of my chart...</div>
+            </div>
+          </div>
+          <div class="msg-item msg-item--unread">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=88&h=88&fit=crop&crop=face" alt="Emily" class="msg-item__avatar">
+            <div class="msg-item__content">
+              <div class="msg-item__header"><div class="msg-item__name">Emily Kawasaki</div><div class="msg-item__time">3 hours ago</div></div>
+              <div style="font-size:var(--fs-sm);font-weight:600;color:var(--clr-text);margin-bottom:2px;">Booking cancellation request</div>
+              <div class="msg-item__preview">I need to cancel my crystal healing session scheduled for April 18. Could you please process the refund?</div>
+            </div>
+          </div>
+          <div class="msg-item">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=88&h=88&fit=crop&crop=face" alt="Selene" class="msg-item__avatar">
+            <div class="msg-item__content">
+              <div class="msg-item__header"><div class="msg-item__name">Selene Moonweaver</div><div class="msg-item__time">Yesterday</div></div>
+              <div style="font-size:var(--fs-sm);color:var(--clr-text);margin-bottom:2px;">Schedule update for next week</div>
+              <div class="msg-item__preview">Hi Marcus, I need to block off Tuesday afternoon for a personal appointment. Can you update my availability?</div>
+            </div>
+          </div>
+          <div class="msg-item">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=88&h=88&fit=crop&crop=face" alt="Orion" class="msg-item__avatar">
+            <div class="msg-item__content">
+              <div class="msg-item__header"><div class="msg-item__name">Orion Starfield</div><div class="msg-item__time">2 days ago</div></div>
+              <div style="font-size:var(--fs-sm);color:var(--clr-text);margin-bottom:2px;">New blog post submission</div>
+              <div class="msg-item__preview">I've finished the Mercury Retrograde article. Can you review it when you have a chance? It's in the drafts...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2-3: Templates + System Notifications -->
+      <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
+        <!-- Templates -->
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-file-lines" style="color:var(--clr-secondary);"></i> Message Templates</div></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><strong style="font-size:var(--fs-sm);">Welcome Email</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">New user onboarding</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><strong style="font-size:var(--fs-sm);">Booking Confirmation</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Auto-sent on booking</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><strong style="font-size:var(--fs-sm);">Session Reminder</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">24hr before session</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
+                <div><strong style="font-size:var(--fs-sm);">Feedback Request</strong><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">After session completion</p></div>
+                <button class="btn btn--ghost btn--sm" style="padding:4px 8px;min-height:28px;"><i class="fas fa-pen"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Notifications -->
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-bell" style="color:var(--clr-info);"></i> System Notifications</div></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
+              <div style="display:flex;gap:var(--sp-3);align-items:start;">
+                <div style="width:32px;height:32px;background:rgba(16,185,129,0.1);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check" style="color:var(--clr-success);font-size:var(--fs-xs);"></i></div>
+                <div><p style="font-size:var(--fs-sm);margin:0;">System backup completed successfully</p><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">Today, 6:00 AM</span></div>
+              </div>
+              <div style="display:flex;gap:var(--sp-3);align-items:start;">
+                <div style="width:32px;height:32px;background:rgba(245,158,11,0.1);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-exclamation" style="color:var(--clr-warning);font-size:var(--fs-xs);"></i></div>
+                <div><p style="font-size:var(--fs-sm);margin:0;">SSL certificate renewal in 15 days</p><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">Yesterday</span></div>
+              </div>
+              <div style="display:flex;gap:var(--sp-3);align-items:start;">
+                <div style="width:32px;height:32px;background:rgba(59,130,246,0.1);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-download" style="color:var(--clr-info);font-size:var(--fs-xs);"></i></div>
+                <div><p style="font-size:var(--fs-sm);margin:0;">Platform update v2.4.1 available</p><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">2 days ago</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4-5: Support Tickets + Announcements -->
+      <div class="grid grid--2">
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-headset" style="color:var(--clr-warning);"></i> Support Tickets</div></div>
+          <div class="dash-panel__body dash-panel__body--no-pad">
+            <div style="padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--clr-border-light);display:flex;justify-content:space-between;align-items:center;">
+              <div><p style="font-size:var(--fs-sm);margin:0;"><strong>#T-421</strong> — Payment not processed</p><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Emily K. • 3 hours ago</p></div>
+              <span class="status status--pending"><span class="status__dot"></span> Open</span>
+            </div>
+            <div style="padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--clr-border-light);display:flex;justify-content:space-between;align-items:center;">
+              <div><p style="font-size:var(--fs-sm);margin:0;"><strong>#T-420</strong> — Video call not connecting</p><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">David L. • 1 day ago</p></div>
+              <span class="status status--pending"><span class="status__dot"></span> Open</span>
+            </div>
+            <div style="padding:var(--sp-4) var(--sp-5);display:flex;justify-content:space-between;align-items:center;">
+              <div><p style="font-size:var(--fs-sm);margin:0;"><strong>#T-419</strong> — Can't access birth chart</p><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Sarah M. • 2 days ago</p></div>
+              <span class="status status--completed"><span class="status__dot"></span> Resolved</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-bullhorn" style="color:var(--clr-accent);"></i> Announcements</div><button class="btn btn--primary btn--sm"><i class="fas fa-plus"></i> New</button></div>
+          <div class="dash-panel__body">
+            <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
+              <div style="padding:var(--sp-4);background:rgba(124,58,237,0.04);border-left:3px solid var(--clr-accent);border-radius:0 var(--radius-md) var(--radius-md) 0;">
+                <h4 style="font-size:var(--fs-sm);margin-bottom:2px;">Platform Update v2.4</h4>
+                <p style="font-size:var(--fs-xs);color:var(--clr-text-secondary);margin:0;">New video session features and improved booking calendar. Rolling out April 20.</p>
+                <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:4px;display:block;">Posted by Marcus • Apr 10</span>
+              </div>
+              <div style="padding:var(--sp-4);background:rgba(212,168,67,0.04);border-left:3px solid var(--clr-secondary);border-radius:0 var(--radius-md) var(--radius-md) 0;">
+                <h4 style="font-size:var(--fs-sm);margin-bottom:2px;">Spring Equinox Special</h4>
+                <p style="font-size:var(--fs-xs);color:var(--clr-text-secondary);margin:0;">20% off all birth chart readings through April 30. Use code SPRING2025.</p>
+                <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:4px;display:block;">Posted by Marcus • Apr 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

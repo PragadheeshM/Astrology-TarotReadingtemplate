@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CelestiaAura — Astrology & Tarot Reading Platform</title>
+  <meta name="description" content="Unlock the mysteries of the cosmos with CelestiaAura. Professional astrology readings, tarot consultations, and spiritual guidance from certified readers.">
+  <meta name="keywords" content="astrology, tarot reading, birth chart, spiritual guidance, horoscope, zodiac">
+  <link rel="canonical" href="https://celestiaaura.com/home-1.html">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CelestiaAura",
+    "description": "Professional astrology readings, tarot consultations, and spiritual guidance.",
+    "url": "https://celestiaaura.com",
+    "image": "assets/images/hero/hero-bg.png",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo" aria-label="CelestiaAura Home">
+        <div class="navbar__logo-icon">
+          <i class="fas fa-star-of-david"></i>
+        </div>
+        <span class="navbar__logo-text">CelestiaAura</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="navbar__menu" aria-label="Main Navigation">
+        <!-- Home Dropdown -->
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link navbar__dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+            Home <i class="fas fa-chevron-down"></i>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="home-1.html" class="navbar__dropdown-item active" role="menuitem">Home 1</a>
+            <a href="home-2.html" class="navbar__dropdown-item" role="menuitem">Home 2</a>
+          </div>
+        </div>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="dashboard/" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a>
+            <a href="user-dashboard/" class="navbar__dropdown-item" role="menuitem">User Dashboard</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Actions -->
+      <div class="navbar__actions">
+        <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL">
+          <i class="fas fa-globe"></i>
+        </button>
+        <button class="navbar__icon-btn theme-toggle" aria-label="Switch to dark mode" title="Dark Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn--primary btn--sm">Sign In</a>
+        <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+          <span class="navbar__hamburger-bar"></span>
+          <span class="navbar__hamburger-bar"></span>
+          <span class="navbar__hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu" id="mobileMenu">
+      <div class="navbar__mobile-dropdown">
+        <a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">
+          Home <i class="fas fa-chevron-down"></i>
+        </a>
+        <div class="navbar__mobile-sub">
+          <a href="home-1.html" class="navbar__mobile-link active">Home 1</a>
+          <a href="home-2.html" class="navbar__mobile-link">Home 2</a>
+        </div>
+      </div>
+      <a href="services.html" class="navbar__mobile-link">Services</a>
+      <a href="blog.html" class="navbar__mobile-link">Blog</a>
+      <a href="about.html" class="navbar__mobile-link">About</a>
+      <a href="pricing.html" class="navbar__mobile-link">Pricing</a>
+      <a href="contact.html" class="navbar__mobile-link">Contact</a>
+      <div class="navbar__mobile-dropdown">
+        <a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
+        <div class="navbar__mobile-sub">
+          <a href="dashboard/" class="navbar__mobile-link">Admin Dashboard</a>
+          <a href="user-dashboard/" class="navbar__mobile-link">User Dashboard</a>
+        </div>
+      </div>
+      <a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SECTION 1: HERO ============ -->
+    <section class="hero hero--full" id="hero">
+      <div class="hero__bg">
+        <img src="assets/images/hero/hero-bg.png" alt="Mystical astrology cosmos with zodiac constellations and golden celestial elements" loading="eager">
+      </div>
+      <div class="hero__overlay"></div>
+
+      <!-- Floating Zodiac Icons -->
+      <div class="floating-icons" aria-hidden="true">
+        <span class="floating-icon">♈</span>
+        <span class="floating-icon">♉</span>
+        <span class="floating-icon">♊</span>
+        <span class="floating-icon">♌</span>
+        <span class="floating-icon">♍</span>
+        <span class="floating-icon">♏</span>
+      </div>
+
+      <div class="container">
+        <div class="hero__content hero__content--centered">
+          <span class="hero__label reveal" data-delay="100">✦ Discover Your Cosmic Path ✦</span>
+          <h1 class="hero__title reveal" data-delay="200">Unlock the Secrets of the Stars</h1>
+          <p class="hero__subtitle reveal" data-delay="300">
+            Professional astrology readings, tarot consultations, and personalized spiritual guidance 
+            from our certified readers. Start your cosmic journey today.
+          </p>
+          <div class="hero__actions reveal" data-delay="400">
+            <a href="services.html" class="btn btn--gold btn--lg">
+              <i class="fas fa-sparkles"></i> Book a Reading
+            </a>
+            <a href="about.html" class="btn btn--secondary btn--lg" style="border-color:rgba(255,255,255,0.3);color:#fff;">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: SERVICES PREVIEW ============ -->
+    <section class="section" id="services-preview">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Our Services</span>
+          <h2>Explore Spiritual Guidance</h2>
+          <p>From tarot readings to birth chart analysis, discover the spiritual services that resonate with your journey.</p>
+        </div>
+
+        <div class="grid grid--4" data-stagger="100">
+          <!-- Service Card 1 -->
+          <div class="card reveal">
+            <img src="assets/images/services/tarot-reading.png" alt="Professional tarot card reading session with crystal ball and candles" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__label">Most Popular</span>
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Tarot Reading</h3>
+              <p class="card__text">Gain clarity and insight through our professional tarot consultations. Uncover hidden truths and navigate life with confidence.</p>
+              <a href="service-detail.html" class="card__link">
+                Explore Service <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="card reveal">
+            <img src="assets/images/services/birth-chart.png" alt="Astrology birth chart with zodiac constellations and astronomical instruments" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__label">Essential</span>
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Birth Chart Analysis</h3>
+              <p class="card__text">Understand your cosmic blueprint with a detailed natal chart reading. Discover your strengths, challenges, and life purpose.</p>
+              <a href="service-detail.html" class="card__link">
+                Explore Service <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="card reveal">
+            <img src="assets/images/services/crystal-healing.png" alt="Healing crystals and gemstones arranged with soft purple lighting" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__label">Holistic</span>
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Crystal Healing</h3>
+              <p class="card__text">Restore balance and harmony through the ancient art of crystal healing. Align your chakras and enhance your spiritual energy.</p>
+              <a href="service-detail.html" class="card__link">
+                Explore Service <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="card reveal">
+            <img src="assets/images/services/palmistry.png" alt="Close-up palmistry session with warm candlelight atmosphere" class="card__image" loading="lazy">
+            <div class="card__body">
+              <span class="card__label">Classic</span>
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Palmistry</h3>
+              <p class="card__text">Read the lines of destiny etched in your palms. Our palmistry experts reveal insights about your life path and potential.</p>
+              <a href="service-detail.html" class="card__link">
+                Explore Service <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: HOW IT WORKS ============ -->
+    <section class="section" id="how-it-works" style="background:var(--clr-bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Simple Process</span>
+          <h2>How It Works</h2>
+          <p>Begin your spiritual journey in three simple steps.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="process-step reveal" data-delay="0">
+            <div class="process-step__number">1</div>
+            <div class="process-connector"></div>
+            <h3 class="process-step__title">Choose Your Reading</h3>
+            <p class="process-step__text">Browse our services and select the type of spiritual guidance that speaks to your soul.</p>
+          </div>
+
+          <div class="process-step reveal" data-delay="150">
+            <div class="process-step__number">2</div>
+            <div class="process-connector"></div>
+            <h3 class="process-step__title">Book a Session</h3>
+            <p class="process-step__text">Select your preferred reader and schedule a time that works for you. Online or in-person available.</p>
+          </div>
+
+          <div class="process-step reveal" data-delay="300">
+            <div class="process-step__number">3</div>
+            <h3 class="process-step__title">Receive Guidance</h3>
+            <p class="process-step__text">Connect with your reader and receive personalized insights to illuminate your path forward.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4: FEATURED READERS ============ -->
+    <section class="section" id="readers">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Our Experts</span>
+          <h2>Featured Readers</h2>
+          <p>Meet our certified spiritual advisors, each with years of experience guiding seekers on their cosmic journeys.</p>
+        </div>
+
+        <div class="grid grid--4" data-stagger="100">
+          <!-- Reader 1 -->
+          <div class="card reveal" style="text-align:center;">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face" alt="Selene Moonweaver — Tarot Specialist" class="card__image" style="height:280px;object-position:top;" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Selene Moonweaver</h3>
+              <p class="card__text" style="margin-bottom:var(--sp-2);">Tarot & Oracle Cards Specialist</p>
+              <div class="stars" style="justify-content:center;margin-bottom:var(--sp-3);">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <span class="badge badge--gold">12+ Years Experience</span>
+            </div>
+          </div>
+
+          <!-- Reader 2 -->
+          <div class="card reveal" style="text-align:center;">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Orion Starfield — Astrology Expert" class="card__image" style="height:280px;object-position:top;" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Orion Starfield</h3>
+              <p class="card__text" style="margin-bottom:var(--sp-2);">Vedic Astrology Expert</p>
+              <div class="stars" style="justify-content:center;margin-bottom:var(--sp-3);">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="badge badge--gold">15+ Years Experience</span>
+            </div>
+          </div>
+
+          <!-- Reader 3 -->
+          <div class="card reveal" style="text-align:center;">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face" alt="Luna Celestine — Crystal Healer" class="card__image" style="height:280px;object-position:top;" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Luna Celestine</h3>
+              <p class="card__text" style="margin-bottom:var(--sp-2);">Crystal Healing & Reiki Master</p>
+              <div class="stars" style="justify-content:center;margin-bottom:var(--sp-3);">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <span class="badge badge--gold">10+ Years Experience</span>
+            </div>
+          </div>
+
+          <!-- Reader 4 -->
+          <div class="card reveal" style="text-align:center;">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Atlas Nightshade — Palmistry Master" class="card__image" style="height:280px;object-position:top;" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title" style="font-size:var(--fs-lg);">Atlas Nightshade</h3>
+              <p class="card__text" style="margin-bottom:var(--sp-2);">Palmistry & Numerology</p>
+              <div class="stars" style="justify-content:center;margin-bottom:var(--sp-3);">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <span class="badge badge--gold">8+ Years Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5: TESTIMONIALS ============ -->
+    <section class="section" id="testimonials" style="background:var(--clr-bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Client Stories</span>
+          <h2>What Our Clients Say</h2>
+          <p>Hear from those who have experienced transformative readings with our spiritual advisors.</p>
+        </div>
+
+        <div class="grid grid--3" data-stagger="100">
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__quote">
+              The birth chart reading with Orion was absolutely life-changing. He revealed patterns I had never noticed and gave me the clarity I needed to make a major career decision. I cannot recommend CelestiaAura enough!
+            </div>
+            <div class="testimonial-card__author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Sarah M." class="testimonial-card__avatar" loading="lazy">
+              <div>
+                <div class="testimonial-card__name">Sarah M.</div>
+                <div class="testimonial-card__role">Marketing Director</div>
+                <div class="stars" style="margin-top:4px;">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__quote">
+              Selene's tarot readings are incredibly accurate and deeply insightful. Every session leaves me feeling empowered and more connected to my intuition. She has a true gift for connecting with spiritual energy.
+            </div>
+            <div class="testimonial-card__author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="James R." class="testimonial-card__avatar" loading="lazy">
+              <div>
+                <div class="testimonial-card__name">James R.</div>
+                <div class="testimonial-card__role">Software Engineer</div>
+                <div class="stars" style="margin-top:4px;">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__quote">
+              The crystal healing session with Luna was a transformative experience. I felt a profound shift in my energy and have been sleeping better ever since. The platform makes booking so easy and seamless.
+            </div>
+            <div class="testimonial-card__author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Emily K." class="testimonial-card__avatar" loading="lazy">
+              <div>
+                <div class="testimonial-card__name">Emily K.</div>
+                <div class="testimonial-card__role">Yoga Instructor</div>
+                <div class="stars" style="margin-top:4px;">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top:var(--sp-10);">
+          <a href="#" class="btn btn--secondary">Read More Reviews <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6: NEWSLETTER CTA ============ -->
+    <section class="cta-section" id="newsletter">
+      <div class="cta-section__bg">
+        <img src="assets/images/hero/hero-bg.png" alt="Cosmic background with stars and nebula" loading="lazy">
+      </div>
+      <div class="cta-section__overlay"></div>
+      <div class="container">
+        <div class="cta-section__content reveal">
+          <span class="section-label" style="color:var(--clr-secondary-light);">Stay Connected</span>
+          <h2>Join Our Cosmic Community</h2>
+          <p>Subscribe to receive weekly horoscopes, spiritual tips, and exclusive offers delivered straight to your inbox.</p>
+          
+          <form class="footer__newsletter-form" style="max-width:480px;margin:0 auto var(--sp-6);" data-validate>
+            <input type="email" class="footer__newsletter-input" placeholder="Enter your email address" required aria-label="Email address">
+            <button type="submit" class="footer__newsletter-btn">Subscribe</button>
+          </form>
+
+          <p style="font-size:var(--fs-sm);color:rgba(255,255,255,0.5);margin-bottom:var(--sp-6);">Or sign up with</p>
+
+          <div style="display:flex;gap:var(--sp-3);justify-content:center;flex-wrap:wrap;">
+            <button class="social-btn social-btn--google" style="min-width:140px;">
+              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+              Google
+            </button>
+            <button class="social-btn social-btn--facebook" style="min-width:140px;">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </button>
+            <button class="social-btn social-btn--apple" style="min-width:140px;">
+              <i class="fab fa-apple"></i> Apple
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <i class="fas fa-star-of-david"></i>
+            </div>
+            <span class="footer__logo-text">CelestiaAura</span>
+          </a>
+          <p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link footer__social-link--facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer__column">
+          <h4>Services</h4>
+          <a href="service-detail.html" class="footer__link">Tarot Reading</a>
+          <a href="service-detail.html" class="footer__link">Birth Chart Analysis</a>
+          <a href="service-detail.html" class="footer__link">Crystal Healing</a>
+          <a href="service-detail.html" class="footer__link">Palmistry</a>
+          <a href="service-detail.html" class="footer__link">Numerology</a>
+        </div>
+
+        <!-- Resources Column -->
+        <div class="footer__column">
+          <h4>Resources</h4>
+          <a href="blog.html" class="footer__link">Blog & Articles</a>
+          <a href="#" class="footer__link">Daily Horoscope</a>
+          <a href="#" class="footer__link">Zodiac Guide</a>
+          <a href="#" class="footer__link">Free Birth Chart</a>
+          <a href="#" class="footer__link">Meditation Library</a>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer__column">
+          <h4>Company</h4>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Press Kit</a>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="footer__column">
+          <h4>Newsletter</h4>
+          <p class="footer__desc" style="max-width:100%;">Get weekly horoscopes and cosmic insights.</p>
+          <div class="footer__newsletter">
+            <form class="footer__newsletter-form">
+              <input type="email" class="footer__newsletter-input" placeholder="Your email" aria-label="Newsletter email">
+              <button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 CelestiaAura. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

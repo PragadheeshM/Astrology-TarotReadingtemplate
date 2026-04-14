@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CelestiaAura — Modern Spiritual Platform | Home</title>
+  <meta name="description" content="Experience the future of spiritual guidance. CelestiaAura combines ancient wisdom with modern technology for personalized astrology and tarot readings.">
+  <link rel="canonical" href="https://celestiaaura.com/home-2.html">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"CelestiaAura","applicationCategory":"LifestyleApplication","description":"Modern spiritual platform for astrology and tarot readings.","url":"https://celestiaaura.com"}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* Home 2 Specific Styles */
+    .hero--split { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:var(--sp-8); min-height:calc(100vh - var(--header-h)); margin-top:var(--header-h); padding:var(--sp-12) 0; }
+    .hero--split .hero__content { color:var(--clr-text); max-width:100%; }
+    .hero--split .hero__title { color:var(--clr-text); font-size:var(--fs-4xl); }
+    .hero--split .hero__subtitle { color:var(--clr-text-secondary); }
+    .hero--split .hero__mockup { position:relative; }
+    .hero--split .hero__mockup img { border-radius:var(--radius-2xl); box-shadow:var(--shadow-2xl); }
+    .hero--split .hero__features { display:flex; gap:var(--sp-6); margin-top:var(--sp-8); }
+    .hero--split .hero__feature { display:flex; align-items:center; gap:var(--sp-2); font-size:var(--fs-sm); color:var(--clr-text-secondary); }
+    .hero--split .hero__feature i { color:var(--clr-secondary); font-size:var(--fs-base); }
+
+    .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-6); }
+    .feature-card { background:var(--clr-surface); border:1px solid var(--clr-border-light); border-radius:var(--radius-xl); padding:var(--sp-8); transition:all var(--transition-base); }
+    .feature-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-card-hover); border-color:var(--clr-accent); }
+    .feature-card__icon { width:56px; height:56px; display:flex; align-items:center; justify-content:center; background:rgba(124,58,237,0.08); border-radius:var(--radius-lg); color:var(--clr-accent); font-size:var(--fs-xl); margin-bottom:var(--sp-5); }
+    .feature-card__title { font-family:var(--ff-body); font-size:var(--fs-lg); font-weight:var(--fw-semibold); margin-bottom:var(--sp-3); color:var(--clr-text); }
+    .feature-card__text { font-size:var(--fs-sm); color:var(--clr-text-secondary); line-height:var(--lh-relaxed); }
+
+    .live-preview { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-12); align-items:center; }
+    .live-preview__status { display:flex; align-items:center; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+    .live-dot { width:10px; height:10px; border-radius:50%; background:var(--clr-success); animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
+    .partners-track { display:flex; align-items:center; gap:var(--sp-12); animation:scroll-logos 30s linear infinite; }
+    .partners-track img { height:40px; opacity:0.5; filter:grayscale(100%); transition:all var(--transition-base); }
+    .partners-track img:hover { opacity:1; filter:none; }
+    .partners-slider { overflow:hidden; padding:var(--sp-8) 0; }
+    @keyframes scroll-logos { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+
+    .stats-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--sp-6); padding:var(--sp-12) 0; background:var(--gradient-primary); border-radius:var(--radius-2xl); }
+    .stats-bar .stat-card { color:#FFF; }
+    .stats-bar .stat-card__number { color:var(--clr-secondary-light); }
+    .stats-bar .stat-card__label { color:rgba(255,255,255,0.7); }
+
+    @media(max-width:1023px) {
+      .hero--split { grid-template-columns:1fr; text-align:center; }
+      .hero--split .hero__features { justify-content:center; }
+      .hero--split .hero__mockup { order:-1; }
+      .feature-grid { grid-template-columns:repeat(2,1fr); }
+      .live-preview { grid-template-columns:1fr; }
+      .stats-bar { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:767px) {
+      .feature-grid { grid-template-columns:1fr; }
+      .hero--split .hero__features { flex-direction:column; align-items:center; }
+      .stats-bar { grid-template-columns:1fr; border-radius:var(--radius-xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="CelestiaAura Home">
+        <div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div>
+        <span class="navbar__logo-text">CelestiaAura</span>
+      </a>
+      <nav class="navbar__menu" aria-label="Main Navigation">
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link navbar__dropdown-toggle active" aria-haspopup="true" aria-expanded="false">Home <i class="fas fa-chevron-down"></i></a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="home-1.html" class="navbar__dropdown-item" role="menuitem">Home 1</a>
+            <a href="home-2.html" class="navbar__dropdown-item active" role="menuitem">Home 2</a>
+          </div>
+        </div>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+        <div class="navbar__dropdown">
+          <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="dashboard/" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a>
+            <a href="user-dashboard/" class="navbar__dropdown-item" role="menuitem">User Dashboard</a>
+          </div>
+        </div>
+      </nav>
+      <div class="navbar__actions">
+        <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <button class="navbar__icon-btn theme-toggle" aria-label="Switch to dark mode" title="Dark Mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="btn btn--primary btn--sm">Sign In</a>
+        <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+      </div>
+    </div>
+    <div class="navbar__mobile-menu" id="mobileMenu">
+      <div class="navbar__mobile-dropdown">
+        <a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a>
+        <div class="navbar__mobile-sub">
+          <a href="home-1.html" class="navbar__mobile-link">Home 1</a>
+          <a href="home-2.html" class="navbar__mobile-link active">Home 2</a>
+        </div>
+      </div>
+      <a href="services.html" class="navbar__mobile-link">Services</a>
+      <a href="blog.html" class="navbar__mobile-link">Blog</a>
+      <a href="about.html" class="navbar__mobile-link">About</a>
+      <a href="pricing.html" class="navbar__mobile-link">Pricing</a>
+      <a href="contact.html" class="navbar__mobile-link">Contact</a>
+      <div class="navbar__mobile-dropdown">
+        <a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
+        <div class="navbar__mobile-sub">
+          <a href="dashboard/" class="navbar__mobile-link">Admin Dashboard</a>
+          <a href="user-dashboard/" class="navbar__mobile-link">User Dashboard</a>
+        </div>
+      </div>
+      <a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ SECTION 1: HERO (Split Layout) ============ -->
+    <section class="hero--split container" id="hero">
+      <div class="hero__content">
+        <span class="hero__label reveal" style="color:var(--clr-secondary);">✦ The Future of Spiritual Guidance ✦</span>
+        <h1 class="hero__title reveal" data-delay="100">Your Personal Cosmic Advisor, Anytime</h1>
+        <p class="hero__subtitle reveal" data-delay="200">
+          CelestiaAura combines centuries of spiritual wisdom with modern technology to deliver accurate, 
+          personalized readings right to your fingertips. Available 24/7.
+        </p>
+        <div class="hero__actions reveal" data-delay="300">
+          <a href="services.html" class="btn btn--primary btn--lg"><i class="fas fa-rocket"></i> Get Started Free</a>
+          <a href="#live-preview" class="btn btn--ghost btn--lg"><i class="fas fa-play-circle"></i> Watch Demo</a>
+        </div>
+        <div class="hero__features reveal" data-delay="400">
+          <div class="hero__feature"><i class="fas fa-check-circle"></i> 100+ Certified Readers</div>
+          <div class="hero__feature"><i class="fas fa-check-circle"></i> 24/7 Availability</div>
+          <div class="hero__feature"><i class="fas fa-check-circle"></i> Secure & Private</div>
+        </div>
+      </div>
+      <div class="hero__mockup reveal--right reveal" data-delay="200">
+        <img src="assets/images/hero/hero-bg-2.png" alt="CelestiaAura platform showing cosmic astrology interface with zodiac symbols" loading="eager" style="width:100%;">
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: FEATURES GRID ============ -->
+    <section class="section" id="features" style="background:var(--clr-bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Platform Features</span>
+          <h2>Everything You Need for Spiritual Growth</h2>
+          <p>Powerful tools and features designed to deepen your cosmic understanding.</p>
+        </div>
+        <div class="feature-grid" data-stagger="100">
+          <div class="feature-card reveal">
+            <div class="feature-card__icon"><i class="fas fa-chart-line"></i></div>
+            <h3 class="feature-card__title">AI Birth Chart Engine</h3>
+            <p class="feature-card__text">Advanced algorithms generate detailed natal charts with planetary positions, aspects, and house placements in seconds.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-card__icon"><i class="fas fa-video"></i></div>
+            <h3 class="feature-card__title">Live Video Readings</h3>
+            <p class="feature-card__text">Connect face-to-face with certified readers through our HD video platform with built-in recording and replay.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-card__icon"><i class="fas fa-bell"></i></div>
+            <h3 class="feature-card__title">Daily Horoscopes</h3>
+            <p class="feature-card__text">Receive personalized daily, weekly, and monthly horoscopes based on your exact birth data delivered to your app.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-card__icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="feature-card__title">Secure & Private</h3>
+            <p class="feature-card__text">End-to-end encrypted sessions ensure your readings remain completely private and confidential at all times.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-card__icon"><i class="fas fa-calendar-check"></i></div>
+            <h3 class="feature-card__title">Smart Scheduling</h3>
+            <p class="feature-card__text">Book sessions that fit your schedule with automatic time zone detection, reminders, and calendar sync.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-card__icon"><i class="fas fa-users"></i></div>
+            <h3 class="feature-card__title">Community Access</h3>
+            <p class="feature-card__text">Join exclusive forums, group readings, and live events with fellow seekers on their spiritual journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: LIVE READING PREVIEW ============ -->
+    <section class="section" id="live-preview">
+      <div class="container">
+        <div class="live-preview">
+          <div class="reveal--left reveal">
+            <img src="assets/images/services/tarot-reading.png" alt="Live tarot reading session in progress" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-2xl);" loading="lazy">
+          </div>
+          <div class="reveal--right reveal">
+            <div class="live-preview__status">
+              <span class="live-dot"></span>
+              <span style="font-size:var(--fs-sm);font-weight:var(--fw-semibold);color:var(--clr-success);">3 Readers Online Now</span>
+            </div>
+            <span class="section-label" style="display:inline-block;margin-bottom:var(--sp-3);">Live Readings</span>
+            <h2>Experience Real-Time Spiritual Guidance</h2>
+            <p>Connect instantly with available readers for immediate guidance. No appointment needed — just click and connect for a transformative experience.</p>
+            <ul style="list-style:none;margin-bottom:var(--sp-6);">
+              <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Instant connection with verified readers</li>
+              <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Chat, voice, or video options</li>
+              <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Pay per minute — transparent pricing</li>
+              <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Satisfaction guarantee on every session</li>
+            </ul>
+            <a href="services.html" class="btn btn--primary btn--lg"><i class="fas fa-bolt"></i> Start Live Reading</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4: PRICING TEASER ============ -->
+    <section class="section" id="pricing-teaser" style="background:var(--clr-bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Pricing</span>
+          <h2>Plans for Every Seeker</h2>
+          <p>Choose the plan that aligns with your spiritual journey. Upgrade or cancel anytime.</p>
+        </div>
+        <div class="grid grid--3" data-stagger="100">
+          <div class="pricing-card reveal">
+            <h3 class="pricing-card__name">Seeker</h3>
+            <div class="pricing-card__price">$9</div>
+            <div class="pricing-card__period">per month</div>
+            <div class="pricing-card__features">
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> 1 Reading per month</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Daily horoscope</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Basic birth chart</div>
+              <div class="pricing-card__feature pricing-card__feature--disabled"><i class="fas fa-times"></i> Live video sessions</div>
+              <div class="pricing-card__feature pricing-card__feature--disabled"><i class="fas fa-times"></i> Priority booking</div>
+            </div>
+            <a href="pricing.html" class="btn btn--secondary btn--block">Get Started</a>
+          </div>
+          <div class="pricing-card pricing-card--popular reveal">
+            <span class="pricing-card__badge">Most Popular</span>
+            <h3 class="pricing-card__name">Mystic</h3>
+            <div class="pricing-card__price">$29</div>
+            <div class="pricing-card__period">per month</div>
+            <div class="pricing-card__features">
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> 5 Readings per month</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Daily + weekly horoscope</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Detailed birth chart</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Live video sessions</div>
+              <div class="pricing-card__feature pricing-card__feature--disabled"><i class="fas fa-times"></i> Priority booking</div>
+            </div>
+            <a href="pricing.html" class="btn btn--primary btn--block">Get Started</a>
+          </div>
+          <div class="pricing-card reveal">
+            <h3 class="pricing-card__name">Oracle</h3>
+            <div class="pricing-card__price">$59</div>
+            <div class="pricing-card__period">per month</div>
+            <div class="pricing-card__features">
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Unlimited readings</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> All horoscope types</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Advanced chart analysis</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Live video sessions</div>
+              <div class="pricing-card__feature"><i class="fas fa-check"></i> Priority booking</div>
+            </div>
+            <a href="pricing.html" class="btn btn--secondary btn--block">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5: COMMUNITY STATS ============ -->
+    <section class="section" id="stats">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Trusted Worldwide</span>
+          <h2>Our Growing Community</h2>
+        </div>
+        <div class="stats-bar reveal">
+          <div class="stat-card">
+            <div class="stat-card__number" data-counter data-target="50000" data-suffix="+">0+</div>
+            <div class="stat-card__label">Happy Clients</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-counter data-target="120" data-suffix="+">0+</div>
+            <div class="stat-card__label">Expert Readers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-counter data-target="250000" data-suffix="+">0+</div>
+            <div class="stat-card__label">Readings Delivered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-counter data-target="98" data-suffix="%">0%</div>
+            <div class="stat-card__label">Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6: PARTNERS / INTEGRATIONS ============ -->
+    <section class="section--sm" id="partners" style="background:var(--clr-bg-alt);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Integrations & Partners</span>
+          <h2>Trusted By Industry Leaders</h2>
+        </div>
+        <div class="partners-slider reveal">
+          <div class="partners-track" style="display:flex;align-items:center;justify-content:center;gap:var(--sp-12);flex-wrap:wrap;padding:var(--sp-6) 0;">
+            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-stripe fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Stripe</span></div>
+            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-paypal fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">PayPal</span></div>
+            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-google fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Google</span></div>
+            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-apple fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Apple</span></div>
+            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fas fa-calendar fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Calendly</span></div>
+            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-zoom fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Zoom</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <div class="footer__logo-icon"><i class="fas fa-star-of-david"></i></div>
+            <span class="footer__logo-text">CelestiaAura</span>
+          </a>
+          <p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link footer__social-link--facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="footer__column">
+          <h4>Services</h4>
+          <a href="service-detail.html" class="footer__link">Tarot Reading</a>
+          <a href="service-detail.html" class="footer__link">Birth Chart Analysis</a>
+          <a href="service-detail.html" class="footer__link">Crystal Healing</a>
+          <a href="service-detail.html" class="footer__link">Palmistry</a>
+          <a href="service-detail.html" class="footer__link">Numerology</a>
+        </div>
+        <div class="footer__column">
+          <h4>Resources</h4>
+          <a href="blog.html" class="footer__link">Blog & Articles</a>
+          <a href="#" class="footer__link">Daily Horoscope</a>
+          <a href="#" class="footer__link">Zodiac Guide</a>
+          <a href="#" class="footer__link">Free Birth Chart</a>
+          <a href="#" class="footer__link">Meditation Library</a>
+        </div>
+        <div class="footer__column">
+          <h4>Company</h4>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Press Kit</a>
+        </div>
+        <div class="footer__column">
+          <h4>Newsletter</h4>
+          <p class="footer__desc" style="max-width:100%;">Get weekly horoscopes and cosmic insights.</p>
+          <div class="footer__newsletter">
+            <form class="footer__newsletter-form">
+              <input type="email" class="footer__newsletter-input" placeholder="Your email" aria-label="Newsletter email">
+              <button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 CelestiaAura. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
