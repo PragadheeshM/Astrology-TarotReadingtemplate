@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — CelestiaAura | Astrology Insights & Spiritual Wisdom</title>
+  <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png">
   <meta name="description" content="Explore CelestiaAura's blog for astrology insights, tarot wisdom, zodiac guides, spiritual growth tips, and cosmic updates.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -13,20 +14,21 @@
     .blog-tabs{display:flex;gap:var(--sp-2);flex-wrap:wrap;justify-content:center;margin-bottom:var(--sp-8);}
     .blog-tab{padding:var(--sp-2) var(--sp-5);font-size:var(--fs-sm);font-weight:var(--fw-medium);color:var(--clr-text-secondary);background:transparent;border:1px solid var(--clr-border);border-radius:var(--radius-full);cursor:pointer;transition:all var(--transition-fast);font-family:var(--ff-body);}
     .blog-tab:hover,.blog-tab.active{background:var(--gradient-cta);color:#FFF;border-color:transparent;}
-    .featured-post{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--sp-8);align-items:center;background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;margin-bottom:var(--sp-12);transition:box-shadow var(--transition-base);}
+    .featured-post{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--sp-8);align-items:stretch;background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;margin-bottom:var(--sp-12);transition:box-shadow var(--transition-base);}
+    .featured-post__body{padding:var(--sp-8);display:flex;flex-direction:column;justify-content:center;}
     .featured-post:hover{box-shadow:var(--shadow-card-hover);}
     .featured-post__image{width:100%;height:100%;min-height:350px;object-fit:cover;}
     .featured-post__body{padding:var(--sp-8);}
     .featured-post__badge{display:inline-block;padding:var(--sp-1) var(--sp-3);background:rgba(124,58,237,0.1);color:var(--clr-accent);border-radius:var(--radius-full);font-size:var(--fs-xs);font-weight:var(--fw-semibold);margin-bottom:var(--sp-4);}
     .featured-post__title{font-size:var(--fs-2xl);margin-bottom:var(--sp-4);}
     .featured-post__excerpt{font-size:var(--fs-sm);color:var(--clr-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-6);}
-    .blog-meta{display:flex;align-items:center;gap:var(--sp-4);font-size:var(--fs-xs);color:var(--clr-text-muted);}
+    .blog-meta{display:flex;align-items:center;gap:var(--sp-4);font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:auto;padding-top:var(--sp-4);border-top:1px solid var(--clr-border-light);}
     .blog-meta__author{display:flex;align-items:center;gap:var(--sp-2);}
     .blog-meta__author img{width:28px;height:28px;border-radius:50%;object-fit:cover;}
-    .blog-card{background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;transition:all var(--transition-base);}
+    .blog-card{background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;transition:all var(--transition-base);display:flex;flex-direction:column;height:100%;}
     .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card-hover);}
     .blog-card__image{width:100%;height:200px;object-fit:cover;}
-    .blog-card__body{padding:var(--sp-5);}
+    .blog-card__body{padding:var(--sp-5);flex:1;display:flex;flex-direction:column;}
     .blog-card__category{display:inline-block;font-size:var(--fs-xs);font-weight:var(--fw-semibold);color:var(--clr-accent);margin-bottom:var(--sp-2);}
     .blog-card__title{font-size:var(--fs-lg);margin-bottom:var(--sp-3);line-height:var(--lh-snug);}
     .blog-card__title a{color:var(--clr-text);transition:color var(--transition-fast);}
@@ -38,20 +40,20 @@
 </head>
 <body>
   <!-- NAVBAR -->
-  <header class="navbar" id="navbar"><div class="navbar__inner"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="navbar__logo-text">CelestiaAura</span></a><nav class="navbar__menu"><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu"><a href="home-1.html" class="navbar__dropdown-item">Home 1</a><a href="home-2.html" class="navbar__dropdown-item">Home 2</a></div></div><a href="services.html" class="navbar__link">Services</a><a href="blog.html" class="navbar__link active">Blog</a><a href="about.html" class="navbar__link">About</a><a href="pricing.html" class="navbar__link">Pricing</a><a href="contact.html" class="navbar__link">Contact</a><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu" role="menu"><a href="dashboard/" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a><a href="user-dashboard/" class="navbar__dropdown-item" role="menuitem">User Dashboard</a></div></div></nav><div class="navbar__actions"><button class="navbar__icon-btn rtl-toggle"><i class="fas fa-globe"></i></button><button class="navbar__icon-btn theme-toggle"><i class="fas fa-moon"></i></button><a href="login.html" class="btn btn--primary btn--sm">Sign In</a><button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+  <header class="navbar" id="navbar"><div class="navbar__inner"><a href="home-1.html" class="navbar__logo"><div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="navbar__logo-text">CelestiaAura</span></a><nav class="navbar__menu"><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu"><a href="home-1.html" class="navbar__dropdown-item">Home 1</a><a href="home-2.html" class="navbar__dropdown-item">Home 2</a></div></div><a href="services.html" class="navbar__link">Services</a><a href="blog.html" class="navbar__link active">Blog</a><a href="about.html" class="navbar__link">About</a><a href="pricing.html" class="navbar__link">Pricing</a><a href="contact.html" class="navbar__link">Contact</a><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu" role="menu"><a href="dashboard/index.html" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__dropdown-item" role="menuitem">User Dashboard</a></div></div></nav><div class="navbar__actions"><button class="navbar__icon-btn rtl-toggle"><span>RTL</span></button><button class="navbar__icon-btn theme-toggle"><i class="fas fa-moon"></i></button><a href="login.html" class="btn btn--primary btn--sm">Sign In</a><button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
           <span class="navbar__hamburger-bar"></span>
           <span class="navbar__hamburger-bar"></span>
           <span class="navbar__hamburger-bar"></span>
-        </button></div></div><div class="navbar__mobile-menu"><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="home-1.html" class="navbar__mobile-link">Home 1</a><a href="home-2.html" class="navbar__mobile-link">Home 2</a></div></div><a href="services.html" class="navbar__mobile-link">Services</a><a href="blog.html" class="navbar__mobile-link active">Blog</a><a href="about.html" class="navbar__mobile-link">About</a><a href="pricing.html" class="navbar__mobile-link">Pricing</a><a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a></div></header>
+        </button></div></div><div class="navbar__mobile-menu"><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="home-1.html" class="navbar__mobile-link">Home 1</a><a href="home-2.html" class="navbar__mobile-link">Home 2</a></div></div><a href="services.html" class="navbar__mobile-link">Services</a><a href="blog.html" class="navbar__mobile-link active">Blog</a><a href="about.html" class="navbar__mobile-link">About</a><a href="pricing.html" class="navbar__mobile-link">Pricing</a><a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/index.html" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a></div></header>
 
   <main>
     <!-- SECTION 1: HERO -->
-    <section class="hero" style="min-height:400px;">
+    <section class="hero">
       <div class="hero__bg"><img src="assets/images/hero/hero-bg.png" alt="Cosmic blog header" loading="eager"></div>
       <div class="hero__overlay"></div>
       <div class="container">
         <div class="hero__content hero__content--centered">
-          <div class="breadcrumb reveal"><a href="index.html">Home</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><span>Blog</span></div>
+          <div class="breadcrumb reveal"><a href="home-1.html">Home</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><span>Blog</span></div>
           <h1 class="hero__title reveal">Cosmic Insights & Wisdom</h1>
           <p class="hero__subtitle reveal" data-delay="100">Explore astrology articles, tarot wisdom, and spiritual guidance from our expert contributors.</p>
           <div class="reveal" data-delay="200" style="max-width:500px;margin:0 auto;">
@@ -100,66 +102,95 @@
     <!-- SECTION 3: ARTICLE GRID -->
     <section class="section--sm">
       <div class="container">
-        <div class="grid grid--3" data-stagger="80">
-          <div class="blog-card reveal">
+        <div class="grid grid--4" data-stagger="80">
+          <div class="blog-card blog-card--center reveal">
             <img src="assets/images/services/tarot-reading.png" alt="Tarot reading guide for beginners" class="blog-card__image" loading="lazy">
             <div class="blog-card__body">
               <span class="blog-card__category">Tarot</span>
-              <h3 class="blog-card__title"><a href="blog-detail.html">The Major Arcana: What Each Card Means for Your Journey</a></h3>
-              <p class="blog-card__excerpt">Explore the 22 cards of the Major Arcana and learn what each archetype means when it appears in your reading.</p>
+              <h3 class="blog-card__title"><a href="blog-detail.html">The Major Arcana: Archetypes of the Soul</a></h3>
+              <p class="blog-card__excerpt">Explore the 22 cards of the Major Arcana and learn what each archetype means for your journey.</p>
               <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 10, 2025</span><span><i class="fas fa-clock"></i> 8 min</span></div>
             </div>
           </div>
-          <div class="blog-card reveal">
+          <div class="blog-card blog-card--center reveal">
             <img src="assets/images/services/crystal-healing.png" alt="Crystal healing properties guide" class="blog-card__image" loading="lazy">
             <div class="blog-card__body">
               <span class="blog-card__category">Crystals</span>
-              <h3 class="blog-card__title"><a href="blog-detail.html">Top 10 Crystals for Spiritual Protection and Energy</a></h3>
-              <p class="blog-card__excerpt">Discover the most powerful crystals for protection, healing, and spiritual growth. Learn how to use and care for them.</p>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Top 10 Crystals for Spiritual Protection</a></h3>
+              <p class="blog-card__excerpt">Discover the most powerful crystals for protection, healing, and spiritual growth.</p>
               <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 5, 2025</span><span><i class="fas fa-clock"></i> 6 min</span></div>
             </div>
           </div>
-          <div class="blog-card reveal">
+          <div class="blog-card blog-card--center reveal">
             <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop" alt="Mercury retrograde cosmic event" class="blog-card__image" loading="lazy">
             <div class="blog-card__body">
               <span class="blog-card__category">Astrology</span>
-              <h3 class="blog-card__title"><a href="blog-detail.html">Mercury Retrograde 2025: Survival Guide for Every Zodiac</a></h3>
-              <p class="blog-card__excerpt">Everything you need to know about Mercury retrograde in 2025 — dates, effects, and how to navigate it successfully.</p>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Mercury Retrograde 2025: Survival Guide</a></h3>
+              <p class="blog-card__excerpt">Everything you need to know about Mercury retrograde in 2025 — dates and effects.</p>
               <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 28, 2025</span><span><i class="fas fa-clock"></i> 10 min</span></div>
             </div>
           </div>
-          <div class="blog-card reveal">
+          <div class="blog-card blog-card--center reveal">
             <img src="assets/images/services/palmistry.png" alt="Palmistry basics guide" class="blog-card__image" loading="lazy">
             <div class="blog-card__body">
               <span class="blog-card__category">Psychic</span>
-              <h3 class="blog-card__title"><a href="blog-detail.html">Reading Your Palm: Lines, Mounts, and What They Reveal</a></h3>
-              <p class="blog-card__excerpt">Learn the basics of palmistry — the life line, heart line, and fate line — and what your palm says about your future.</p>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Reading Your Palm: Lines and Mounts</a></h3>
+              <p class="blog-card__excerpt">Learn the basics of palmistry — the life line, heart line, and fate line.</p>
               <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 20, 2025</span><span><i class="fas fa-clock"></i> 7 min</span></div>
             </div>
           </div>
-          <div class="blog-card reveal">
+          <div class="blog-card blog-card--center reveal">
             <img src="https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=600&h=400&fit=crop" alt="Full moon ritual guide" class="blog-card__image" loading="lazy">
             <div class="blog-card__body">
               <span class="blog-card__category">Wellness</span>
-              <h3 class="blog-card__title"><a href="blog-detail.html">Full Moon Rituals: Harness Lunar Energy for Manifestation</a></h3>
-              <p class="blog-card__excerpt">Step-by-step rituals to perform during the full moon to release negativity and manifest your deepest desires.</p>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Full Moon Rituals for Manifestation</a></h3>
+              <p class="blog-card__excerpt">Step-by-step rituals to perform during the full moon to release negativity.</p>
               <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 15, 2025</span><span><i class="fas fa-clock"></i> 5 min</span></div>
             </div>
           </div>
-          <div class="blog-card reveal">
+          <div class="blog-card blog-card--center reveal">
             <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&h=400&fit=crop" alt="Zodiac compatibility guide" class="blog-card__image" loading="lazy">
             <div class="blog-card__body">
               <span class="blog-card__category">Zodiac</span>
-              <h3 class="blog-card__title"><a href="blog-detail.html">Zodiac Compatibility: Which Signs Are Your Perfect Match?</a></h3>
-              <p class="blog-card__excerpt">Explore the most and least compatible zodiac pairings in love, friendship, and business partnerships.</p>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Zodiac Compatibility: Your Perfect Match</a></h3>
+              <p class="blog-card__excerpt">Explore the most and least compatible zodiac pairings in love and life.</p>
               <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 10, 2025</span><span><i class="fas fa-clock"></i> 9 min</span></div>
             </div>
           </div>
+          <div class="blog-card blog-card--center reveal">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=400&fit=crop" alt="Dream interpretation guide" class="blog-card__image" loading="lazy">
+            <div class="blog-card__body">
+              <span class="blog-card__category">Spirituality</span>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Decoding Your Dreams: A Common Symbols Guide</a></h3>
+              <p class="blog-card__excerpt">What your subconscious is trying to tell you through the language of dreams.</p>
+              <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 05, 2025</span><span><i class="fas fa-clock"></i> 11 min</span></div>
+            </div>
+          </div>
+          <div class="blog-card blog-card--center reveal">
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop" alt="Chakra balancing basics" class="blog-card__image" loading="lazy">
+            <div class="blog-card__body">
+              <span class="blog-card__category">Healing</span>
+              <h3 class="blog-card__title"><a href="blog-detail.html">Chakra Balancing: Aligning Your Energy Centers</a></h3>
+              <p class="blog-card__excerpt">An introduction to the seven chakras and how to keep them in harmony.</p>
+              <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 01, 2025</span><span><i class="fas fa-clock"></i> 8 min</span></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- PAGINATION -->
+        <div class="pagination" style="margin-top:var(--sp-10);">
+          <button class="pagination__btn"><i class="fas fa-chevron-left"></i></button>
+          <button class="pagination__btn pagination__btn--active">1</button>
+          <button class="pagination__btn">2</button>
+          <button class="pagination__btn">3</button>
+          <button class="pagination__btn">...</button>
+          <button class="pagination__btn">8</button>
+          <button class="pagination__btn"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: POPULAR TAGS -->
+    <!-- SECTION 5: POPULAR TAGS -->
     <section class="section--sm" style="background:var(--clr-bg-alt);">
       <div class="container">
         <div class="section-header reveal"><span class="section-label">Trending</span><h2>Popular Topics</h2></div>
@@ -169,7 +200,7 @@
       </div>
     </section>
 
-    <!-- SECTION 5: NEWSLETTER -->
+    <!-- SECTION 6: NEWSLETTER -->
     <section class="section--sm">
       <div class="container container--narrow">
         <div style="background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);padding:var(--sp-10);text-align:center;" class="reveal">
@@ -182,25 +213,84 @@
         </div>
       </div>
     </section>
-
-    <!-- SECTION 6: PAGINATION -->
-    <section class="section--sm">
-      <div class="container">
-        <div class="pagination">
-          <button class="pagination__btn"><i class="fas fa-chevron-left"></i></button>
-          <button class="pagination__btn pagination__btn--active">1</button>
-          <button class="pagination__btn">2</button>
-          <button class="pagination__btn">3</button>
-          <button class="pagination__btn">...</button>
-          <button class="pagination__btn">8</button>
-          <button class="pagination__btn"><i class="fas fa-chevron-right"></i></button>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="footer__logo-text">CelestiaAura</span></a><p class="footer__desc">Connecting souls with the cosmos since 2015.</p><div class="footer__social"><a href="#" class="footer__social-link footer__social-link--facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="footer__social-link footer__social-link--twitter"><i class="fab fa-x-twitter"></i></a><a href="#" class="footer__social-link footer__social-link--instagram"><i class="fab fa-instagram"></i></a><a href="#" class="footer__social-link footer__social-link--youtube"><i class="fab fa-youtube"></i></a><a href="#" class="footer__social-link footer__social-link--tiktok"><i class="fab fa-tiktok"></i></a></div></div><div class="footer__column"><h4>Services</h4><a href="service-detail.html" class="footer__link">Tarot Reading</a><a href="service-detail.html" class="footer__link">Birth Chart</a><a href="service-detail.html" class="footer__link">Crystal Healing</a><a href="service-detail.html" class="footer__link">Palmistry</a></div><div class="footer__column"><h4>Resources</h4><a href="blog.html" class="footer__link">Blog</a><a href="#" class="footer__link">Horoscope</a><a href="#" class="footer__link">Zodiac Guide</a><a href="#" class="footer__link">Free Chart</a></div><div class="footer__column"><h4>Company</h4><a href="about.html" class="footer__link">About</a><a href="pricing.html" class="footer__link">Pricing</a><a href="contact.html" class="footer__link">Contact</a></div><div class="footer__column"><h4>Newsletter</h4><p class="footer__desc" style="max-width:100%;">Weekly cosmic insights.</p><div class="footer__newsletter"><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email"><button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button></form></div></div></div><div class="footer__bottom"><p>&copy; 2025 CelestiaAura. All rights reserved.</p><div class="footer__bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div></div></footer>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <a href="home-1.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <i class="fas fa-star-of-david"></i>
+            </div>
+            <span class="footer__logo-text">CelestiaAura</span>
+          </a>
+          <p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link footer__social-link--facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer__column">
+          <h3>Services</h3>
+          <a href="service-detail.html" class="footer__link">Tarot Reading</a>
+          <a href="service-detail.html" class="footer__link">Birth Chart Analysis</a>
+          <a href="service-detail.html" class="footer__link">Crystal Healing</a>
+          <a href="service-detail.html" class="footer__link">Palmistry</a>
+          <a href="service-detail.html" class="footer__link">Numerology</a>
+        </div>
+
+        <!-- Resources Column -->
+        <div class="footer__column">
+          <h3>Resources</h3>
+          <a href="blog.html" class="footer__link">Blog & Articles</a>
+          <a href="#" class="footer__link">Daily Horoscope</a>
+          <a href="#" class="footer__link">Zodiac Guide</a>
+          <a href="#" class="footer__link">Free Birth Chart</a>
+          <a href="#" class="footer__link">Meditation Library</a>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer__column">
+          <h3>Company</h3>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Press Kit</a>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="footer__column">
+          <h3>Newsletter</h3>
+          <p class="footer__desc" style="max-width:100%;">Get weekly horoscopes and cosmic insights.</p>
+          <div class="footer__newsletter">
+            <form class="footer__newsletter-form">
+              <input type="email" class="footer__newsletter-input" placeholder="Your email" aria-label="Newsletter email">
+              <button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 CelestiaAura. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
   <script src="assets/js/theme.js"></script><script src="assets/js/rtl.js"></script><script src="assets/js/animations.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+

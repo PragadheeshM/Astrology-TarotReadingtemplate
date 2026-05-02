@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookings — CelestiaAura Dashboard</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicons/favicon.png">
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +20,12 @@
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__header">
-      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
-      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+      <a href="../home-1.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+
     </div>
     <nav class="sidebar__nav">
       <div class="sidebar__section-label">Main</div>
-      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="home-1.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
       <a href="users.html" class="sidebar__link"><i class="fas fa-users"></i> Users</a>
       <a href="bookings.html" class="sidebar__link active"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
       <div class="sidebar__section-label">Content</div>
@@ -32,7 +33,7 @@
       <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
       <div class="sidebar__section-label">System</div>
       <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
-      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+      <a href="../home-1.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
     </nav>
     <div class="sidebar__footer">
       <div class="sidebar__user">
@@ -46,11 +47,14 @@
     <header class="dash-header">
       <div class="dash-header__left">
         <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
-        <div><div class="dash-header__title">Bookings & Orders</div><div class="dash-header__subtitle">Manage all reading sessions</div></div>
+        <div>
+          <h1 class="dash-header__title">Bookings &amp; Orders</h1>
+          <div class="dash-header__subtitle">Manage all reading sessions</div>
+        </div>
       </div>
       <div class="dash-header__right">
         <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search bookings..." aria-label="Search"></div>
-        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><span>RTL</span></button>
         <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
         <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
       </div>
@@ -60,7 +64,7 @@
       <!-- Section 1: Calendar Overview (simplified) -->
       <div class="dash-panel" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel__header">
-          <div class="dash-panel__title"><i class="fas fa-calendar" style="color:var(--clr-accent);"></i> April 2025</div>
+          <h2 class="dash-panel__title"><i class="fas fa-calendar" style="color:var(--clr-accent);"></i> April 2025</h2>
           <div style="display:flex;gap:var(--sp-2);">
             <button class="btn btn--ghost btn--sm"><i class="fas fa-chevron-left"></i></button>
             <button class="btn btn--ghost btn--sm">Today</button>
@@ -107,7 +111,7 @@
       <!-- Section 2: Bookings List -->
       <div class="dash-panel" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel__header">
-          <div class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> All Bookings</div>
+          <h2 class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> All Bookings</h2>
           <div style="display:flex;gap:var(--sp-2);">
             <select style="padding:6px 12px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
               <option>All Status</option><option>Confirmed</option><option>Pending</option><option>Completed</option><option>Cancelled</option>
@@ -116,7 +120,7 @@
           </div>
         </div>
         <div class="dash-panel__body dash-panel__body--no-pad">
-          <div style="overflow-x:auto;">
+
             <div class="dash-table-wrap"><table class="dash-table">
               <thead><tr><th>ID</th><th>Client</th><th>Service</th><th>Reader</th><th>Date & Time</th><th>Status</th><th>Payment</th><th>Actions</th></tr></thead>
               <tbody>
@@ -154,7 +158,6 @@
                 </tr>
               </tbody>
             </table></div>
-          </div>
         </div>
       </div>
 
@@ -162,7 +165,7 @@
       <div class="grid grid--3" style="margin-bottom:var(--sp-6);">
         <!-- Status Management -->
         <div class="dash-panel">
-          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-tasks" style="color:var(--clr-success);"></i> Status Overview</div></div>
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-tasks" style="color:var(--clr-success);"></i> Status Overview</h2></div>
           <div class="dash-panel__body">
             <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
               <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:var(--fs-sm);">Confirmed</span><span class="badge badge--success">12</span></div>
@@ -177,7 +180,7 @@
 
         <!-- Payment Tracking -->
         <div class="dash-panel">
-          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-credit-card" style="color:var(--clr-secondary);"></i> Payment Summary</div></div>
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-credit-card" style="color:var(--clr-secondary);"></i> Payment Summary</h2></div>
           <div class="dash-panel__body">
             <div style="text-align:center;margin-bottom:var(--sp-4);">
               <div style="font-family:var(--ff-heading);font-size:var(--fs-2xl);font-weight:700;color:var(--clr-primary);">$3,240</div>
@@ -193,7 +196,7 @@
 
         <!-- Reader Assignment -->
         <div class="dash-panel">
-          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-user-tie" style="color:var(--clr-info);"></i> Reader Load</div></div>
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-user-tie" style="color:var(--clr-info);"></i> Reader Load</h2></div>
           <div class="dash-panel__body">
             <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
               <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -221,3 +224,9 @@
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+

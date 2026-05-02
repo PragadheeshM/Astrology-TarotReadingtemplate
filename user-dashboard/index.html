@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Dashboard — CelestiaAura</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicons/favicon.png">
   <meta name="description" content="Your personal spiritual dashboard. Track readings, manage bookings, and explore your cosmic journey.">
   <meta name="robots" content="noindex, nofollow">
 
@@ -19,8 +20,8 @@
 
   <style>
     /* User Dashboard Specific Overrides */
-    .sidebar { background: linear-gradient(180deg, var(--clr-surface) 0%, rgba(74,29,150,0.03) 100%); }
-    [data-theme="dark"] .sidebar { background: linear-gradient(180deg, var(--clr-surface) 0%, rgba(124,58,237,0.05) 100%); }
+    .sidebar { background: var(--clr-surface); }
+    [data-theme="dark"] .sidebar { background: var(--clr-surface); }
 
     .user-welcome {
       background: var(--gradient-primary);
@@ -175,16 +176,16 @@
   <!-- ============ USER SIDEBAR ============ -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__header">
-      <a href="../index.html" class="sidebar__logo">
+      <a href="../home-1.html" class="sidebar__logo">
         <div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div>
         <span class="sidebar__logo-text">CelestiaAura</span>
       </a>
-      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+
     </div>
 
     <nav class="sidebar__nav" aria-label="User Dashboard Navigation">
       <div class="sidebar__section-label">My Space</div>
-      <a href="index.html" class="sidebar__link active"><i class="fas fa-home"></i> My Dashboard</a>
+      <a href="home-1.html" class="sidebar__link active"><i class="fas fa-home"></i> My Dashboard</a>
       <a href="my-bookings.html" class="sidebar__link"><i class="fas fa-calendar-alt"></i> My Bookings</a>
       <a href="my-readings.html" class="sidebar__link"><i class="fas fa-hand-sparkles"></i> My Readings</a>
       <a href="horoscope.html" class="sidebar__link"><i class="fas fa-sun"></i> Daily Horoscope</a>
@@ -197,7 +198,7 @@
       <div class="sidebar__section-label">Account</div>
       <a href="my-profile.html" class="sidebar__link"><i class="fas fa-user"></i> My Profile</a>
       <a href="my-subscription.html" class="sidebar__link"><i class="fas fa-crown"></i> Subscription</a>
-      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+      <a href="../home-1.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
     </nav>
 
     <div class="sidebar__footer">
@@ -226,7 +227,7 @@
           <i class="fas fa-search"></i>
           <input type="text" placeholder="Search..." aria-label="Search">
         </div>
-        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL" title="RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL" title="RTL"><span>RTL</span></button>
         <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme" title="Theme"><i class="fas fa-moon"></i></button>
         <button class="dash-header__icon-btn" aria-label="Notifications" title="Notifications">
           <i class="fas fa-bell"></i>
@@ -241,7 +242,7 @@
       <div class="user-welcome">
         <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--sp-4);">
           <div>
-            <h1>Welcome back, Arya! ✨</h1>
+            <h1>Welcome back, Arya! <i class="fas fa-sparkles" style="color:var(--clr-secondary-light); font-size: 0.8em;"></i></h1>
             <p>The stars have aligned beautifully for you today. Your cosmic energy is at its peak.</p>
             <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;">
               <span class="zodiac-badge"><i class="fas fa-star"></i> Pisces — Sun Sign</span>
@@ -281,7 +282,7 @@
             <div class="stat-card-dash__icon stat-card-dash__icon--blue"><i class="fas fa-fire"></i></div>
           </div>
           <div class="stat-card-dash__value">7</div>
-          <div class="stat-card-dash__label">Day Streak 🔥</div>
+          <div class="stat-card-dash__label">Day Streak <i class="fas fa-fire" style="color:var(--clr-secondary); font-size: 0.9em; margin-left: 4px;"></i></div>
         </div>
       </div>
 
@@ -289,7 +290,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-spider" style="color:var(--clr-accent);"></i> My Cosmic Profile</div>
+            <h2 class="dash-panel__title"><i class="fas fa-wand-magic-sparkles" style="color:var(--clr-accent);"></i> My Cosmic Profile</h2>
             <span class="badge badge--primary" style="font-size:var(--fs-xs);">Pisces</span>
           </div>
           <div class="dash-panel__body">
@@ -301,7 +302,7 @@
 
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-chart-bar" style="color:var(--clr-secondary);"></i> Monthly Spending</div>
+            <h2 class="dash-panel__title"><i class="fas fa-receipt" style="color:var(--clr-secondary);"></i> Monthly Spending</h2>
             <select style="padding:4px 8px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
               <option selected>Last 6 Months</option>
               <option>This Year</option>
@@ -319,22 +320,41 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-bullseye" style="color:var(--clr-success);"></i> Reading Goals</div>
+            <h2 class="dash-panel__title"><i class="fas fa-compass-drafting" style="color:var(--clr-success);"></i> Reading Goals</h2>
           </div>
           <div class="dash-panel__body">
-            <div class="chart-container chart-container--sm">
-              <canvas id="userGoalsChart"></canvas>
+            <div style="display:flex;align-items:center;gap:var(--sp-4);">
+              <div class="chart-container chart-container--sm" style="flex:1;height:180px;">
+                <canvas id="userGoalsChart"></canvas>
+              </div>
+              <div style="flex:0 0 120px;">
+                <div style="margin-bottom:var(--sp-3);">
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-secondary);display:flex;align-items:center;gap:6px;margin-bottom:2px;"><span style="width:10px;height:10px;border-radius:50%;background:#8B5CF6;display:inline-block;"></span> Monthly</div>
+                  <div style="font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--clr-text);">5 / 8 Readings</div>
+                </div>
+                <div style="margin-bottom:var(--sp-3);">
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-secondary);display:flex;align-items:center;gap:6px;margin-bottom:2px;"><span style="width:10px;height:10px;border-radius:50%;background:#D4A843;display:inline-block;"></span> Yearly</div>
+                  <div style="font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--clr-text);">24 / 50 Readings</div>
+                </div>
+                <div>
+                  <div style="font-size:var(--fs-xs);color:var(--clr-text-secondary);display:flex;align-items:center;gap:6px;margin-bottom:2px;"><span style="width:10px;height:10px;border-radius:50%;background:#10B981;display:inline-block;"></span> Hours</div>
+                  <div style="font-size:var(--fs-sm);font-weight:var(--fw-bold);color:var(--clr-text);">18 / 30 Total</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-face-smile" style="color:var(--clr-info);"></i> Satisfaction Trend</div>
+            <h2 class="dash-panel__title"><i class="fas fa-chart-line" style="color:var(--clr-info);"></i> Satisfaction Trend</h2>
           </div>
           <div class="dash-panel__body">
             <div class="chart-container chart-container--sm">
               <canvas id="userSatisfactionChart"></canvas>
+            </div>
+            <div style="margin-top:var(--sp-2);text-align:center;font-size:var(--fs-xs);color:var(--clr-text-secondary);">
+              <span style="font-weight:var(--fw-bold);color:var(--clr-success);">4.9/5.0</span> Avg. Customer Satisfaction
             </div>
           </div>
         </div>
@@ -344,7 +364,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-calendar" style="color:var(--clr-accent);"></i> Upcoming Sessions</div>
+            <h2 class="dash-panel__title"><i class="fas fa-calendar-check" style="color:var(--clr-accent);"></i> Upcoming Sessions</h2>
             <a href="my-bookings.html" class="btn btn--ghost btn--sm">View All</a>
           </div>
           <div class="dash-panel__body">
@@ -388,7 +408,7 @@
 
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-bolt" style="color:var(--clr-secondary);"></i> Today's Cosmic Energy</div>
+            <h2 class="dash-panel__title"><i class="fas fa-bolt-lightning" style="color:var(--clr-secondary);"></i> Today's Cosmic Energy</h2>
           </div>
           <div class="dash-panel__body">
             <p style="font-size:var(--fs-sm);color:var(--clr-text-secondary);margin-bottom:var(--sp-5);">Your planetary alignments for today, April 14, 2025.</p>
@@ -427,7 +447,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-clock-rotate-left" style="color:var(--clr-accent);"></i> Recent Readings</div>
+            <h2 class="dash-panel__title"><i class="fas fa-clock-rotate-left" style="color:var(--clr-accent);"></i> Recent Readings</h2>
             <a href="my-readings.html" class="btn btn--ghost btn--sm">View All</a>
           </div>
           <div class="dash-panel__body">
@@ -506,10 +526,10 @@
         </div>
         <div class="dash-panel__body">
           <div class="quick-actions" style="grid-template-columns:repeat(4,1fr);">
-            <a href="../services.html" class="quick-action"><i class="fas fa-plus-circle" style="color:var(--clr-accent);"></i> Book Reading</a>
-            <a href="horoscope.html" class="quick-action"><i class="fas fa-sun" style="color:var(--clr-secondary);"></i> Daily Horoscope</a>
-            <a href="birth-chart.html" class="quick-action"><i class="fas fa-chart-pie" style="color:var(--clr-info);"></i> Birth Chart</a>
-            <a href="../blog.html" class="quick-action"><i class="fas fa-book-open" style="color:var(--clr-success);"></i> Cosmic Blog</a>
+            <a href="../services.html" class="quick-action"><i class="fas fa-calendar-plus" style="color:var(--clr-accent);"></i> Book Reading</a>
+            <a href="horoscope.html" class="quick-action"><i class="fas fa-moon" style="color:var(--clr-secondary);"></i> Daily Horoscope</a>
+            <a href="birth-chart.html" class="quick-action"><i class="fas fa-atom" style="color:var(--clr-info);"></i> Birth Chart</a>
+            <a href="../blog.html" class="quick-action"><i class="fas fa-scroll" style="color:var(--clr-success);"></i> Cosmic Blog</a>
           </div>
         </div>
       </div>
@@ -575,3 +595,8 @@
   </script>
 </body>
 </html>
+
+
+
+
+

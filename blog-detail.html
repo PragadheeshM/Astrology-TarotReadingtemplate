@@ -4,143 +4,207 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Understanding Your Birth Chart — CelestiaAura Blog</title>
+  <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png">
   <meta name="description" content="Learn how to read your natal birth chart. Discover what planets, houses, and aspects reveal about your personality, strengths, and destiny.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/dark-mode.css"><link rel="stylesheet" href="assets/css/rtl.css"><link rel="stylesheet" href="assets/css/responsive.css">
   <style>
-    .article-header{position:relative;min-height:450px;display:flex;align-items:flex-end;margin-top:var(--header-h);}
-    .article-header__bg{position:absolute;inset:0;z-index:-2;}
-    .article-header__bg img{width:100%;height:100%;object-fit:cover;}
-    .article-header__overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,10,26,0.9) 0%,rgba(15,10,26,0.3) 100%);z-index:-1;}
-    .article-header__content{padding:var(--sp-12) 0;color:#FFF;max-width:800px;}
-    .article-header__title{color:#FFF;font-size:var(--fs-4xl);margin-bottom:var(--sp-5);}
-    .article-meta{display:flex;align-items:center;gap:var(--sp-6);flex-wrap:wrap;font-size:var(--fs-sm);color:rgba(255,255,255,0.7);}
+    .article-header{display:grid;grid-template-columns:1fr 1fr;min-height:600px;align-items:center;background:var(--clr-bg);margin-top:var(--header-h);overflow:hidden;}
+    .article-header__content{padding:var(--sp-12);max-width:100%;}
+    .article-header__title{font-size:var(--fs-4xl);margin-bottom:var(--sp-5);color:var(--clr-text);}
+    .article-header__intro{font-size:var(--fs-md);color:var(--clr-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-6);}
+    .article-header__img{height:100%;}
+    .article-header__img img{width:100%;height:100%;object-fit:cover;}
+    .article-meta{display:flex;align-items:center;gap:var(--sp-6);flex-wrap:wrap;font-size:var(--fs-sm);color:var(--clr-text-muted);margin-bottom:var(--sp-6);}
     .article-meta__author{display:flex;align-items:center;gap:var(--sp-3);}
     .article-meta__author img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-secondary);}
-    .share-buttons{display:flex;gap:var(--sp-2);margin-top:var(--sp-5);}
-    .share-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);font-size:var(--fs-sm);transition:all var(--transition-fast);background:transparent;cursor:pointer;}
+    .share-buttons{display:flex;gap:var(--sp-2);}
+    .share-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-full);border:1px solid var(--clr-border);color:var(--clr-text-muted);font-size:var(--fs-sm);transition:all var(--transition-fast);background:transparent;cursor:pointer;}
     .share-btn:hover{background:var(--clr-accent);color:#FFF;border-color:var(--clr-accent);}
-    .article-body{max-width:800px;margin:0 auto;padding:var(--sp-12) var(--sp-6);}
-    .article-body h2{font-size:var(--fs-2xl);margin:var(--sp-10) 0 var(--sp-4);}
-    .article-body h3{font-size:var(--fs-xl);margin:var(--sp-8) 0 var(--sp-3);}
+    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:var(--sp-12);max-width:1200px;margin:0 auto;padding:var(--sp-12) var(--sp-6);}
+    .article-body{max-width:100%;margin:0;padding:0;}
+    .article-body h2{font-size:var(--fs-2xl);margin:var(--sp-10) 0 var(--sp-4);color:var(--clr-primary);}
+    .article-body h3{font-size:var(--fs-xl);margin:var(--sp-8) 0 var(--sp-3);color:var(--clr-text);}
     .article-body p{font-size:var(--fs-md);color:var(--clr-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-5);}
-    .article-body img{border-radius:var(--radius-lg);margin:var(--sp-6) 0;box-shadow:var(--shadow-md);}
-    .pull-quote{border-left:3px solid var(--clr-secondary);padding:var(--sp-4) var(--sp-6);margin:var(--sp-8) 0;font-family:var(--ff-heading);font-size:var(--fs-xl);font-style:italic;color:var(--clr-text);line-height:var(--lh-snug);}
-    .author-bio{display:flex;gap:var(--sp-6);padding:var(--sp-8);background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);margin-top:var(--sp-12);}
-    .author-bio__photo{width:80px;height:80px;border-radius:var(--radius-full);object-fit:cover;flex-shrink:0;}
-    .author-bio__name{font-size:var(--fs-lg);font-weight:var(--fw-semibold);margin-bottom:var(--sp-2);}
-    .author-bio__text{font-size:var(--fs-sm);color:var(--clr-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-3);}
-    .author-bio__links{display:flex;gap:var(--sp-3);}
-    .author-bio__links a{color:var(--clr-text-muted);font-size:var(--fs-base);transition:color var(--transition-fast);}
-    .author-bio__links a:hover{color:var(--clr-accent);}
-    .related-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-6);}
-    .comment-form textarea{min-height:120px;}
-    .comment{display:flex;gap:var(--sp-4);padding:var(--sp-5) 0;border-bottom:1px solid var(--clr-border-light);}
-    .comment__avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;}
-    .comment__name{font-weight:var(--fw-semibold);font-size:var(--fs-sm);margin-bottom:var(--sp-1);}
-    .comment__date{font-size:var(--fs-xs);color:var(--clr-text-muted);margin-bottom:var(--sp-2);}
-    .comment__text{font-size:var(--fs-sm);color:var(--clr-text-secondary);line-height:var(--lh-relaxed);}
-    @media(max-width:767px){.related-posts{grid-template-columns:1fr;}.author-bio{flex-direction:column;align-items:center;text-align:center;}.author-bio__links{justify-content:center;}}
+    .article-body ul{margin-bottom:var(--sp-6);padding-left:var(--sp-6);}
+    .article-body li{margin-bottom:var(--sp-2);color:var(--clr-text-secondary);font-size:var(--fs-md);}
+    .sidebar-widget{background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);padding:var(--sp-6);margin-bottom:var(--sp-8);}
+    .sidebar-widget__title{font-size:var(--fs-lg);margin-bottom:var(--sp-5);padding-bottom:var(--sp-3);border-bottom:2px solid var(--clr-border-light);color:var(--clr-text);}
+    .post-mini{display:flex;gap:var(--sp-4);margin-bottom:var(--sp-5);text-decoration:none;align-items:center;}
+    .post-mini__img{width:70px;height:70px;border-radius:var(--radius-md);object-fit:cover;flex-shrink:0;}
+    .post-mini__title{font-size:var(--fs-sm);font-weight:var(--fw-semibold);color:var(--clr-text);line-height:var(--lh-snug);transition:color var(--transition-fast);}
+    .post-mini:hover .post-mini__title{color:var(--clr-accent);}
+    @media(max-width:1023px){.article-layout{grid-template-columns:1fr;}.sidebar{display:none;}}
+    @media(max-width:767px){.author-bio{flex-direction:column;align-items:center;text-align:center;}.author-bio__links{justify-content:center;}}
   </style>
 </head>
 <body>
   <!-- NAVBAR -->
-  <header class="navbar" id="navbar"><div class="navbar__inner"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="navbar__logo-text">CelestiaAura</span></a><nav class="navbar__menu"><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu"><a href="home-1.html" class="navbar__dropdown-item">Home 1</a><a href="home-2.html" class="navbar__dropdown-item">Home 2</a></div></div><a href="services.html" class="navbar__link">Services</a><a href="blog.html" class="navbar__link active">Blog</a><a href="about.html" class="navbar__link">About</a><a href="pricing.html" class="navbar__link">Pricing</a><a href="contact.html" class="navbar__link">Contact</a><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu" role="menu"><a href="dashboard/" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a><a href="user-dashboard/" class="navbar__dropdown-item" role="menuitem">User Dashboard</a></div></div></nav><div class="navbar__actions"><button class="navbar__icon-btn rtl-toggle"><i class="fas fa-globe"></i></button><button class="navbar__icon-btn theme-toggle"><i class="fas fa-moon"></i></button><a href="login.html" class="btn btn--primary btn--sm">Sign In</a><button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+  <header class="navbar" id="navbar"><div class="navbar__inner"><a href="home-1.html" class="navbar__logo"><div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="navbar__logo-text">CelestiaAura</span></a><nav class="navbar__menu"><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu"><a href="home-1.html" class="navbar__dropdown-item">Home 1</a><a href="home-2.html" class="navbar__dropdown-item">Home 2</a></div></div><a href="services.html" class="navbar__link">Services</a><a href="blog.html" class="navbar__link active">Blog</a><a href="about.html" class="navbar__link">About</a><a href="pricing.html" class="navbar__link">Pricing</a><a href="contact.html" class="navbar__link">Contact</a><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu" role="menu"><a href="dashboard/index.html" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__dropdown-item" role="menuitem">User Dashboard</a></div></div></nav><div class="navbar__actions"><button class="navbar__icon-btn rtl-toggle"><span>RTL</span></button><button class="navbar__icon-btn theme-toggle"><i class="fas fa-moon"></i></button><a href="login.html" class="btn btn--primary btn--sm">Sign In</a><button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
           <span class="navbar__hamburger-bar"></span>
           <span class="navbar__hamburger-bar"></span>
           <span class="navbar__hamburger-bar"></span>
-        </button></div></div><div class="navbar__mobile-menu"><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="home-1.html" class="navbar__mobile-link">Home 1</a><a href="home-2.html" class="navbar__mobile-link">Home 2</a></div></div><a href="services.html" class="navbar__mobile-link">Services</a><a href="blog.html" class="navbar__mobile-link active">Blog</a><a href="about.html" class="navbar__mobile-link">About</a><a href="pricing.html" class="navbar__mobile-link">Pricing</a><a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link">Sign In</a></div></header>
+        </button></div></div><div class="navbar__mobile-menu"><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="home-1.html" class="navbar__mobile-link">Home 1</a><a href="home-2.html" class="navbar__mobile-link">Home 2</a></div></div><a href="services.html" class="navbar__mobile-link">Services</a><a href="blog.html" class="navbar__mobile-link active">Blog</a><a href="about.html" class="navbar__mobile-link">About</a><a href="pricing.html" class="navbar__mobile-link">Pricing</a><a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/index.html" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link">Sign In</a></div></header>
 
   <main>
     <!-- SECTION 1: ARTICLE HEADER -->
     <section class="article-header">
-      <div class="article-header__bg"><img src="assets/images/services/birth-chart.png" alt="Birth chart analysis with zodiac constellations" loading="eager"></div>
-      <div class="article-header__overlay"></div>
-      <div class="container">
-        <div class="article-header__content">
-          <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><a href="blog.html">Blog</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><span>Birth Chart Guide</span></div>
-          <h1 class="article-header__title">Understanding Your Birth Chart: A Complete Beginner's Guide</h1>
-          <div class="article-meta">
-            <div class="article-meta__author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Orion Starfield"><div><strong style="color:#FFF;">Orion Starfield</strong><br>Chief Astrologer</div></div>
-            <span><i class="fas fa-calendar"></i> March 15, 2025</span>
-            <span><i class="fas fa-clock"></i> 12 min read</span>
+      <div class="article-header__content">
+        <div class="breadcrumb"><a href="home-1.html">Home</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><a href="blog.html">Blog</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><span>Birth Chart Guide</span></div>
+        <h1 class="article-header__title">Understanding Your Birth Chart: A Complete Beginner's Guide</h1>
+        <p class="article-header__intro">Unlock the mysteries of your soul with a deep dive into your natal chart. Discover how the celestial bodies shaped your personality at the exact moment of your arrival on Earth.</p>
+        
+        <div class="article-meta">
+          <div class="article-meta__author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Orion Starfield">
+            <div><strong style="color:var(--clr-text);">Orion Starfield</strong><br>Chief Astrologer</div>
           </div>
-          <div class="share-buttons">
-            <button class="share-btn" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
-            <button class="share-btn" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></button>
-            <button class="share-btn" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></button>
-            <button class="share-btn" aria-label="Copy link"><i class="fas fa-link"></i></button>
-          </div>
+          <span><i class="fas fa-calendar"></i> March 15, 2025</span>
+          <span><i class="fas fa-clock"></i> 12 min read</span>
         </div>
+
+        <div class="share-buttons">
+          <button class="share-btn" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
+          <button class="share-btn" aria-label="Share on Twitter"><i class="fab fa-x-twitter"></i></button>
+          <button class="share-btn" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></button>
+          <button class="share-btn" aria-label="Copy link"><i class="fas fa-link"></i></button>
+        </div>
+      </div>
+      <div class="article-header__img">
+        <img src="assets/images/services/birth-chart.png" alt="Birth chart analysis with zodiac constellations" loading="eager">
       </div>
     </section>
 
     <!-- SECTION 2: ARTICLE CONTENT -->
-    <article class="article-body">
-      <p>Your birth chart — also known as a natal chart — is essentially a map of the sky at the exact moment you were born. It captures the positions of the Sun, Moon, and all the planets relative to Earth, creating a unique cosmic fingerprint that is entirely yours.</p>
+    <div class="article-layout">
+      <section class="article-body">
+        <p>Your birth chart — also known as a natal chart — is essentially a map of the sky at the exact moment you were born. It captures the positions of the Sun, Moon, and all the planets relative to Earth, creating a unique cosmic fingerprint that is entirely yours.</p>
 
-      <h2>What Is a Birth Chart?</h2>
-      <p>Think of your birth chart as a celestial blueprint. While your Sun sign (what most people refer to as their "zodiac sign") is just one piece of the puzzle, your birth chart contains information about all the planetary positions, the twelve houses they occupied, and the geometric relationships (aspects) between them.</p>
-      <p>This intricate web of cosmic data reveals profound insights into your personality, emotional patterns, communication style, relationship tendencies, career inclinations, and spiritual path.</p>
+        <h2>What Is a Birth Chart?</h2>
+        <p>Think of your birth chart as a celestial blueprint. While your Sun sign (what most people refer to as their "zodiac sign") is just one piece of the puzzle, your birth chart contains information about all the planetary positions, the twelve houses they occupied, and the geometric relationships (aspects) between them.</p>
+        <p>This intricate web of cosmic data reveals profound insights into your personality, emotional patterns, communication style, relationship tendencies, career inclinations, and spiritual path.</p>
 
-      <div class="pull-quote">"The stars impel, they do not compel. Your birth chart is a map of potential — not a fixed destiny."</div>
+        <div class="pull-quote">"The stars impel, they do not compel. Your birth chart is a map of potential — not a fixed destiny."</div>
 
-      <h2>The Three Foundation Pillars</h2>
-      <h3>1. Your Sun Sign</h3>
-      <p>Your Sun sign represents your core identity, ego, and life purpose. It's the sign the Sun was passing through at the time of your birth. This is the sign you likely already know — Aries, Taurus, Gemini, and so on. It governs your fundamental sense of self and the qualities you're here to develop.</p>
+        <h2>Key Components of Your Chart</h2>
+        <p>To truly understand your natal chart, you must look at the interplay between three main variables: the planets (the what), the signs (the how), and the houses (the where).</p>
+        <ul>
+          <li><strong>The Planets:</strong> These represent different parts of your psyche — your drive, your emotions, your communication style, and your values.</li>
+          <li><strong>The Zodiac Signs:</strong> These describe the "flavor" or style in which those planetary energies are expressed.</li>
+          <li><strong>The Houses:</strong> These 12 sectors of the chart represent specific areas of life, such as career, relationships, or home.</li>
+        </ul>
 
-      <h3>2. Your Moon Sign</h3>
-      <p>Your Moon sign reveals your emotional inner world, instincts, and subconscious patterns. While your Sun sign is how you shine in the world, your Moon sign is how you feel and process emotions. Understanding your Moon sign can unlock deep self-awareness about your emotional needs and nurturing style.</p>
+        <h2>The Three Foundation Pillars</h2>
+        <h3>1. Your Sun Sign (Identity)</h3>
+        <p>Your Sun sign represents your core identity, ego, and life purpose. It's the sign the Sun was passing through at the time of your birth. It governs your fundamental sense of self and the qualities you're here to develop.</p>
 
-      <h3>3. Your Rising Sign (Ascendant)</h3>
-      <p>Your Rising sign, or Ascendant, is the zodiac sign that was ascending on the eastern horizon at your exact time of birth. It represents the mask you wear to the world, your first impression on others, and your approach to new situations. Many astrologers consider it as important as the Sun sign.</p>
+        <h3>2. Your Moon Sign (Inner Self)</h3>
+        <p>Your Moon sign reveals your emotional inner world, instincts, and subconscious patterns. Understanding your Moon sign can unlock deep self-awareness about your emotional needs and nurturing style.</p>
 
-      <img src="assets/images/services/crystal-healing.png" alt="Crystals used for spiritual alignment during astrological readings" loading="lazy">
+        <h3>3. Your Rising Sign (Persona)</h3>
+        <p>Your Rising sign, or Ascendant, is the mask you wear to the world. It represents your first impression on others and your approach to new situations.</p>
 
-      <h2>The Twelve Houses</h2>
-      <p>Your birth chart is divided into twelve sectors called "houses," each governing a different area of life. The first house, starting at your Ascendant, represents self and appearance. Moving counterclockwise, each subsequent house addresses finances, communication, home, creativity, health, partnerships, transformation, philosophy, career, friendships, and the subconscious.</p>
+        <img src="assets/images/services/crystal-healing.png" alt="Crystals used for spiritual alignment during astrological readings" loading="lazy" style="width:100%; height:auto; border-radius:var(--radius-lg); margin:var(--sp-6) 0;">
 
-      <h2>Getting Your Chart Read</h2>
-      <p>While there are many free birth chart calculators online, having a professional astrologer interpret your chart adds layers of depth and nuance that algorithms simply cannot match. A skilled reader will weave together the planetary positions, house placements, and aspects into a cohesive narrative that speaks directly to your lived experience.</p>
-      <p>At CelestiaAura, our certified astrologers provide comprehensive birth chart readings that go beyond surface-level interpretations. Whether you're seeking clarity about your career, relationships, or spiritual path, your birth chart holds the answers.</p>
-    </article>
+        <h2>How to Read Your Chart</h2>
+        <p>Reading a birth chart is an art form that takes time to master. Start by identifying your "Big Three" (Sun, Moon, and Rising). Next, look at the clusters of planets in specific houses to see where your life's focus lies.</p>
+        <p>Don't be overwhelmed by the complexity. Every symbol in the chart is a piece of a story that is uniquely yours. As you study your chart, you'll begin to see the beautiful symmetry of your own existence reflected in the movements of the stars.</p>
 
-    <!-- SECTION 3: AUTHOR BIO -->
-    <section class="section--sm">
-      <div class="container container--narrow">
+        <h2>Professional Interpretation</h2>
+        <p>While algorithms can give you the raw data, a professional astrologer adds layer of depth and nuance. They can identify complex patterns like "Stelliums," "T-Squares," or "Grand Trines" that provide critical context to your life's journey.</p>
+        <p>At CelestiaAura, our certified astrologers provide comprehensive birth chart readings that go beyond surface-level interpretations. Whether you're seeking clarity about your career, relationships, or spiritual path, your birth chart holds the keys to your evolution.</p>
+
+        <!-- AUTHOR BIO MOVED INSIDE CONTENT FOR BETTER FLOW -->
         <div class="author-bio">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=face" alt="Orion Starfield" class="author-bio__photo">
           <div>
             <h3 class="author-bio__name">Orion Starfield</h3>
-            <p class="author-bio__text">Orion is CelestiaAura's Chief Astrologer with over 15 years of experience in Vedic and Western astrology. He specializes in birth chart analysis, transit forecasting, and relationship compatibility.</p>
+            <p class="author-bio__text">Orion is CelestiaAura's Chief Astrologer with over 15 years of experience in Vedic and Western astrology. He specializes in birth chart analysis and transit forecasting.</p>
             <div class="author-bio__links">
               <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
               <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- NEW SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h3 class="sidebar-widget__title">Popular Posts</h3>
+          <a href="blog-detail.html" class="post-mini">
+            <img src="assets/images/services/tarot-reading.png" alt="Post" class="post-mini__img">
+            <span class="post-mini__title">The Major Arcana: Archetypes of the Soul</span>
+          </a>
+          <a href="blog-detail.html" class="post-mini">
+            <img src="assets/images/services/crystal-healing.png" alt="Post" class="post-mini__img">
+            <span class="post-mini__title">Top 10 Crystals for Spiritual Protection</span>
+          </a>
+          <a href="blog-detail.html" class="post-mini">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=100&h=100&fit=crop" alt="Post" class="post-mini__img">
+            <span class="post-mini__title">Mercury Retrograde 2025 Survival Guide</span>
+          </a>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3 class="sidebar-widget__title">Categories</h3>
+          <ul style="list-style:none; padding:0;">
+            <li style="display:flex; justify-content:space-between; margin-bottom:var(--sp-3);"><a href="#" style="color:var(--clr-text-secondary); text-decoration:none;">Astrology</a> <span style="color:var(--clr-text-muted);">(12)</span></li>
+            <li style="display:flex; justify-content:space-between; margin-bottom:var(--sp-3);"><a href="#" style="color:var(--clr-text-secondary); text-decoration:none;">Tarot</a> <span style="color:var(--clr-text-muted);">(8)</span></li>
+            <li style="display:flex; justify-content:space-between; margin-bottom:var(--sp-3);"><a href="#" style="color:var(--clr-text-secondary); text-decoration:none;">Healing</a> <span style="color:var(--clr-text-muted);">(5)</span></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background:var(--gradient-primary); border:none; color:#FFF; text-align:center;">
+          <h3 class="sidebar-widget__title" style="color:#FFF; border-bottom-color:rgba(255,255,255,0.2);">Unlock Your Destiny</h3>
+          <p style="font-size:var(--fs-sm); color:rgba(255,255,255,0.8); margin-bottom:var(--sp-6);">Book a private session with our master astrologers today.</p>
+          <a href="services.html" class="btn btn--gold btn--sm btn--block">Book Now</a>
+        </div>
+      </aside>
+    </div>
 
     <!-- SECTION 4: RELATED ARTICLES -->
     <section class="section" style="background:var(--clr-bg-alt);">
       <div class="container">
         <div class="section-header reveal"><span class="section-label">Keep Reading</span><h2>Related Articles</h2></div>
         <div class="related-posts" data-stagger="100">
-          <div class="blog-card reveal" style="background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;">
+          <div class="blog-card blog-card--center reveal">
             <img src="assets/images/services/tarot-reading.png" alt="Tarot Major Arcana guide" style="width:100%;height:180px;object-fit:cover;" loading="lazy">
-            <div style="padding:var(--sp-5);"><span style="font-size:var(--fs-xs);color:var(--clr-accent);font-weight:600;">Tarot</span><h3 style="font-size:var(--fs-base);margin:var(--sp-2) 0;"><a href="blog-detail.html" style="color:var(--clr-text);">The Major Arcana Explained</a></h3><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">8 min read</span></div>
+            <div class="blog-card__body" style="padding:var(--sp-5);">
+              <span style="font-size:var(--fs-xs);color:var(--clr-accent);font-weight:600;">Tarot</span>
+              <h3 style="font-size:var(--fs-base);margin:var(--sp-2) 0;"><a href="blog-detail.html" style="color:var(--clr-text);">The Major Arcana Explained</a></h3>
+              <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">8 min read</span>
+              <a href="blog-detail.html" class="card__link" style="margin-top:var(--sp-3);">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="blog-card reveal" style="background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;">
+          <div class="blog-card blog-card--center reveal">
             <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=300&fit=crop" alt="Mercury retrograde guide" style="width:100%;height:180px;object-fit:cover;" loading="lazy">
-            <div style="padding:var(--sp-5);"><span style="font-size:var(--fs-xs);color:var(--clr-accent);font-weight:600;">Astrology</span><h3 style="font-size:var(--fs-base);margin:var(--sp-2) 0;"><a href="blog-detail.html" style="color:var(--clr-text);">Mercury Retrograde Survival Guide</a></h3><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">10 min read</span></div>
+            <div class="blog-card__body" style="padding:var(--sp-5);">
+              <span style="font-size:var(--fs-xs);color:var(--clr-accent);font-weight:600;">Astrology</span>
+              <h3 style="font-size:var(--fs-base);margin:var(--sp-2) 0;"><a href="blog-detail.html" style="color:var(--clr-text);">Mercury Retrograde Survival</a></h3>
+              <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">10 min read</span>
+              <a href="blog-detail.html" class="card__link" style="margin-top:var(--sp-3);">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="blog-card reveal" style="background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;">
+          <div class="blog-card blog-card--center reveal">
             <img src="assets/images/services/crystal-healing.png" alt="Crystal healing properties" style="width:100%;height:180px;object-fit:cover;" loading="lazy">
-            <div style="padding:var(--sp-5);"><span style="font-size:var(--fs-xs);color:var(--clr-accent);font-weight:600;">Crystals</span><h3 style="font-size:var(--fs-base);margin:var(--sp-2) 0;"><a href="blog-detail.html" style="color:var(--clr-text);">Top 10 Protection Crystals</a></h3><span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">6 min read</span></div>
+            <div class="blog-card__body" style="padding:var(--sp-5);">
+              <span style="font-size:var(--fs-xs);color:var(--clr-accent);font-weight:600;">Crystals</span>
+              <h3 style="font-size:var(--fs-base);margin:var(--sp-2) 0;"><a href="blog-detail.html" style="color:var(--clr-text);">Top 10 Protection Crystals</a></h3>
+              <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">6 min read</span>
+              <a href="blog-detail.html" class="card__link" style="margin-top:var(--sp-3);">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card blog-card--center reveal">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&h=300&fit=crop" alt="Zodiac compatibility guide" style="width:100%;height:180px;object-fit:cover;" loading="lazy">
+            <div class="blog-card__body" style="padding:var(--sp-5);">
+              <span style="font-size:var(--fs-xs);color:var(--clr-accent);font-weight:600;">Zodiac</span>
+              <h3 style="font-size:var(--fs-base);margin:var(--sp-2) 0;"><a href="blog-detail.html" style="color:var(--clr-text);">Zodiac Love Compatibility</a></h3>
+              <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);">9 min read</span>
+              <a href="blog-detail.html" class="card__link" style="margin-top:var(--sp-3);">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -180,8 +244,82 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="footer__logo-text">CelestiaAura</span></a><p class="footer__desc">Connecting souls with the cosmos since 2015.</p><div class="footer__social"><a href="#" class="footer__social-link footer__social-link--facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="footer__social-link footer__social-link--twitter"><i class="fab fa-x-twitter"></i></a><a href="#" class="footer__social-link footer__social-link--instagram"><i class="fab fa-instagram"></i></a><a href="#" class="footer__social-link footer__social-link--youtube"><i class="fab fa-youtube"></i></a></div></div><div class="footer__column"><h4>Services</h4><a href="service-detail.html" class="footer__link">Tarot Reading</a><a href="service-detail.html" class="footer__link">Birth Chart</a><a href="service-detail.html" class="footer__link">Crystal Healing</a></div><div class="footer__column"><h4>Resources</h4><a href="blog.html" class="footer__link">Blog</a><a href="#" class="footer__link">Horoscope</a><a href="#" class="footer__link">Zodiac Guide</a></div><div class="footer__column"><h4>Company</h4><a href="about.html" class="footer__link">About</a><a href="pricing.html" class="footer__link">Pricing</a><a href="contact.html" class="footer__link">Contact</a></div><div class="footer__column"><h4>Newsletter</h4><div class="footer__newsletter"><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email"><button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button></form></div></div></div><div class="footer__bottom"><p>&copy; 2025 CelestiaAura.</p><div class="footer__bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div></div></div></footer>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <a href="home-1.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <i class="fas fa-star-of-david"></i>
+            </div>
+            <span class="footer__logo-text">CelestiaAura</span>
+          </a>
+          <p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link footer__social-link--facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer__column">
+          <h3>Services</h3>
+          <a href="service-detail.html" class="footer__link">Tarot Reading</a>
+          <a href="service-detail.html" class="footer__link">Birth Chart Analysis</a>
+          <a href="service-detail.html" class="footer__link">Crystal Healing</a>
+          <a href="service-detail.html" class="footer__link">Palmistry</a>
+          <a href="service-detail.html" class="footer__link">Numerology</a>
+        </div>
+
+        <!-- Resources Column -->
+        <div class="footer__column">
+          <h3>Resources</h3>
+          <a href="blog.html" class="footer__link">Blog & Articles</a>
+          <a href="#" class="footer__link">Daily Horoscope</a>
+          <a href="#" class="footer__link">Zodiac Guide</a>
+          <a href="#" class="footer__link">Free Birth Chart</a>
+          <a href="#" class="footer__link">Meditation Library</a>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer__column">
+          <h3>Company</h3>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Press Kit</a>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="footer__column">
+          <h3>Newsletter</h3>
+          <p class="footer__desc" style="max-width:100%;">Get weekly horoscopes and cosmic insights.</p>
+          <div class="footer__newsletter">
+            <form class="footer__newsletter-form">
+              <input type="email" class="footer__newsletter-input" placeholder="Your email" aria-label="Newsletter email">
+              <button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 CelestiaAura. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
   <script src="assets/js/theme.js"></script><script src="assets/js/rtl.js"></script><script src="assets/js/animations.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+

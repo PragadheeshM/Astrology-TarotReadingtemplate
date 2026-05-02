@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services — CelestiaAura | Astrology & Tarot Readings</title>
+  <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png">
   <meta name="description" content="Explore CelestiaAura's spiritual services including tarot reading, birth chart analysis, crystal healing, palmistry, and numerology consultations.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -13,14 +14,14 @@
     .services-filter{display:flex;align-items:center;justify-content:center;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-10);}
     .filter-btn{padding:var(--sp-2) var(--sp-5);font-size:var(--fs-sm);font-weight:var(--fw-medium);color:var(--clr-text-secondary);background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--radius-full);cursor:pointer;transition:all var(--transition-fast);font-family:var(--ff-body);}
     .filter-btn:hover,.filter-btn.active{background:var(--gradient-cta);color:#FFF;border-color:transparent;}
-    .service-card{background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;transition:all var(--transition-base);}
+    .service-card{background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;transition:all var(--transition-base);display:flex;flex-direction:column;height:100%;}
     .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover);}
     .service-card__image{width:100%;height:220px;object-fit:cover;}
-    .service-card__body{padding:var(--sp-6);}
+    .service-card__body{padding:var(--sp-6);flex:1;display:flex;flex-direction:column;}
     .service-card__price{display:inline-flex;align-items:center;gap:var(--sp-1);font-size:var(--fs-sm);font-weight:var(--fw-semibold);color:var(--clr-accent);background:rgba(124,58,237,0.06);padding:var(--sp-1) var(--sp-3);border-radius:var(--radius-full);margin-bottom:var(--sp-3);}
     .service-card__title{font-size:var(--fs-lg);margin-bottom:var(--sp-2);}
     .service-card__text{font-size:var(--fs-sm);color:var(--clr-text-secondary);margin-bottom:var(--sp-4);line-height:var(--lh-relaxed);}
-    .service-card__meta{display:flex;align-items:center;justify-content:space-between;}
+    .service-card__meta{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:var(--sp-4);border-top:1px solid var(--clr-border-light);}
     .service-card__duration{display:flex;align-items:center;gap:var(--sp-1);font-size:var(--fs-xs);color:var(--clr-text-muted);}
     .timeline{position:relative;max-width:700px;margin:0 auto;}
     .timeline::before{content:'';position:absolute;left:50%;width:2px;height:100%;background:var(--clr-border);transform:translateX(-50%);}
@@ -38,20 +39,20 @@
 </head>
 <body>
   <!-- NAVBAR -->
-  <header class="navbar" id="navbar"><div class="navbar__inner"><a href="index.html" class="navbar__logo"><div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="navbar__logo-text">CelestiaAura</span></a><nav class="navbar__menu"><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu"><a href="home-1.html" class="navbar__dropdown-item">Home 1</a><a href="home-2.html" class="navbar__dropdown-item">Home 2</a></div></div><a href="services.html" class="navbar__link active">Services</a><a href="blog.html" class="navbar__link">Blog</a><a href="about.html" class="navbar__link">About</a><a href="pricing.html" class="navbar__link">Pricing</a><a href="contact.html" class="navbar__link">Contact</a><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu" role="menu"><a href="dashboard/" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a><a href="user-dashboard/" class="navbar__dropdown-item" role="menuitem">User Dashboard</a></div></div></nav><div class="navbar__actions"><button class="navbar__icon-btn rtl-toggle"><i class="fas fa-globe"></i></button><button class="navbar__icon-btn theme-toggle"><i class="fas fa-moon"></i></button><a href="login.html" class="btn btn--primary btn--sm">Sign In</a><button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
+  <header class="navbar" id="navbar"><div class="navbar__inner"><a href="home-1.html" class="navbar__logo"><div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="navbar__logo-text">CelestiaAura</span></a><nav class="navbar__menu"><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu"><a href="home-1.html" class="navbar__dropdown-item">Home 1</a><a href="home-2.html" class="navbar__dropdown-item">Home 2</a></div></div><a href="services.html" class="navbar__link active">Services</a><a href="blog.html" class="navbar__link">Blog</a><a href="about.html" class="navbar__link">About</a><a href="pricing.html" class="navbar__link">Pricing</a><a href="contact.html" class="navbar__link">Contact</a><div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu" role="menu"><a href="dashboard/index.html" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__dropdown-item" role="menuitem">User Dashboard</a></div></div></nav><div class="navbar__actions"><button class="navbar__icon-btn rtl-toggle"><span>RTL</span></button><button class="navbar__icon-btn theme-toggle"><i class="fas fa-moon"></i></button><a href="login.html" class="btn btn--primary btn--sm">Sign In</a><button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false">
           <span class="navbar__hamburger-bar"></span>
           <span class="navbar__hamburger-bar"></span>
           <span class="navbar__hamburger-bar"></span>
-        </button></div></div><div class="navbar__mobile-menu"><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="home-1.html" class="navbar__mobile-link">Home 1</a><a href="home-2.html" class="navbar__mobile-link">Home 2</a></div></div><a href="services.html" class="navbar__mobile-link active">Services</a><a href="blog.html" class="navbar__mobile-link">Blog</a><a href="about.html" class="navbar__mobile-link">About</a><a href="pricing.html" class="navbar__mobile-link">Pricing</a><a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a></div></header>
+        </button></div></div><div class="navbar__mobile-menu"><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="home-1.html" class="navbar__mobile-link">Home 1</a><a href="home-2.html" class="navbar__mobile-link">Home 2</a></div></div><a href="services.html" class="navbar__mobile-link active">Services</a><a href="blog.html" class="navbar__mobile-link">Blog</a><a href="about.html" class="navbar__mobile-link">About</a><a href="pricing.html" class="navbar__mobile-link">Pricing</a><a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/index.html" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a></div></header>
 
   <main>
     <!-- SECTION 1: HERO -->
-    <section class="hero" style="min-height:400px;">
+    <section class="hero">
       <div class="hero__bg"><img src="assets/images/hero/hero-bg.png" alt="Mystical cosmic background" loading="eager"></div>
       <div class="hero__overlay"></div>
       <div class="container">
         <div class="hero__content hero__content--centered">
-          <div class="breadcrumb reveal"><a href="index.html">Home</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><span>Services</span></div>
+          <div class="breadcrumb reveal"><a href="home-1.html">Home</a><span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span><span>Services</span></div>
           <h1 class="hero__title reveal" data-delay="100">Our Spiritual Services</h1>
           <p class="hero__subtitle reveal" data-delay="200">Discover transformative readings and holistic healing experiences tailored to your soul's journey.</p>
         </div>
@@ -68,59 +69,78 @@
           <button class="filter-btn" data-filter="healing">Healing</button>
           <button class="filter-btn" data-filter="psychic">Psychic</button>
         </div>
-        <div class="grid grid--3" data-stagger="80">
-          <div class="service-card reveal" data-category="divination">
+        <h2 class="sr-only">Browse Our Services</h2>
+        <div class="grid grid--4" data-stagger="80">
+          <div class="service-card service-card--center reveal" data-category="divination">
             <img src="assets/images/services/tarot-reading.png" alt="Tarot card reading session" class="service-card__image" loading="lazy">
             <div class="service-card__body">
               <span class="service-card__price"><i class="fas fa-tag"></i> From $45</span>
               <h3 class="service-card__title">Tarot Reading</h3>
-              <p class="service-card__text">Unlock hidden truths and gain clarity through the ancient art of tarot. Let the cards illuminate your path forward.</p>
+              <p class="service-card__text">Unlock hidden truths and gain clarity through the ancient art of tarot cards.</p>
               <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 30-60 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
             </div>
           </div>
-          <div class="service-card reveal" data-category="astrology">
+          <div class="service-card service-card--center reveal" data-category="astrology">
             <img src="assets/images/services/birth-chart.png" alt="Birth chart analysis with celestial maps" class="service-card__image" loading="lazy">
             <div class="service-card__body">
               <span class="service-card__price"><i class="fas fa-tag"></i> From $65</span>
               <h3 class="service-card__title">Birth Chart Analysis</h3>
-              <p class="service-card__text">Discover your cosmic blueprint with a comprehensive natal chart reading revealing your life purpose and potential.</p>
+              <p class="service-card__text">Discover your cosmic blueprint with a comprehensive natal chart reading.</p>
               <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 45-90 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
             </div>
           </div>
-          <div class="service-card reveal" data-category="healing">
+          <div class="service-card service-card--center reveal" data-category="healing">
             <img src="assets/images/services/crystal-healing.png" alt="Crystal healing gemstones session" class="service-card__image" loading="lazy">
             <div class="service-card__body">
               <span class="service-card__price"><i class="fas fa-tag"></i> From $55</span>
               <h3 class="service-card__title">Crystal Healing</h3>
-              <p class="service-card__text">Restore balance through the ancient art of crystal healing. Align your chakras and rejuvenate your spiritual energy.</p>
+              <p class="service-card__text">Restore balance through the ancient art of crystal healing and energy therapy.</p>
               <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 45 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
             </div>
           </div>
-          <div class="service-card reveal" data-category="psychic">
+          <div class="service-card service-card--center reveal" data-category="psychic">
             <img src="assets/images/services/palmistry.png" alt="Palmistry reading session" class="service-card__image" loading="lazy">
             <div class="service-card__body">
               <span class="service-card__price"><i class="fas fa-tag"></i> From $40</span>
               <h3 class="service-card__title">Palmistry</h3>
-              <p class="service-card__text">Read the lines of destiny in your palms. Uncover insights about your love life, career, health, and fortune.</p>
+              <p class="service-card__text">Read the lines of destiny in your palms. Uncover insights about your life path.</p>
               <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 30 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
             </div>
           </div>
-          <div class="service-card reveal" data-category="astrology">
-            <img src="https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f0?w=600&h=400&fit=crop" alt="Numerology chart with golden numbers" class="service-card__image" loading="lazy">
+          <div class="service-card service-card--center reveal" data-category="astrology">
+            <img src="assets/images/services/numerology.png" alt="Numerology chart with golden numbers" class="service-card__image" loading="lazy">
             <div class="service-card__body">
               <span class="service-card__price"><i class="fas fa-tag"></i> From $50</span>
               <h3 class="service-card__title">Numerology</h3>
-              <p class="service-card__text">Decode the hidden meaning of numbers in your life. Understand your life path number and destiny number.</p>
+              <p class="service-card__text">Decode the hidden meaning of numbers and understand your life path number.</p>
               <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 40 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
             </div>
           </div>
-          <div class="service-card reveal" data-category="healing">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop" alt="Meditation and aura cleansing session" class="service-card__image" loading="lazy">
+          <div class="service-card service-card--center reveal" data-category="healing">
+            <img src="assets/images/services/aura-reading.png" alt="Meditation and aura cleansing session" class="service-card__image" loading="lazy">
             <div class="service-card__body">
               <span class="service-card__price"><i class="fas fa-tag"></i> From $35</span>
               <h3 class="service-card__title">Aura Reading</h3>
-              <p class="service-card__text">Discover the colors and energy patterns of your aura. Understand your emotional and spiritual state.</p>
+              <p class="service-card__text">Discover the colors and energy patterns of your aura and emotional state.</p>
               <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 30 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+          <div class="service-card service-card--center reveal" data-category="divination">
+            <img src="assets/images/services/dream-analysis.png" alt="Dream interpretation guide" class="service-card__image" loading="lazy">
+            <div class="service-card__body">
+              <span class="service-card__price"><i class="fas fa-tag"></i> From $45</span>
+              <h3 class="service-card__title">Dream Analysis</h3>
+              <p class="service-card__text">Decode the symbols of your subconscious and understand your nightly visions.</p>
+              <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 45 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+          <div class="service-card service-card--center reveal" data-category="psychic">
+            <img src="assets/images/services/mediumship.png" alt="Spiritual mediumship session" class="service-card__image" loading="lazy">
+            <div class="service-card__body">
+              <span class="service-card__price"><i class="fas fa-tag"></i> From $75</span>
+              <h3 class="service-card__title">Mediumship</h3>
+              <p class="service-card__text">Connect with loved ones in the spirit world and receive messages of peace.</p>
+              <div class="service-card__meta"><span class="service-card__duration"><i class="fas fa-clock"></i> 60 min</span><a href="service-detail.html" class="card__link">Book Now <i class="fas fa-arrow-right"></i></a></div>
             </div>
           </div>
         </div>
@@ -203,8 +223,82 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="footer__logo-text">CelestiaAura</span></a><p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p><div class="footer__social"><a href="#" class="footer__social-link footer__social-link--facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="footer__social-link footer__social-link--twitter"><i class="fab fa-x-twitter"></i></a><a href="#" class="footer__social-link footer__social-link--instagram"><i class="fab fa-instagram"></i></a><a href="#" class="footer__social-link footer__social-link--youtube"><i class="fab fa-youtube"></i></a><a href="#" class="footer__social-link footer__social-link--tiktok"><i class="fab fa-tiktok"></i></a></div></div><div class="footer__column"><h4>Services</h4><a href="service-detail.html" class="footer__link">Tarot Reading</a><a href="service-detail.html" class="footer__link">Birth Chart</a><a href="service-detail.html" class="footer__link">Crystal Healing</a><a href="service-detail.html" class="footer__link">Palmistry</a><a href="service-detail.html" class="footer__link">Numerology</a></div><div class="footer__column"><h4>Resources</h4><a href="blog.html" class="footer__link">Blog</a><a href="#" class="footer__link">Daily Horoscope</a><a href="#" class="footer__link">Zodiac Guide</a><a href="#" class="footer__link">Free Birth Chart</a></div><div class="footer__column"><h4>Company</h4><a href="about.html" class="footer__link">About Us</a><a href="pricing.html" class="footer__link">Pricing</a><a href="contact.html" class="footer__link">Contact</a><a href="#" class="footer__link">Careers</a></div><div class="footer__column"><h4>Newsletter</h4><p class="footer__desc" style="max-width:100%;">Get weekly cosmic insights.</p><div class="footer__newsletter"><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email"><button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button></form></div></div></div><div class="footer__bottom"><p>&copy; 2025 CelestiaAura. All rights reserved.</p><div class="footer__bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div></div></div></footer>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <a href="home-1.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <i class="fas fa-star-of-david"></i>
+            </div>
+            <span class="footer__logo-text">CelestiaAura</span>
+          </a>
+          <p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link footer__social-link--facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="footer__social-link footer__social-link--tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer__column">
+          <h3>Services</h3>
+          <a href="service-detail.html" class="footer__link">Tarot Reading</a>
+          <a href="service-detail.html" class="footer__link">Birth Chart Analysis</a>
+          <a href="service-detail.html" class="footer__link">Crystal Healing</a>
+          <a href="service-detail.html" class="footer__link">Palmistry</a>
+          <a href="service-detail.html" class="footer__link">Numerology</a>
+        </div>
+
+        <!-- Resources Column -->
+        <div class="footer__column">
+          <h3>Resources</h3>
+          <a href="blog.html" class="footer__link">Blog & Articles</a>
+          <a href="#" class="footer__link">Daily Horoscope</a>
+          <a href="#" class="footer__link">Zodiac Guide</a>
+          <a href="#" class="footer__link">Free Birth Chart</a>
+          <a href="#" class="footer__link">Meditation Library</a>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer__column">
+          <h3>Company</h3>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="#" class="footer__link">Careers</a>
+          <a href="#" class="footer__link">Press Kit</a>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="footer__column">
+          <h3>Newsletter</h3>
+          <p class="footer__desc" style="max-width:100%;">Get weekly horoscopes and cosmic insights.</p>
+          <div class="footer__newsletter">
+            <form class="footer__newsletter-form">
+              <input type="email" class="footer__newsletter-input" placeholder="Your email" aria-label="Newsletter email">
+              <button type="submit" class="footer__newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 CelestiaAura. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
   <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
   <script src="assets/js/theme.js"></script><script src="assets/js/rtl.js"></script><script src="assets/js/animations.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+

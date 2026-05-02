@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Messages — CelestiaAura Dashboard</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicons/favicon.png">
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +20,12 @@
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__header">
-      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
-      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+      <a href="../home-1.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+
     </div>
     <nav class="sidebar__nav">
       <div class="sidebar__section-label">Main</div>
-      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="home-1.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
       <a href="users.html" class="sidebar__link"><i class="fas fa-users"></i> Users</a>
       <a href="bookings.html" class="sidebar__link"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
       <div class="sidebar__section-label">Content</div>
@@ -32,7 +33,7 @@
       <a href="messages.html" class="sidebar__link active"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
       <div class="sidebar__section-label">System</div>
       <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
-      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+      <a href="../home-1.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
     </nav>
     <div class="sidebar__footer">
       <div class="sidebar__user">
@@ -46,11 +47,14 @@
     <header class="dash-header">
       <div class="dash-header__left">
         <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
-        <div><div class="dash-header__title">Messages & Notifications</div><div class="dash-header__subtitle">Manage communications and support</div></div>
+        <div>
+          <h1 class="dash-header__title">Messages &amp; Notifications</h1>
+          <div class="dash-header__subtitle">Manage communications and support</div>
+        </div>
       </div>
       <div class="dash-header__right">
         <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search messages..." aria-label="Search"></div>
-        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><span>RTL</span></button>
         <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
         <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
       </div>
@@ -68,7 +72,7 @@
       <!-- Section 1: Inbox -->
       <div class="dash-panel" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel__header">
-          <div class="dash-panel__title"><i class="fas fa-inbox" style="color:var(--clr-accent);"></i> Inbox</div>
+          <h2 class="dash-panel__title"><i class="fas fa-inbox" style="color:var(--clr-accent);"></i> Inbox</h2>
           <button class="btn btn--primary btn--sm"><i class="fas fa-pen-to-square"></i> Compose</button>
         </div>
         <div class="dash-panel__body dash-panel__body--no-pad">
@@ -119,7 +123,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <!-- Templates -->
         <div class="dash-panel">
-          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-file-lines" style="color:var(--clr-secondary);"></i> Message Templates</div></div>
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-file-lines" style="color:var(--clr-secondary);"></i> Message Templates</h2></div>
           <div class="dash-panel__body">
             <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
               <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-3);background:var(--clr-bg-alt);border-radius:var(--radius-md);">
@@ -144,7 +148,7 @@
 
         <!-- System Notifications -->
         <div class="dash-panel">
-          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-bell" style="color:var(--clr-info);"></i> System Notifications</div></div>
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-bell" style="color:var(--clr-info);"></i> System Notifications</h2></div>
           <div class="dash-panel__body">
             <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
               <div style="display:flex;gap:var(--sp-3);align-items:start;">
@@ -167,7 +171,7 @@
       <!-- Section 4-5: Support Tickets + Announcements -->
       <div class="grid grid--2">
         <div class="dash-panel">
-          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-headset" style="color:var(--clr-warning);"></i> Support Tickets</div></div>
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-headset" style="color:var(--clr-warning);"></i> Support Tickets</h2></div>
           <div class="dash-panel__body dash-panel__body--no-pad">
             <div style="padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--clr-border-light);display:flex;justify-content:space-between;align-items:center;">
               <div><p style="font-size:var(--fs-sm);margin:0;"><strong>#T-421</strong> — Payment not processed</p><p style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin:0;">Emily K. • 3 hours ago</p></div>
@@ -185,18 +189,18 @@
         </div>
 
         <div class="dash-panel">
-          <div class="dash-panel__header"><div class="dash-panel__title"><i class="fas fa-bullhorn" style="color:var(--clr-accent);"></i> Announcements</div><button class="btn btn--primary btn--sm"><i class="fas fa-plus"></i> New</button></div>
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-bullhorn" style="color:var(--clr-accent);"></i> Announcements</h2><button class="btn btn--primary btn--sm"><i class="fas fa-plus"></i> New</button></div>
           <div class="dash-panel__body">
             <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
               <div style="padding:var(--sp-4);background:rgba(124,58,237,0.04);border-left:3px solid var(--clr-accent);border-radius:0 var(--radius-md) var(--radius-md) 0;">
-                <h4 style="font-size:var(--fs-sm);margin-bottom:2px;">Platform Update v2.4</h4>
+                <h3 style="font-size:var(--fs-sm);margin-bottom:2px;">Platform Update v2.4</h3>
                 <p style="font-size:var(--fs-xs);color:var(--clr-text-secondary);margin:0;">New video session features and improved booking calendar. Rolling out April 20.</p>
-                <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:4px;display:block;">Posted by Marcus • Apr 10</span>
+                <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:4px;display:block;">Posted by Marcus &bull; Apr 10</span>
               </div>
               <div style="padding:var(--sp-4);background:rgba(212,168,67,0.04);border-left:3px solid var(--clr-secondary);border-radius:0 var(--radius-md) var(--radius-md) 0;">
-                <h4 style="font-size:var(--fs-sm);margin-bottom:2px;">Spring Equinox Special</h4>
+                <h3 style="font-size:var(--fs-sm);margin-bottom:2px;">Spring Equinox Special</h3>
                 <p style="font-size:var(--fs-xs);color:var(--clr-text-secondary);margin:0;">20% off all birth chart readings through April 30. Use code SPRING2025.</p>
-                <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:4px;display:block;">Posted by Marcus • Apr 1</span>
+                <span style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:4px;display:block;">Posted by Marcus &bull; Apr 1</span>
               </div>
             </div>
           </div>
@@ -211,3 +215,9 @@
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+

@@ -68,36 +68,77 @@
     var mobileMenu = document.querySelector('.navbar__mobile-menu');
     if (!hamburger || !mobileMenu) return;
 
-    hamburger.addEventListener('click', function() {
-      var isOpen = mobileMenu.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
+    // Main Toggle Logic (Separate State)
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = mobileMenu.classList.contains('open');
       
-      // CSS bars handle animation via aria-expanded state
-
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    // Close on link click
-    var mobileLinks = mobileMenu.querySelectorAll('.navbar__mobile-link');
-    mobileLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
+      if (isOpen) {
         mobileMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
-        // CSS bars handle close via aria-expanded
+        document.body.style.overflow = '';
+      } else {
+        mobileMenu.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    // Prevent any interaction inside the mobile menu from bubbling to document (prevents auto-close)
+    mobileMenu.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    // Close menu ONLY on actual navigation link clicks (excluding dropdown triggers)
+    var mobileLinks = mobileMenu.querySelectorAll('.navbar__mobile-link');
+    mobileLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        // If it's a dropdown toggle, don't close the main menu
+        if (link.classList.contains('navbar__mobile-dropdown-toggle')) {
+          return;
+        }
+        
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
 
-    // Mobile submenu toggles
+    // Dropdown Expand/Collapse Logic (Separate State)
     var mobileDropdowns = mobileMenu.querySelectorAll('.navbar__mobile-dropdown');
     mobileDropdowns.forEach(function(dropdown) {
+      // Prevent event bubbling from the parent container
+      dropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+
       var toggle = dropdown.querySelector('.navbar__mobile-dropdown-toggle');
       if (toggle) {
         toggle.addEventListener('click', function(e) {
           e.preventDefault();
-          dropdown.classList.toggle('open');
+          e.stopPropagation(); // Prevent trigger from bubbling
+          
+          var isExpanded = dropdown.classList.contains('open');
+          
+          // Toggle current dropdown without affecting main menu state
+          if (isExpanded) {
+            dropdown.classList.remove('open');
+          } else {
+            dropdown.classList.add('open');
+          }
         });
+      }
+    });
+
+    // Strictly Outside Click Handler
+    document.addEventListener('click', function(e) {
+      var isMenuOpen = mobileMenu.classList.contains('open');
+      
+      // Use ref.contains check to ensure click is strictly outside
+      if (isMenuOpen && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
     });
   }
@@ -213,7 +254,7 @@
 
   /* ---------- Active Nav Highlight ---------- */
   function highlightActiveNav() {
-    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    var currentPage = window.location.pathname.split('/').pop() || 'home-1.html';
     var navLinks = document.querySelectorAll('.navbar__link, .navbar__dropdown-item');
     
     navLinks.forEach(function(link) {

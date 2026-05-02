@@ -21,14 +21,17 @@
   function updateToggleState(dir) {
     const toggles = document.querySelectorAll('.rtl-toggle');
     toggles.forEach(function(btn) {
+      const textSpan = btn.querySelector('span');
       if (dir === 'rtl') {
         btn.classList.add('active');
         btn.setAttribute('aria-label', 'Switch to LTR layout');
         btn.title = 'Switch to LTR';
+        if (textSpan) textSpan.textContent = 'LTR';
       } else {
         btn.classList.remove('active');
         btn.setAttribute('aria-label', 'Switch to RTL layout');
         btn.title = 'Switch to RTL';
+        if (textSpan) textSpan.textContent = 'RTL';
       }
     });
   }

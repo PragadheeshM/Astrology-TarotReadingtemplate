@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 — Page Not Found | CelestiaAura</title>
+  <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png">
   <meta name="description" content="The page you're looking for seems to have drifted into another dimension. Let us guide you back to your cosmic journey.">
   <meta name="robots" content="noindex, nofollow">
 
@@ -22,7 +23,6 @@
     .error-page__bg img { width:100%; height:100%; object-fit:cover; opacity:0.15; }
     .error-page__content { position:relative; z-index:2; text-align:center; max-width:680px; padding:var(--sp-8); }
     .error-page__code { font-family:var(--ff-heading); font-size:clamp(6rem,15vw,12rem); font-weight:var(--fw-extrabold); background:var(--gradient-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; margin-bottom:var(--sp-4); position:relative; }
-    .error-page__code::after { content:'✦'; position:absolute; top:-10px; right:-20px; font-size:var(--fs-xl); -webkit-text-fill-color:var(--clr-secondary); animation:twinkle 2s ease-in-out infinite; }
     @keyframes twinkle { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.3;transform:scale(0.8);} }
     .error-stars { position:absolute; inset:0; z-index:1; pointer-events:none; }
     .error-star { position:absolute; width:3px; height:3px; background:var(--clr-secondary-light); border-radius:50%; animation:starFloat 4s ease-in-out infinite; }
@@ -38,7 +38,7 @@
     .error-search { display:flex; max-width:400px; margin:0 auto var(--sp-8); gap:var(--sp-2); }
     .error-search input { flex:1; padding:var(--sp-3) var(--sp-4); border:1px solid var(--clr-border); border-radius:var(--radius-full); background:var(--clr-surface); font-family:var(--ff-body); font-size:var(--fs-sm); color:var(--clr-text); }
     .error-search input:focus { outline:none; border-color:var(--clr-accent); box-shadow:0 0 0 3px rgba(124,58,237,0.1); }
-    .error-search button { padding:var(--sp-3) var(--sp-5); background:var(--gradient-cta); color:#fff; border:none; border-radius:var(--radius-full); cursor:pointer; font-weight:var(--fw-semibold); font-size:var(--fs-sm); transition:transform 0.2s; }
+    .error-search button { display:flex; align-items:center; justify-content:center; gap:var(--sp-2); padding:var(--sp-3) var(--sp-5); background:var(--gradient-cta); color:#fff; border:none; border-radius:var(--radius-full); cursor:pointer; font-weight:var(--fw-semibold); font-size:var(--fs-sm); transition:transform 0.2s; }
     .error-search button:hover { transform:translateY(-2px); }
     .error-links { display:flex; flex-wrap:wrap; gap:var(--sp-3); justify-content:center; margin-bottom:var(--sp-8); }
     .error-link-card { display:flex; align-items:center; gap:var(--sp-3); padding:var(--sp-3) var(--sp-5); background:var(--clr-surface); border:1px solid var(--clr-border-light); border-radius:var(--radius-lg); font-size:var(--fs-sm); font-weight:var(--fw-medium); color:var(--clr-text); text-decoration:none; transition:all 0.25s; }
@@ -51,12 +51,12 @@
 
   <!-- Mini Nav -->
   <div class="error-page__nav">
-    <a href="index.html" class="navbar__logo" aria-label="CelestiaAura Home">
+    <a href="home-1.html" class="navbar__logo" aria-label="CelestiaAura Home">
       <div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div>
       <span class="navbar__logo-text">CelestiaAura</span>
     </a>
     <div style="display:flex;gap:var(--sp-2);">
-      <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+      <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL"><span>RTL</span></button>
       <button class="navbar__icon-btn theme-toggle" aria-label="Switch to dark mode" title="Dark Mode"><i class="fas fa-moon"></i></button>
     </div>
   </div>
@@ -75,7 +75,7 @@
 
     <div class="error-page__content">
       <!-- Section 1: Error Display -->
-      <div class="error-page__code">404</div>
+      <div class="error-page__code">404 <i class="fas fa-sparkles" style="position:absolute; top:-10px; right:-30px; font-size:var(--fs-xl); -webkit-text-fill-color:var(--clr-secondary); animation:twinkle 2s ease-in-out infinite;"></i></div>
       <h1 style="font-size:var(--fs-2xl);margin-bottom:var(--sp-3);">Lost in the Cosmos</h1>
       <p style="color:var(--clr-text-secondary);margin-bottom:var(--sp-8);font-size:var(--fs-md);">
         The page you're looking for has drifted into another dimension. Let us guide you back to your cosmic journey.
@@ -89,7 +89,7 @@
 
       <!-- Section 3: Quick Links -->
       <div class="error-links">
-        <a href="index.html" class="error-link-card"><i class="fas fa-home"></i> Home</a>
+        <a href="home-1.html" class="error-link-card"><i class="fas fa-home"></i> Home</a>
         <a href="services.html" class="error-link-card"><i class="fas fa-spa"></i> Services</a>
         <a href="blog.html" class="error-link-card"><i class="fas fa-newspaper"></i> Blog</a>
         <a href="contact.html" class="error-link-card"><i class="fas fa-envelope"></i> Contact</a>
@@ -117,7 +117,6 @@
 
       <!-- Section 6: CTA -->
       <div style="display:flex;gap:var(--sp-4);justify-content:center;flex-wrap:wrap;">
-        <a href="index.html" class="btn btn--primary btn--lg"><i class="fas fa-home"></i> Back to Home</a>
         <a href="services.html" class="btn btn--gold btn--lg"><i class="fas fa-sparkles"></i> Book a Reading</a>
       </div>
     </div>
@@ -127,3 +126,8 @@
   <script src="assets/js/rtl.js"></script>
 </body>
 </html>
+
+
+
+
+

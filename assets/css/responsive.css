@@ -458,17 +458,10 @@ html, body {
 }
 
 /* Tables: scroll within container, not whole page */
-.dash-panel__body table,
 .dash-table-wrap {
   width: 100%;
   overflow-x: auto;
-  display: block;
   -webkit-overflow-scrolling: touch;
-}
-
-.dash-table {
-  min-width: 500px;
-  width: 100%;
 }
 
 /* Stats row: prevent overflow */

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Management — CelestiaAura Dashboard</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicons/favicon.png">
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,12 +21,12 @@
 
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__header">
-      <a href="../index.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
-      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+      <a href="../home-1.html" class="sidebar__logo"><div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="sidebar__logo-text">CelestiaAura</span></a>
+
     </div>
     <nav class="sidebar__nav">
       <div class="sidebar__section-label">Main</div>
-      <a href="index.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
+      <a href="home-1.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> Overview</a>
       <a href="users.html" class="sidebar__link active"><i class="fas fa-users"></i> Users</a>
       <a href="bookings.html" class="sidebar__link"><i class="fas fa-calendar-check"></i> Bookings <span class="sidebar__badge">5</span></a>
       <div class="sidebar__section-label">Content</div>
@@ -33,7 +34,7 @@
       <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
       <div class="sidebar__section-label">System</div>
       <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
-      <a href="../index.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
+      <a href="../home-1.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
     </nav>
     <div class="sidebar__footer">
       <div class="sidebar__user">
@@ -47,11 +48,14 @@
     <header class="dash-header">
       <div class="dash-header__left">
         <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
-        <div><div class="dash-header__title">User Management</div><div class="dash-header__subtitle">Manage all platform users and roles</div></div>
+        <div>
+          <h1 class="dash-header__title">User Management</h1>
+          <div class="dash-header__subtitle">Manage all platform users and roles</div>
+        </div>
       </div>
       <div class="dash-header__right">
         <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search users..." aria-label="Search users"></div>
-        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><span>RTL</span></button>
         <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
         <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
       </div>
@@ -85,7 +89,7 @@
       <!-- Section 2: Users Table -->
       <div class="dash-panel" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel__header">
-          <div class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> All Users</div>
+          <h2 class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> All Users</h2>
           <div style="display:flex;gap:var(--sp-2);">
             <select style="padding:6px 12px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
               <option>All Roles</option><option>Client</option><option>Reader</option><option>Admin</option>
@@ -94,7 +98,7 @@
           </div>
         </div>
         <div class="dash-panel__body dash-panel__body--no-pad">
-          <div style="overflow-x:auto;">
+
             <div class="dash-table-wrap"><table class="dash-table">
               <thead>
                 <tr>
@@ -145,7 +149,6 @@
                 </tr>
               </tbody>
             </table></div>
-          </div>
         </div>
       </div>
 
@@ -153,7 +156,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-shield-halved" style="color:var(--clr-accent);"></i> Role Management</div>
+            <h2 class="dash-panel__title"><i class="fas fa-shield-halved" style="color:var(--clr-accent);"></i> Role Management</h2>
           </div>
           <div class="dash-panel__body">
             <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
@@ -176,7 +179,7 @@
         <!-- Section 4: Activity Log -->
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-clock-rotate-left" style="color:var(--clr-secondary);"></i> Recent Activity</div>
+            <h2 class="dash-panel__title"><i class="fas fa-clock-rotate-left" style="color:var(--clr-secondary);"></i> Recent Activity</h2>
           </div>
           <div class="dash-panel__body">
             <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
@@ -204,7 +207,7 @@
       <!-- Section 5: Add User Form -->
       <div class="dash-panel" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel__header">
-          <div class="dash-panel__title"><i class="fas fa-user-plus" style="color:var(--clr-success);"></i> Add New User</div>
+          <h2 class="dash-panel__title"><i class="fas fa-user-plus" style="color:var(--clr-success);"></i> Add New User</h2>
         </div>
         <div class="dash-panel__body">
           <form data-validate>
@@ -223,7 +226,7 @@
       <!-- Section 6: Export Options -->
       <div class="dash-panel">
         <div class="dash-panel__header">
-          <div class="dash-panel__title"><i class="fas fa-download" style="color:var(--clr-info);"></i> Export Users</div>
+          <h2 class="dash-panel__title"><i class="fas fa-download" style="color:var(--clr-info);"></i> Export Users</h2>
         </div>
         <div class="dash-panel__body">
           <p style="font-size:var(--fs-sm);color:var(--clr-text-secondary);">Export user data in your preferred format for reporting and analysis.</p>
@@ -243,3 +246,9 @@
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+

@@ -43,23 +43,32 @@
     var colors = getChartColors();
     var opts = Object.assign({ lineColor: colors.accent, fillColor: hexToRgba(colors.accent, 0.08), gridColor: colors.border, labelColor: colors.text, labels: [], values: [], lineWidth: 3 }, options || {});
 
-    // High DPI
-    var rect = canvas.parentElement.getBoundingClientRect();
+    // High DPI / Robust Dimensions
+    var parent = canvas.parentElement;
+    var rect = parent.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
+    
+    // Fallback to client dimensions if rect is 0 (e.g. hidden on load)
+    var w = rect.width || parent.clientWidth || 300;
+    var h = rect.height || parent.clientHeight || 200;
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
     ctx.scale(dpr, dpr);
 
-    var w = rect.width;
-    var h = rect.height;
     var pad = { top: 20, right: 20, bottom: 40, left: 50 };
     var chartW = w - pad.left - pad.right;
     var chartH = h - pad.top - pad.bottom;
-    var values = data.values || opts.values;
-    var labels = data.labels || opts.labels;
-    var max = Math.max.apply(null, values) * 1.15;
+    var values = data.values || opts.values || [0];
+    var labels = data.labels || opts.labels || [''];
+    if (values.length === 0) values = [0];
+    if (labels.length === 0) labels = [''];
+    
+    var max = Math.max.apply(null, values);
+    if (max === 0) max = 1; // Prevent division by zero
+    max *= 1.15;
     var min = 0;
 
     ctx.clearRect(0, 0, w, h);
@@ -76,11 +85,12 @@
       ctx.stroke();
 
       // Y labels
-      var val = Math.round(max - (max / 4) * gi);
+      var val = max - (max / 4) * gi;
       ctx.fillStyle = opts.labelColor;
       ctx.font = '11px Inter, sans-serif';
       ctx.textAlign = 'right';
-      ctx.fillText(val >= 1000 ? (val / 1000).toFixed(1) + 'k' : val, pad.left - 8, gy + 4);
+      var displayVal = val >= 1000 ? (val / 1000).toFixed(1) + 'k' : (max < 10 ? val.toFixed(1) : Math.round(val));
+      ctx.fillText(displayVal, pad.left - 8, gy + 4);
     }
     ctx.setLineDash([]);
 
@@ -151,16 +161,20 @@
     var colors = getChartColors();
     var opts = Object.assign({ barColors: [colors.accent, colors.secondary, colors.success, colors.info, colors.primary, colors.warning], gridColor: colors.border, labelColor: colors.text, labels: [], values: [], barRadius: 6 }, options || {});
 
-    var rect = canvas.parentElement.getBoundingClientRect();
+    var parent = canvas.parentElement;
+    var rect = parent.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
+    var w = rect.width || parent.clientWidth || 300;
+    var h = rect.height || parent.clientHeight || 200;
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
     ctx.scale(dpr, dpr);
 
-    var w = rect.width;
-    var h = rect.height;
+    
+    
     var pad = { top: 20, right: 20, bottom: 40, left: 50 };
     var chartW = w - pad.left - pad.right;
     var chartH = h - pad.top - pad.bottom;
@@ -230,16 +244,18 @@
     var colors = getChartColors();
     var opts = Object.assign({ colors: [colors.accent, colors.secondary, colors.success, colors.info, colors.error, colors.warning], labels: [], values: [], donut: true, donutWidth: 35, labelColor: colors.text }, options || {});
 
-    var rect = canvas.parentElement.getBoundingClientRect();
+    var parent = canvas.parentElement;
+    var rect = parent.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
+    var w = rect.width || parent.clientWidth || 300;
+    var h = rect.height || parent.clientHeight || 200;
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
     ctx.scale(dpr, dpr);
 
-    var w = rect.width;
-    var h = rect.height;
     var values = data.values || opts.values;
     var labels = data.labels || opts.labels;
     var total = values.reduce(function(s, v) { return s + v; }, 0);
@@ -326,15 +342,18 @@
     var colors = getChartColors();
     var opts = Object.assign({ barColors: [colors.accent, colors.secondary, colors.success, colors.info, colors.primary, colors.warning], gridColor: colors.border, labelColor: colors.text, barRadius: 6, barHeight: 24 }, options || {});
 
-    var rect = canvas.parentElement.getBoundingClientRect();
+    var parent = canvas.parentElement;
+    var rect = parent.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
+    var w = rect.width || parent.clientWidth || 300;
+    var h = rect.height || parent.clientHeight || 200;
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
     ctx.scale(dpr, dpr);
 
-    var w = rect.width, h = rect.height;
     var values = data.values, labels = data.labels;
     var max = Math.max.apply(null, values) * 1.1;
     var pad = { top: 15, right: 50, bottom: 10, left: 90 };
@@ -392,15 +411,18 @@
     var colors = getChartColors();
     var opts = Object.assign({ fillColor: hexToRgba(colors.accent, 0.2), strokeColor: colors.accent, gridColor: colors.border, labelColor: colors.text, dotColor: colors.accent, levels: 5 }, options || {});
 
-    var rect = canvas.parentElement.getBoundingClientRect();
+    var parent = canvas.parentElement;
+    var rect = parent.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
+    var w = rect.width || parent.clientWidth || 300;
+    var h = rect.height || parent.clientHeight || 200;
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
     ctx.scale(dpr, dpr);
 
-    var w = rect.width, h = rect.height;
     var labels = data.labels, values = data.values;
     var n = labels.length;
     var cx = w / 2, cy = h / 2;
@@ -500,15 +522,18 @@
       { color: colors.success, label: 'High' }
     ], value: data.value || 0, max: data.max || 100, label: data.label || '', lineWidth: 28 }, options || {});
 
-    var rect = canvas.parentElement.getBoundingClientRect();
+    var parent = canvas.parentElement;
+    var rect = parent.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
+    var w = rect.width || parent.clientWidth || 300;
+    var h = rect.height || parent.clientHeight || 200;
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
     ctx.scale(dpr, dpr);
 
-    var w = rect.width, h = rect.height;
     var cx = w / 2, cy = h * 0.58;
     var radius = Math.min(w / 2, h * 0.55) - opts.lineWidth;
     var startAngle = Math.PI * 0.8;
@@ -597,15 +622,18 @@
     var colors = getChartColors();
     var opts = Object.assign({ labelColor: colors.text, ringWidth: 18, gap: 8 }, options || {});
 
-    var rect = canvas.parentElement.getBoundingClientRect();
+    var parent = canvas.parentElement;
+    var rect = parent.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
+    var w = rect.width || parent.clientWidth || 300;
+    var h = rect.height || parent.clientHeight || 200;
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
     ctx.scale(dpr, dpr);
 
-    var w = rect.width, h = rect.height;
     var rings = data.rings || [];
     var cx = w / 2, cy = h / 2 - 12;
     var maxR = Math.min(w, h) / 2 - 30;

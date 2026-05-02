@@ -6,6 +6,9 @@
   <title>CelestiaAura — Modern Spiritual Platform | Home</title>
   <meta name="description" content="Experience the future of spiritual guidance. CelestiaAura combines ancient wisdom with modern technology for personalized astrology and tarot readings.">
   <link rel="canonical" href="https://celestiaaura.com/home-2.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"CelestiaAura","applicationCategory":"LifestyleApplication","description":"Modern spiritual platform for astrology and tarot readings.","url":"https://celestiaaura.com"}
   </script>
@@ -36,7 +39,10 @@
     .feature-card__title { font-family:var(--ff-body); font-size:var(--fs-lg); font-weight:var(--fw-semibold); margin-bottom:var(--sp-3); color:var(--clr-text); }
     .feature-card__text { font-size:var(--fs-sm); color:var(--clr-text-secondary); line-height:var(--lh-relaxed); }
 
-    .live-preview { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-12); align-items:center; }
+    .live-preview { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-12); align-items:stretch; }
+    .live-preview__content { display:flex; flex-direction:column; justify-content:center; }
+    .live-preview__image { border-radius:var(--radius-xl); overflow:hidden; display:flex; }
+    .live-preview__image img { width:100%; height:100%; object-fit:cover; box-shadow:var(--shadow-2xl); }
     .live-preview__status { display:flex; align-items:center; gap:var(--sp-2); margin-bottom:var(--sp-4); }
     .live-dot { width:10px; height:10px; border-radius:50%; background:var(--clr-success); animation:pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
@@ -72,7 +78,7 @@
   <!-- ============ NAVBAR ============ -->
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="CelestiaAura Home">
+      <a href="home-1.html" class="navbar__logo" aria-label="CelestiaAura Home">
         <div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div>
         <span class="navbar__logo-text">CelestiaAura</span>
       </a>
@@ -92,13 +98,13 @@
         <div class="navbar__dropdown">
           <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a>
           <div class="navbar__dropdown-menu" role="menu">
-            <a href="dashboard/" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a>
-            <a href="user-dashboard/" class="navbar__dropdown-item" role="menuitem">User Dashboard</a>
+            <a href="dashboard/index.html" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a>
+            <a href="user-dashboard/index.html" class="navbar__dropdown-item" role="menuitem">User Dashboard</a>
           </div>
         </div>
       </nav>
       <div class="navbar__actions">
-        <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL"><span>RTL</span></button>
         <button class="navbar__icon-btn theme-toggle" aria-label="Switch to dark mode" title="Dark Mode"><i class="fas fa-moon"></i></button>
         <a href="login.html" class="btn btn--primary btn--sm">Sign In</a>
         <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
@@ -120,8 +126,8 @@
       <div class="navbar__mobile-dropdown">
         <a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
         <div class="navbar__mobile-sub">
-          <a href="dashboard/" class="navbar__mobile-link">Admin Dashboard</a>
-          <a href="user-dashboard/" class="navbar__mobile-link">User Dashboard</a>
+          <a href="dashboard/index.html" class="navbar__mobile-link">Admin Dashboard</a>
+          <a href="user-dashboard/index.html" class="navbar__mobile-link">User Dashboard</a>
         </div>
       </div>
       <a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a>
@@ -132,7 +138,7 @@
     <!-- ============ SECTION 1: HERO (Split Layout) ============ -->
     <section class="hero--split container" id="hero">
       <div class="hero__content">
-        <span class="hero__label reveal" style="color:var(--clr-secondary);">✦ The Future of Spiritual Guidance ✦</span>
+        <span class="hero__label reveal" style="color:var(--clr-secondary);"><i class="fas fa-sparkles" style="font-size:0.8em; margin:0 8px;"></i> The Future of Spiritual Guidance <i class="fas fa-sparkles" style="font-size:0.8em; margin:0 8px;"></i></span>
         <h1 class="hero__title reveal" data-delay="100">Your Personal Cosmic Advisor, Anytime</h1>
         <p class="hero__subtitle reveal" data-delay="200">
           CelestiaAura combines centuries of spiritual wisdom with modern technology to deliver accurate, 
@@ -162,32 +168,32 @@
           <p>Powerful tools and features designed to deepen your cosmic understanding.</p>
         </div>
         <div class="feature-grid" data-stagger="100">
-          <div class="feature-card reveal">
+          <div class="feature-card feature-card--center reveal">
             <div class="feature-card__icon"><i class="fas fa-chart-line"></i></div>
             <h3 class="feature-card__title">AI Birth Chart Engine</h3>
             <p class="feature-card__text">Advanced algorithms generate detailed natal charts with planetary positions, aspects, and house placements in seconds.</p>
           </div>
-          <div class="feature-card reveal">
+          <div class="feature-card feature-card--center reveal">
             <div class="feature-card__icon"><i class="fas fa-video"></i></div>
             <h3 class="feature-card__title">Live Video Readings</h3>
             <p class="feature-card__text">Connect face-to-face with certified readers through our HD video platform with built-in recording and replay.</p>
           </div>
-          <div class="feature-card reveal">
+          <div class="feature-card feature-card--center reveal">
             <div class="feature-card__icon"><i class="fas fa-bell"></i></div>
             <h3 class="feature-card__title">Daily Horoscopes</h3>
             <p class="feature-card__text">Receive personalized daily, weekly, and monthly horoscopes based on your exact birth data delivered to your app.</p>
           </div>
-          <div class="feature-card reveal">
+          <div class="feature-card feature-card--center reveal">
             <div class="feature-card__icon"><i class="fas fa-shield-alt"></i></div>
             <h3 class="feature-card__title">Secure & Private</h3>
             <p class="feature-card__text">End-to-end encrypted sessions ensure your readings remain completely private and confidential at all times.</p>
           </div>
-          <div class="feature-card reveal">
+          <div class="feature-card feature-card--center reveal">
             <div class="feature-card__icon"><i class="fas fa-calendar-check"></i></div>
             <h3 class="feature-card__title">Smart Scheduling</h3>
             <p class="feature-card__text">Book sessions that fit your schedule with automatic time zone detection, reminders, and calendar sync.</p>
           </div>
-          <div class="feature-card reveal">
+          <div class="feature-card feature-card--center reveal">
             <div class="feature-card__icon"><i class="fas fa-users"></i></div>
             <h3 class="feature-card__title">Community Access</h3>
             <p class="feature-card__text">Join exclusive forums, group readings, and live events with fellow seekers on their spiritual journey.</p>
@@ -200,10 +206,10 @@
     <section class="section" id="live-preview">
       <div class="container">
         <div class="live-preview">
-          <div class="reveal--left reveal">
-            <img src="assets/images/services/tarot-reading.png" alt="Live tarot reading session in progress" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-2xl);" loading="lazy">
+          <div class="live-preview__image reveal--left reveal">
+            <img src="assets/images/services/tarot-reading.png" alt="Live tarot reading session in progress" loading="lazy">
           </div>
-          <div class="reveal--right reveal">
+          <div class="live-preview__content reveal--right reveal">
             <div class="live-preview__status">
               <span class="live-dot"></span>
               <span style="font-size:var(--fs-sm);font-weight:var(--fw-semibold);color:var(--clr-success);">3 Readers Online Now</span>
@@ -214,8 +220,8 @@
             <ul style="list-style:none;margin-bottom:var(--sp-6);">
               <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Instant connection with verified readers</li>
               <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Chat, voice, or video options</li>
-              <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Pay per minute — transparent pricing</li>
-              <li style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Satisfaction guarantee on every session</li>
+              <li style="display:flex;align-items:center;gap:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Pay per minute — transparent pricing</li>
+              <li style="display:flex;align-items:center;gap:var(--sp-2) 0;color:var(--clr-text-secondary);font-size:var(--fs-sm);"><i class="fas fa-check" style="color:var(--clr-success);"></i> Satisfaction guarantee on every session</li>
             </ul>
             <a href="services.html" class="btn btn--primary btn--lg"><i class="fas fa-bolt"></i> Start Live Reading</a>
           </div>
@@ -232,7 +238,7 @@
           <p>Choose the plan that aligns with your spiritual journey. Upgrade or cancel anytime.</p>
         </div>
         <div class="grid grid--3" data-stagger="100">
-          <div class="pricing-card reveal">
+          <div class="pricing-card pricing-card--center reveal">
             <h3 class="pricing-card__name">Seeker</h3>
             <div class="pricing-card__price">$9</div>
             <div class="pricing-card__period">per month</div>
@@ -245,7 +251,7 @@
             </div>
             <a href="pricing.html" class="btn btn--secondary btn--block">Get Started</a>
           </div>
-          <div class="pricing-card pricing-card--popular reveal">
+          <div class="pricing-card pricing-card--popular pricing-card--center reveal">
             <span class="pricing-card__badge">Most Popular</span>
             <h3 class="pricing-card__name">Mystic</h3>
             <div class="pricing-card__price">$29</div>
@@ -259,7 +265,7 @@
             </div>
             <a href="pricing.html" class="btn btn--primary btn--block">Get Started</a>
           </div>
-          <div class="pricing-card reveal">
+          <div class="pricing-card pricing-card--center reveal">
             <h3 class="pricing-card__name">Oracle</h3>
             <div class="pricing-card__price">$59</div>
             <div class="pricing-card__period">per month</div>
@@ -329,9 +335,12 @@
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer__top">
+        <!-- Brand Column -->
         <div class="footer__brand">
-          <a href="index.html" class="footer__logo">
-            <div class="footer__logo-icon"><i class="fas fa-star-of-david"></i></div>
+          <a href="home-1.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <i class="fas fa-star-of-david"></i>
+            </div>
             <span class="footer__logo-text">CelestiaAura</span>
           </a>
           <p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p>
@@ -343,32 +352,40 @@
             <a href="#" class="footer__social-link footer__social-link--tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
+
+        <!-- Services Column -->
         <div class="footer__column">
-          <h4>Services</h4>
+          <h3>Services</h3>
           <a href="service-detail.html" class="footer__link">Tarot Reading</a>
           <a href="service-detail.html" class="footer__link">Birth Chart Analysis</a>
           <a href="service-detail.html" class="footer__link">Crystal Healing</a>
           <a href="service-detail.html" class="footer__link">Palmistry</a>
           <a href="service-detail.html" class="footer__link">Numerology</a>
         </div>
+
+        <!-- Resources Column -->
         <div class="footer__column">
-          <h4>Resources</h4>
+          <h3>Resources</h3>
           <a href="blog.html" class="footer__link">Blog & Articles</a>
           <a href="#" class="footer__link">Daily Horoscope</a>
           <a href="#" class="footer__link">Zodiac Guide</a>
           <a href="#" class="footer__link">Free Birth Chart</a>
           <a href="#" class="footer__link">Meditation Library</a>
         </div>
+
+        <!-- Company Column -->
         <div class="footer__column">
-          <h4>Company</h4>
+          <h3>Company</h3>
           <a href="about.html" class="footer__link">About Us</a>
           <a href="pricing.html" class="footer__link">Pricing</a>
           <a href="contact.html" class="footer__link">Contact Us</a>
           <a href="#" class="footer__link">Careers</a>
           <a href="#" class="footer__link">Press Kit</a>
         </div>
+
+        <!-- Newsletter Column -->
         <div class="footer__column">
-          <h4>Newsletter</h4>
+          <h3>Newsletter</h3>
           <p class="footer__desc" style="max-width:100%;">Get weekly horoscopes and cosmic insights.</p>
           <div class="footer__newsletter">
             <form class="footer__newsletter-form">
@@ -378,13 +395,9 @@
           </div>
         </div>
       </div>
+
       <div class="footer__bottom">
         <p>&copy; 2025 CelestiaAura. All rights reserved.</p>
-        <div class="footer__bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -397,3 +410,7 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+

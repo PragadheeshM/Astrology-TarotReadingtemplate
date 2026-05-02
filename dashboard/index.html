@@ -29,7 +29,7 @@
         <div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div>
         <span class="sidebar__logo-text">CelestiaAura</span>
       </a>
-      <button class="sidebar__close" aria-label="Close sidebar"><i class="fas fa-times"></i></button>
+
     </div>
 
     <nav class="sidebar__nav" aria-label="Dashboard Navigation">
@@ -74,7 +74,7 @@
           <i class="fas fa-search"></i>
           <input type="text" placeholder="Search..." aria-label="Search dashboard">
         </div>
-        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL" title="RTL Toggle"><i class="fas fa-globe"></i></button>
+        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL" title="RTL"><span>RTL</span></button>
         <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme" title="Theme Toggle"><i class="fas fa-moon"></i></button>
         <button class="dash-header__icon-btn" aria-label="Notifications" title="Notifications">
           <i class="fas fa-bell"></i>
@@ -129,7 +129,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-chart-line" style="color:var(--clr-accent);"></i> Revenue Over Time</div>
+            <h2 class="dash-panel__title"><i class="fas fa-chart-line" style="color:var(--clr-accent);"></i> Revenue Over Time</h2>
             <select style="padding:4px 8px;border:1px solid var(--clr-border);border-radius:var(--radius-md);background:var(--clr-surface);color:var(--clr-text);font-size:var(--fs-xs);">
               <option>Last 7 Days</option>
               <option selected>Last 30 Days</option>
@@ -145,7 +145,7 @@
 
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-bars-staggered" style="color:var(--clr-secondary);"></i> Bookings by Service</div>
+            <h2 class="dash-panel__title"><i class="fas fa-bars-staggered" style="color:var(--clr-secondary);"></i> Bookings by Service</h2>
           </div>
           <div class="dash-panel__body">
             <div class="chart-container">
@@ -159,7 +159,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-chart-pie" style="color:var(--clr-success);"></i> User Demographics</div>
+            <h2 class="dash-panel__title"><i class="fas fa-chart-pie" style="color:var(--clr-success);"></i> User Demographics</h2>
           </div>
           <div class="dash-panel__body">
             <div class="chart-container chart-container--sm">
@@ -170,7 +170,7 @@
 
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-gauge-high" style="color:var(--clr-info);"></i> Platform Health Score</div>
+            <h2 class="dash-panel__title"><i class="fas fa-gauge-high" style="color:var(--clr-info);"></i> Platform Health Score</h2>
           </div>
           <div class="dash-panel__body">
             <div class="chart-container chart-container--sm">
@@ -183,11 +183,11 @@
       <!-- Section 4: Recent Bookings Table -->
       <div class="dash-panel" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel__header">
-          <div class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> Recent Bookings</div>
+          <h2 class="dash-panel__title"><i class="fas fa-list" style="color:var(--clr-accent);"></i> Recent Bookings</h2>
           <a href="bookings.html" class="btn btn--sm btn--ghost">View All</a>
         </div>
         <div class="dash-panel__body dash-panel__body--no-pad">
-          <div style="overflow-x:auto;">
+
             <div class="dash-table-wrap"><table class="dash-table">
               <thead>
                 <tr>
@@ -267,7 +267,6 @@
                 </tr>
               </tbody>
             </table></div>
-          </div>
         </div>
       </div>
 
@@ -275,7 +274,7 @@
       <div class="grid grid--2" style="margin-bottom:var(--sp-6);">
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-trophy" style="color:var(--clr-secondary);"></i> Top Readers</div>
+            <h2 class="dash-panel__title"><i class="fas fa-trophy" style="color:var(--clr-secondary);"></i> Top Readers</h2>
           </div>
           <div class="dash-panel__body dash-panel__body--no-pad">
             <div class="dash-table-wrap"><table class="dash-table">
@@ -307,7 +306,7 @@
         <!-- Section 6: Quick Actions -->
         <div class="dash-panel">
           <div class="dash-panel__header">
-            <div class="dash-panel__title"><i class="fas fa-bolt" style="color:var(--clr-warning);"></i> Quick Actions</div>
+            <h2 class="dash-panel__title"><i class="fas fa-bolt" style="color:var(--clr-warning);"></i> Quick Actions</h2>
           </div>
           <div class="dash-panel__body">
             <div class="quick-actions">
@@ -373,3 +372,4 @@
   </script>
 </body>
 </html>
+

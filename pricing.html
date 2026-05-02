@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing Plans — CelestiaAura Astrology Platform</title>
+  <link rel="icon" type="image/png" href="assets/images/favicons/favicon.png">
   <meta name="description" content="Explore CelestiaAura's transparent pricing plans. Choose from Basic, Pro, and Premium tiers for astrology, tarot, and spiritual guidance services.">
   <meta name="keywords" content="astrology pricing, tarot reading cost, spiritual guidance plans, CelestiaAura pricing">
   <link rel="canonical" href="https://celestiaaura.com/pricing.html">
@@ -32,7 +33,7 @@
   <!-- ============ NAVBAR ============ -->
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="CelestiaAura Home">
+      <a href="home-1.html" class="navbar__logo" aria-label="CelestiaAura Home">
         <div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div>
         <span class="navbar__logo-text">CelestiaAura</span>
       </a>
@@ -52,13 +53,13 @@
         <div class="navbar__dropdown">
           <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a>
           <div class="navbar__dropdown-menu" role="menu">
-            <a href="dashboard/" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a>
-            <a href="user-dashboard/" class="navbar__dropdown-item" role="menuitem">User Dashboard</a>
+            <a href="dashboard/index.html" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a>
+            <a href="user-dashboard/index.html" class="navbar__dropdown-item" role="menuitem">User Dashboard</a>
           </div>
         </div>
       </nav>
       <div class="navbar__actions">
-        <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL"><i class="fas fa-globe"></i></button>
+        <button class="navbar__icon-btn rtl-toggle" aria-label="Switch to RTL layout" title="Switch to RTL"><span>RTL</span></button>
         <button class="navbar__icon-btn theme-toggle" aria-label="Switch to dark mode" title="Dark Mode"><i class="fas fa-moon"></i></button>
         <a href="login.html" class="btn btn--primary btn--sm">Sign In</a>
         <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
@@ -80,8 +81,8 @@
       <div class="navbar__mobile-dropdown">
         <a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
         <div class="navbar__mobile-sub">
-          <a href="dashboard/" class="navbar__mobile-link">Admin Dashboard</a>
-          <a href="user-dashboard/" class="navbar__mobile-link">User Dashboard</a>
+          <a href="dashboard/index.html" class="navbar__mobile-link">Admin Dashboard</a>
+          <a href="user-dashboard/index.html" class="navbar__mobile-link">User Dashboard</a>
         </div>
       </div>
       <a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a>
@@ -98,7 +99,7 @@
       <div class="container">
         <div class="hero__content hero__content--centered">
           <nav class="breadcrumb reveal" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
+            <a href="home-1.html">Home</a>
             <span class="breadcrumb__sep"><i class="fas fa-chevron-right"></i></span>
             <span>Pricing</span>
           </nav>
@@ -127,7 +128,7 @@
 
         <div class="grid grid--3" style="align-items:start;">
           <!-- Basic Plan -->
-          <div class="pricing-card reveal" data-delay="0">
+          <div class="pricing-card pricing-card--center reveal" data-delay="0">
             <div class="pricing-card__name">Seeker</div>
             <div class="pricing-card__price">
               <span data-price="monthly">$19</span>
@@ -150,7 +151,7 @@
           </div>
 
           <!-- Pro Plan (Popular) -->
-          <div class="pricing-card pricing-card--popular reveal" data-delay="150">
+          <div class="pricing-card pricing-card--popular pricing-card--center reveal" data-delay="150">
             <span class="pricing-card__badge">Most Popular</span>
             <div class="pricing-card__name">Mystic</div>
             <div class="pricing-card__price">
@@ -174,7 +175,7 @@
           </div>
 
           <!-- Premium Plan -->
-          <div class="pricing-card reveal" data-delay="300">
+          <div class="pricing-card pricing-card--center reveal" data-delay="300">
             <div class="pricing-card__name">Oracle</div>
             <div class="pricing-card__price">
               <span data-price="monthly">$99</span>
@@ -214,7 +215,7 @@
               <tr style="border-bottom:2px solid var(--clr-border);">
                 <th style="padding:var(--sp-4) var(--sp-6);text-align:left;font-weight:600;font-size:var(--fs-sm);width:40%;">Feature</th>
                 <th style="padding:var(--sp-4) var(--sp-6);text-align:center;font-weight:600;font-size:var(--fs-sm);width:20%;">Seeker</th>
-                <th style="padding:var(--sp-4) var(--sp-6);text-align:center;font-weight:600;font-size:var(--fs-sm);width:20%;color:var(--clr-accent);">Mystic ★</th>
+                <th style="padding:var(--sp-4) var(--sp-6);text-align:center;font-weight:600;font-size:var(--fs-sm);width:20%;color:var(--clr-accent);">Mystic <i class="fas fa-star" style="font-size: 0.8em; vertical-align: middle;"></i></th>
                 <th style="padding:var(--sp-4) var(--sp-6);text-align:center;font-weight:600;font-size:var(--fs-sm);width:20%;">Oracle</th>
               </tr>
             </thead>
@@ -321,7 +322,7 @@
           <p>Hear from our valued subscribers about their experience.</p>
         </div>
 
-        <div class="grid grid--3" data-stagger="100">
+        <div class="grid grid--4" data-stagger="100">
           <div class="testimonial-card reveal">
             <div class="testimonial-card__quote">The Mystic plan is incredible value. Eight readings a month means I always have guidance when I need it. The video sessions are so much more personal than text-based readings.</div>
             <div class="testimonial-card__author">
@@ -357,6 +358,21 @@
               </div>
             </div>
           </div>
+
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__quote">The compatibility reports in the Mystic plan are scarily accurate. It helped me understand my partner's needs on a whole new level. Highly recommend to everyone!</div>
+            <div class="testimonial-card__author">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Elena R." class="testimonial-card__avatar" loading="lazy">
+              <div>
+                <div class="testimonial-card__name">Elena R.</div>
+                <div class="testimonial-card__role">Mystic Plan Subscriber</div>
+                <div class="stars" style="margin-top:4px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center reveal" style="margin-top:var(--sp-10);">
+          <a href="#" class="btn btn--secondary">Read More Reviews <i class="fas fa-arrow-right"></i></a>
         </div>
 
         <!-- Trust Badges -->
@@ -404,9 +420,12 @@
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer__top">
+        <!-- Brand Column -->
         <div class="footer__brand">
-          <a href="index.html" class="footer__logo">
-            <div class="footer__logo-icon"><i class="fas fa-star-of-david"></i></div>
+          <a href="home-1.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <i class="fas fa-star-of-david"></i>
+            </div>
             <span class="footer__logo-text">CelestiaAura</span>
           </a>
           <p class="footer__desc">Connecting souls with the cosmos through professional astrology, tarot, and spiritual guidance since 2015.</p>
@@ -418,32 +437,40 @@
             <a href="#" class="footer__social-link footer__social-link--tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
+
+        <!-- Services Column -->
         <div class="footer__column">
-          <h4>Services</h4>
+          <h3>Services</h3>
           <a href="service-detail.html" class="footer__link">Tarot Reading</a>
           <a href="service-detail.html" class="footer__link">Birth Chart Analysis</a>
           <a href="service-detail.html" class="footer__link">Crystal Healing</a>
           <a href="service-detail.html" class="footer__link">Palmistry</a>
           <a href="service-detail.html" class="footer__link">Numerology</a>
         </div>
+
+        <!-- Resources Column -->
         <div class="footer__column">
-          <h4>Resources</h4>
+          <h3>Resources</h3>
           <a href="blog.html" class="footer__link">Blog & Articles</a>
           <a href="#" class="footer__link">Daily Horoscope</a>
           <a href="#" class="footer__link">Zodiac Guide</a>
           <a href="#" class="footer__link">Free Birth Chart</a>
           <a href="#" class="footer__link">Meditation Library</a>
         </div>
+
+        <!-- Company Column -->
         <div class="footer__column">
-          <h4>Company</h4>
+          <h3>Company</h3>
           <a href="about.html" class="footer__link">About Us</a>
           <a href="pricing.html" class="footer__link">Pricing</a>
           <a href="contact.html" class="footer__link">Contact Us</a>
           <a href="#" class="footer__link">Careers</a>
           <a href="#" class="footer__link">Press Kit</a>
         </div>
+
+        <!-- Newsletter Column -->
         <div class="footer__column">
-          <h4>Newsletter</h4>
+          <h3>Newsletter</h3>
           <p class="footer__desc" style="max-width:100%;">Get weekly horoscopes and cosmic insights.</p>
           <div class="footer__newsletter">
             <form class="footer__newsletter-form">
@@ -453,13 +480,9 @@
           </div>
         </div>
       </div>
+
       <div class="footer__bottom">
         <p>&copy; 2025 CelestiaAura. All rights reserved.</p>
-        <div class="footer__bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
       </div>
     </div>
   </footer>
@@ -472,3 +495,8 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
