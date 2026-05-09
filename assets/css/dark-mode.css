@@ -89,13 +89,28 @@
 }
 
 [data-theme="dark"] .social-btn--google {
-  background: var(--clr-surface);
-  color: var(--clr-text);
-  border-color: var(--clr-border);
+  background: #FFFFFF;
+  color: #3C4043;
+  border-color: #FFFFFF;
 }
 
 [data-theme="dark"] .social-btn--google:hover {
-  background: var(--clr-surface-hover);
+  background: #F1F3F4;
+}
+
+[data-theme="dark"] .social-btn--facebook {
+  background: #1877F2;
+  border-color: #1877F2;
+}
+
+[data-theme="dark"] .social-btn--apple {
+  background: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+[data-theme="dark"] .social-btn--apple i {
+  color: #000000;
 }
 
 [data-theme="dark"] .footer {

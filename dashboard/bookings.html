@@ -33,13 +33,9 @@
       <a href="messages.html" class="sidebar__link"><i class="fas fa-envelope"></i> Messages <span class="sidebar__badge">3</span></a>
       <div class="sidebar__section-label">System</div>
       <a href="settings.html" class="sidebar__link"><i class="fas fa-cog"></i> Settings</a>
-      <a href="../home-1.html" class="sidebar__link"><i class="fas fa-arrow-left"></i> Back to Site</a>
     </nav>
     <div class="sidebar__footer">
-      <div class="sidebar__user">
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin" class="sidebar__user-avatar">
-        <div><div class="sidebar__user-name">Marcus Chen</div><div class="sidebar__user-role">Administrator</div></div>
-      </div>
+      <div style="font-size: 10px; color: var(--clr-text-muted); text-align: center;">CelestiaAura v1.2</div>
     </div>
   </aside>
 
@@ -54,9 +50,18 @@
       </div>
       <div class="dash-header__right">
         <div class="dash-header__search"><i class="fas fa-search"></i><input type="text" placeholder="Search bookings..." aria-label="Search"></div>
-        <button class="dash-header__icon-btn rtl-toggle" aria-label="Toggle RTL"><span>RTL</span></button>
+        <button class="dash-header__icon-btn dash-header__icon-btn--lang rtl-toggle" aria-label="Toggle RTL"><span>RTL</span></button>
         <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
         <button class="dash-header__icon-btn"><i class="fas fa-bell"></i><span class="notif-dot"></span></button>
+
+        <div class="dash-header__user">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Admin Avatar" class="dash-header__user-avatar">
+          <div class="dash-header__user-info">
+            <div class="dash-header__user-name">Marcus Chen</div>
+            <div class="dash-header__user-role">Administrator</div>
+          </div>
+          <i class="fas fa-chevron-down dash-header__user-chevron"></i>
+        </div>
       </div>
     </header>
 

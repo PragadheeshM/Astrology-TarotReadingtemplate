@@ -25,7 +25,7 @@
     .mission-card__icon{width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:rgba(124,58,237,0.08);border-radius:var(--radius-full);color:var(--clr-accent);font-size:var(--fs-xl);margin:0 auto var(--sp-5);}
     .team-card{background:var(--clr-surface);border:1px solid var(--clr-border-light);border-radius:var(--radius-xl);overflow:hidden;text-align:center;transition:all var(--transition-base);position:relative;}
     .team-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card-hover);}
-    .team-card__photo{width:100%;height:180px;object-fit:cover;object-position:top;}
+    .team-card__photo{width:100%;height:320px;object-fit:cover;object-position:top;display:block;transition:transform var(--transition-base);}
     .team-card__body{padding:var(--sp-4);}
     .team-card__name{font-size:var(--fs-base);font-weight:var(--fw-semibold);margin-bottom:var(--sp-1);}
     .team-card__role{font-size:var(--fs-sm);color:var(--clr-text-secondary);margin-bottom:var(--sp-3);}
@@ -44,10 +44,10 @@
       <a href="home-1.html" class="navbar__logo"><div class="navbar__logo-icon"><i class="fas fa-star-of-david"></i></div><span class="navbar__logo-text">CelestiaAura</span></a>
       <nav class="navbar__menu">
         <div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu"><a href="home-1.html" class="navbar__dropdown-item">Home 1</a><a href="home-2.html" class="navbar__dropdown-item">Home 2</a></div></div>
-        <a href="services.html" class="navbar__link">Services</a>
-        <a href="blog.html" class="navbar__link">Blog</a>
         <a href="about.html" class="navbar__link active">About</a>
+        <a href="services.html" class="navbar__link">Services</a>
         <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
         <a href="contact.html" class="navbar__link">Contact</a>
         <div class="navbar__dropdown"><a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__dropdown-menu" role="menu"><a href="dashboard/index.html" class="navbar__dropdown-item" role="menuitem">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__dropdown-item" role="menuitem">User Dashboard</a></div></div>
       </nav>
@@ -64,7 +64,11 @@
     </div>
     <div class="navbar__mobile-menu">
       <div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Home <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="home-1.html" class="navbar__mobile-link">Home 1</a><a href="home-2.html" class="navbar__mobile-link">Home 2</a></div></div>
-      <a href="services.html" class="navbar__mobile-link">Services</a><a href="blog.html" class="navbar__mobile-link">Blog</a><a href="about.html" class="navbar__mobile-link active">About</a><a href="pricing.html" class="navbar__mobile-link">Pricing</a><a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/index.html" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a>
+      <a href="about.html" class="navbar__mobile-link active">About</a>
+      <a href="services.html" class="navbar__mobile-link">Services</a>
+      <a href="pricing.html" class="navbar__mobile-link">Pricing</a>
+      <a href="blog.html" class="navbar__mobile-link">Blog</a>
+      <a href="contact.html" class="navbar__mobile-link">Contact</a><div class="navbar__mobile-dropdown"><a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a><div class="navbar__mobile-sub"><a href="dashboard/index.html" class="navbar__mobile-link">Admin Dashboard</a><a href="user-dashboard/index.html" class="navbar__mobile-link">User Dashboard</a></div></div><a href="login.html" class="navbar__mobile-link" style="color:var(--clr-accent);font-weight:600;">Sign In</a>
     </div>
   </header>
 
@@ -137,7 +141,7 @@
         </div>
         <div class="grid grid--4" data-stagger="100">
           <div class="team-card reveal">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face" alt="Selene Moonweaver" class="team-card__photo" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop" alt="Selene Moonweaver" class="team-card__photo" loading="lazy">
             <div class="team-card__body">
               <h3 class="team-card__name">Selene Moonweaver</h3>
               <p class="team-card__role">Lead Tarot Reader</p>
@@ -149,7 +153,7 @@
             </div>
           </div>
           <div class="team-card reveal">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Orion Starfield" class="team-card__photo" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop" alt="Orion Starfield" class="team-card__photo" loading="lazy">
             <div class="team-card__body">
               <h3 class="team-card__name">Orion Starfield</h3>
               <p class="team-card__role">Chief Astrologer</p>
@@ -161,7 +165,7 @@
             </div>
           </div>
           <div class="team-card reveal">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face" alt="Luna Celestine" class="team-card__photo" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop" alt="Luna Celestine" class="team-card__photo" loading="lazy">
             <div class="team-card__body">
               <h3 class="team-card__name">Luna Celestine</h3>
               <p class="team-card__role">Crystal & Reiki Master</p>
@@ -173,7 +177,7 @@
             </div>
           </div>
           <div class="team-card reveal">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Atlas Nightshade" class="team-card__photo" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop" alt="Atlas Nightshade" class="team-card__photo" loading="lazy">
             <div class="team-card__body">
               <h3 class="team-card__name">Atlas Nightshade</h3>
               <p class="team-card__role">Palmistry & Numerology</p>

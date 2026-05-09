@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Horoscope — CelestiaAura</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicons/favicon.png">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <a href="../home-1.html" class="sidebar__logo">
+        <div class="sidebar__logo-icon"><i class="fas fa-star-of-david"></i></div>
+        <span class="sidebar__logo-text">CelestiaAura</span>
+      </a>
+    </div>
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">My Space</div>
+      <a href="index.html" class="sidebar__link"><i class="fas fa-home"></i> My Dashboard</a>
+      <a href="my-bookings.html" class="sidebar__link"><i class="fas fa-calendar-alt"></i> My Bookings</a>
+      <a href="my-readings.html" class="sidebar__link"><i class="fas fa-hand-sparkles"></i> My Readings</a>
+      <a href="horoscope.html" class="sidebar__link active"><i class="fas fa-sun"></i> Daily Horoscope</a>
+
+      <div class="sidebar__section-label">Explore</div>
+      <a href="../services.html" class="sidebar__link"><i class="fas fa-spa"></i> Browse Services</a>
+      <a href="favorites.html" class="sidebar__link"><i class="fas fa-heart"></i> Favorites</a>
+      <a href="birth-chart.html" class="sidebar__link"><i class="fas fa-chart-pie"></i> My Birth Chart</a>
+
+      <div class="sidebar__section-label">Account</div>
+      <a href="my-profile.html" class="sidebar__link"><i class="fas fa-user"></i> My Profile</a>
+      <a href="my-subscription.html" class="sidebar__link"><i class="fas fa-crown"></i> Subscription</a>
+    </nav>
+    <div class="sidebar__footer">
+      <div style="font-size: 10px; color: var(--clr-text-muted); text-align: center;">CelestiaAura User v1.2</div>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <div class="dash-header__left">
+        <button class="dash-header__hamburger" aria-label="Toggle sidebar"><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span></button>
+        <div>
+          <div class="dash-header__title">Daily Horoscope</div>
+          <div class="dash-header__subtitle">April 14, 2025 — Pisces Season</div>
+        </div>
+      </div>
+      <div class="dash-header__right">
+        <button class="dash-header__icon-btn theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <div class="dash-header__user">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face" alt="User Avatar" class="dash-header__user-avatar">
+          <div class="dash-header__user-info">
+            <div class="dash-header__user-name">Arya Nightbloom</div>
+            <div class="dash-header__user-role">Mystic Plan</div>
+          </div>
+          <i class="fas fa-chevron-down dash-header__user-chevron"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      <div class="user-welcome" style="background:var(--gradient-secondary);">
+        <h1>Your Daily Insight <i class="fas fa-sun" style="color:var(--clr-accent);"></i></h1>
+        <p>"Today, the Moon enters your sector of communication, bringing clarity to long-standing misunderstandings."</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="dash-panel">
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-heart" style="color:var(--clr-error);"></i> Love & Relationships</h2></div>
+          <div class="dash-panel__body">
+            <p style="font-size:var(--fs-sm);line-height:1.6;color:var(--clr-text-secondary);">Your emotional depth is your greatest strength today. Reach out to a loved one; your vulnerability will be met with profound understanding.</p>
+          </div>
+        </div>
+        <div class="dash-panel">
+          <div class="dash-panel__header"><h2 class="dash-panel__title"><i class="fas fa-briefcase" style="color:var(--clr-info);"></i> Career & Wealth</h2></div>
+          <div class="dash-panel__body">
+            <p style="font-size:var(--fs-sm);line-height:1.6;color:var(--clr-text-secondary);">A creative project finally gains momentum. Don't be afraid to voice your unconventional ideas during team meetings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

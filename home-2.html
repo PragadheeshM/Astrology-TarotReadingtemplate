@@ -47,11 +47,50 @@
     .live-dot { width:10px; height:10px; border-radius:50%; background:var(--clr-success); animation:pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 
-    .partners-track { display:flex; align-items:center; gap:var(--sp-12); animation:scroll-logos 30s linear infinite; }
-    .partners-track img { height:40px; opacity:0.5; filter:grayscale(100%); transition:all var(--transition-base); }
-    .partners-track img:hover { opacity:1; filter:none; }
     .partners-slider { overflow:hidden; padding:var(--sp-8) 0; }
-    @keyframes scroll-logos { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+    .partners-track { display:flex; align-items:center; justify-content:center; gap:var(--sp-12); flex-wrap:wrap; padding:var(--sp-6) 0; }
+    
+    .partner-item {
+      display:flex;
+      align-items:center;
+      gap:var(--sp-3);
+      transition:all var(--transition-base);
+      cursor:pointer;
+      padding:var(--sp-3) var(--sp-4);
+      border-radius:var(--radius-lg);
+    }
+    
+    .partner-icon {
+      color:var(--clr-primary);
+      transition:transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    
+    .partner-label {
+      font-weight:var(--fw-bold);
+      color:var(--clr-text);
+      font-size:var(--fs-base);
+      letter-spacing:0.5px;
+      transition:color var(--transition-base);
+    }
+    
+    .partner-item:hover {
+      transform:translateY(-4px);
+    }
+    
+    .partner-item:hover .partner-icon {
+      transform:rotate(360deg);
+      color:var(--clr-accent);
+    }
+    
+    .partner-item:hover .partner-label {
+      color:var(--clr-accent);
+    }
+
+    [data-theme="dark"] .partner-icon { color:var(--clr-secondary-light); }
+    [data-theme="dark"] .partner-label { color:#FFF; }
 
     .stats-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--sp-6); padding:var(--sp-12) 0; background:var(--gradient-primary); border-radius:var(--radius-2xl); }
     .stats-bar .stat-card { color:#FFF; }
@@ -90,10 +129,10 @@
             <a href="home-2.html" class="navbar__dropdown-item active" role="menuitem">Home 2</a>
           </div>
         </div>
-        <a href="services.html" class="navbar__link">Services</a>
-        <a href="blog.html" class="navbar__link">Blog</a>
         <a href="about.html" class="navbar__link">About</a>
+        <a href="services.html" class="navbar__link">Services</a>
         <a href="pricing.html" class="navbar__link">Pricing</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
         <a href="contact.html" class="navbar__link">Contact</a>
         <div class="navbar__dropdown">
           <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard <i class="fas fa-chevron-down"></i></a>
@@ -118,10 +157,10 @@
           <a href="home-2.html" class="navbar__mobile-link active">Home 2</a>
         </div>
       </div>
-      <a href="services.html" class="navbar__mobile-link">Services</a>
-      <a href="blog.html" class="navbar__mobile-link">Blog</a>
       <a href="about.html" class="navbar__mobile-link">About</a>
+      <a href="services.html" class="navbar__mobile-link">Services</a>
       <a href="pricing.html" class="navbar__mobile-link">Pricing</a>
+      <a href="blog.html" class="navbar__mobile-link">Blog</a>
       <a href="contact.html" class="navbar__mobile-link">Contact</a>
       <div class="navbar__mobile-dropdown">
         <a href="#" class="navbar__mobile-link navbar__mobile-dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
@@ -318,13 +357,35 @@
           <h2>Trusted By Industry Leaders</h2>
         </div>
         <div class="partners-slider reveal">
-          <div class="partners-track" style="display:flex;align-items:center;justify-content:center;gap:var(--sp-12);flex-wrap:wrap;padding:var(--sp-6) 0;">
-            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-stripe fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Stripe</span></div>
-            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-paypal fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">PayPal</span></div>
-            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-google fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Google</span></div>
-            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-apple fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Apple</span></div>
-            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fas fa-calendar fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Calendly</span></div>
-            <div style="display:flex;align-items:center;gap:var(--sp-2);opacity:0.5;"><i class="fab fa-zoom fa-2x" style="color:var(--clr-text-muted);"></i><span style="font-weight:600;color:var(--clr-text-muted);">Zoom</span></div>
+          <div class="partners-track">
+            <div class="partner-item">
+              <div class="partner-icon"><i class="fab fa-stripe fa-2x"></i></div>
+              <span class="partner-label">Stripe</span>
+            </div>
+            <div class="partner-item">
+              <div class="partner-icon"><i class="fab fa-paypal fa-2x"></i></div>
+              <span class="partner-label">PayPal</span>
+            </div>
+            <div class="partner-item">
+              <div class="partner-icon"><i class="fab fa-google fa-2x"></i></div>
+              <span class="partner-label">Google</span>
+            </div>
+            <div class="partner-item">
+              <div class="partner-icon"><i class="fab fa-apple fa-2x"></i></div>
+              <span class="partner-label">Apple</span>
+            </div>
+            <div class="partner-item">
+              <div class="partner-icon"><i class="fas fa-calendar-check fa-2x"></i></div>
+              <span class="partner-label">Calendly</span>
+            </div>
+            <div class="partner-item">
+              <div class="partner-icon">
+                <svg width="28" height="20" viewBox="0 0 28 20" fill="currentColor">
+                  <path d="M17.92 3.03H2.08C.93 3.03 0 3.96 0 5.11v9.78c0 1.15.93 2.08 2.08 2.08h15.84c1.15 0 2.08-.93 2.08-2.08V5.11c0-1.15-.93-2.08-2.08-2.08zm8.7 13.04l-5.62-4.08V7.93l5.62-4.08c.5-.36.93-.15.93.47v11.3c0 .63-.43.83-.93.47z"/>
+                </svg>
+              </div>
+              <span class="partner-label">Zoom</span>
+            </div>
           </div>
         </div>
       </div>

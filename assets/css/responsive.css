@@ -563,8 +563,14 @@ html, body {
   }
 
   .navbar__icon-btn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0;
+  }
+
+  .navbar__icon-btn span {
+    font-size: 10px;
   }
 
   .navbar__hamburger {
@@ -586,9 +592,57 @@ html, body {
     grid-template-columns: 1fr !important;
   }
 
-  /* Stats: compact */
-  .stat-card-dash {
-    padding: var(--sp-4) !important;
+  .dash-panel__header {
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .dash-panel__body {
+    padding: var(--sp-4);
+  }
+
+  /* Dashboard Table Mobile Optimization */
+  .dash-table {
+    min-width: 700px; /* Reduced from 900px for better mobile scroll feel */
+  }
+
+  .dash-table thead th {
+    padding: var(--sp-3) var(--sp-4);
+    font-size: 10px;
+  }
+
+  .dash-table tbody td {
+    padding: var(--sp-3) var(--sp-4);
+    font-size: var(--fs-xs);
+  }
+
+  .dash-table__avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dash-table__user {
+    gap: var(--sp-2);
+  }
+
+  .status {
+    padding: 2px 8px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .dash-table__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+
+  .dash-table__email {
+    display: none; /* Hide email on very small mobile to save space */
+  }
+
+  .dash-table td:last-child {
+    text-align: right; /* Ensure amount is always right-aligned */
   }
 }
 

@@ -535,7 +535,7 @@
     ctx.scale(dpr, dpr);
 
     var cx = w / 2, cy = h * 0.58;
-    var radius = Math.min(w / 2, h * 0.55) - opts.lineWidth;
+    var radius = Math.min(w / 2 - (w < 350 ? 20 : 5), h * 0.55) - opts.lineWidth;
     var startAngle = Math.PI * 0.8;
     var endAngle = Math.PI * 2.2;
     var totalArc = endAngle - startAngle;
@@ -605,8 +605,10 @@
     // Segment labels
     for (var sli = 0; sli < segCount; sli++) {
       var sla = startAngle + segArc * sli + segArc / 2;
-      var slx = cx + (radius + opts.lineWidth + 12) * Math.cos(sla);
-      var sly = cy + (radius + opts.lineWidth + 12) * Math.sin(sla);
+      // Reduce label offset if canvas is narrow to prevent clipping
+      var labelOffset = w < 350 ? 5 : 12;
+      var slx = cx + (radius + opts.lineWidth + labelOffset) * Math.cos(sla);
+      var sly = cy + (radius + opts.lineWidth + labelOffset) * Math.sin(sla);
       ctx.fillStyle = opts.segments[sli].color;
       ctx.font = '10px Inter, sans-serif';
       ctx.textAlign = 'center';
